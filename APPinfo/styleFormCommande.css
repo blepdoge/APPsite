@@ -1,0 +1,198 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+li,
+a {
+  font-family: "Poppins";
+  text-decoration: none;
+  font-size: 48px;
+  color: white;
+}
+
+.pageContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+/*--------------------HAUT DE PAGE ICI------------------*/
+header {
+  display: flex;
+  position: sticky;
+  top: 0;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: #0764a3;
+  padding: 12px;
+  padding-right: 24px;
+  max-height: 132px;
+  width: auto;
+}
+
+.textelogo {
+  flex: 2;
+  margin-right: auto;
+  font-family: "Poppins";
+  font-size: 48px;
+  text-decoration: none;
+  color: white;
+  padding-left: 12px;
+}
+
+.logotop {
+  width: 100px;
+  margin-right: auto;
+}
+
+.navlien {
+  list-style: none;
+  padding-left: 0px;
+  margin-left: 20px;
+}
+
+.navlien li {
+  display: inline-block;
+  padding: 0px 24px;
+}
+
+.navlien li a {
+  font-size: 40px;
+}
+
+.navlien li a:hover {
+  color: rgb(19, 24, 92);
+}
+
+/*--------------------MILIEU DE PAGE ICI------------------*/
+
+.contenuPage {
+  display: flex;
+  max-height: fit-content;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+
+.formulaireContact {
+  display: flex;
+  max-height: fit-content;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  font-size: 32px;
+  font-family: "Poppins";
+  line-height: 0px;
+  padding : 20px;
+}
+
+.nomPrenom {
+  display: flex;
+  flex-direction: row;
+  width:100%;
+}
+#inputNom{
+  margin-right: 20px;
+}
+
+
+.formulaireContact input[type="text"],
+textarea {
+  width: 100%;
+  padding: 8px;
+  box-sizing: border-box;
+  margin-bottom: 24px;
+  border: 1px solid #0764a3;
+  font-size: 32px;
+  border-radius: 10px;
+  background-color: rgb(187, 187, 187);
+}
+
+.formulaireContact input[type=submit] {
+  width: 70%;
+  border: none;
+  font-size: 32px;
+  border-radius: 10px;
+  background-color: #0764a3;
+  padding: 20px;
+}
+
+.formulaireContact input[type=submit]:hover {
+  background-color: #017ed1;
+}
+
+/*--------------------BAS DE PAGE ICI------------------*/
+footer {
+  display: flex;
+  align-items: center;
+  position: fixed;        /*LIGNE A RETIREr POUR LES GROSSES PAGES*/
+  background: linear-gradient(
+    90.58deg,
+    rgba(53, 53, 53) 30.81%,
+    rgba(7, 100, 163) 74.18%
+  );
+  width: 100%;
+  bottom: 0;
+}
+
+.logobottom {
+  margin: 39px 14px;
+}
+
+.infoFooterContainer {
+  display: flex;
+  align-items: center;
+}
+
+.infoFooter {
+  list-style: none;
+  padding-left: 0px;
+  margin-left: 14px;
+}
+
+.infoFooter li {
+  font-size: 26px;
+}
+
+.line {   /*Sert a dessiner la ligne noire pour séparer*/
+  width: 1px;
+  height: 160px;
+  border-left: 4px solid black;
+  margin-left: 46px;
+}
+
+/*------------newsletter-----------*/
+
+.newsletterContainer {
+  display: flex;
+  justify-content: flex-end;
+  flex: 1 0 250px;
+  margin-right: 39px;
+}
+
+.newsletterContainer p {
+  font-family: "Poppins";
+  font-size: 26px;
+  color: white;
+  line-height: 0px;
+}
+
+.newsletterContainer input[type="text"] {
+  height: 50px;
+  width: 500px;
+  font-size: 26px;
+  border-radius: 15px;
+  margin-right: 24px;
+}
+
+.newsletterContainer input[type="submit"] {
+  height: 50px;
+  width: 180px;
+  font-size: 26px;
+  background-color: #44c767;
+  border-radius: 15px;
+  border: none;
+  padding: 10px;
+  text-shadow: 0px 1px 0px #2f6627;
+}
+
+.newsletterContainer input[type="submit"]:hover {
+  background-color: #5cbf2a;
+}
