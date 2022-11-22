@@ -59,6 +59,13 @@ header {
 
 /*----------------------MILIEU DE PAGE-----------------*/
 
+body{
+    font-family: 'Poppins';
+}
+
+.titleZone{
+    text-align: center;
+}
 
 /*--------------------BAS DE PAGE ICI------------------*/
 footer {
