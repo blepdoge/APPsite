@@ -66,6 +66,8 @@ body{
 .titleZone{
     text-align: center;
     background-image: url("fondlaboaccueil.png");
+    background-repeat:no-repeat;
+    max-width: 100%;
 }
 
 
