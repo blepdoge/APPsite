@@ -2,6 +2,7 @@
 
 body{
   font-family: "Poppins";
+  margin:0;
 }
 
 li,
@@ -232,6 +233,10 @@ footer {
     border-radius: 15px;
     margin: 50px;
     text-align: center;
+}
+
+.contrôle:hover {
+  cursor:pointer
 }
 
 .graphe{
