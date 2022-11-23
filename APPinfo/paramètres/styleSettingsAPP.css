@@ -92,7 +92,7 @@ header {
   flex-direction: column;
 }
 
-.Zonesdetextedroite input[type="text"],input[type="email"] {
+.Zonesdetextedroite input[type="text"],input[type="email"],select {
   width: 100%;
   padding: 10px;
   
