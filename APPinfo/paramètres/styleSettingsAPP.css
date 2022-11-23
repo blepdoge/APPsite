@@ -57,15 +57,25 @@ header {
 
 /*--------------------MILIEU DE PAGE ICI------------------*/
 
+.containerset {
+
+  display: flex;
+  flex: row;
+  justify-content: center;
+
+}
+
+
 .contenuPage {
 
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   font-family: "Poppins", sans-serif;
+  text-align: center;
 }
 
-.Zonesdetexte {
+.Zonesdetextedroite {
   display: flex;
   align-items: center;
   justify-content: flex-start;
@@ -74,29 +84,27 @@ header {
   font-family: "Poppins";
   line-height: 0px;
   padding : 15px;
-  max-height: 600px;
 }
+
 
 .partiedroite {
   display: flex;
-  flex-direction: row;
-  width:50%;
+  flex-direction: column;
 }
 
-.Zonesdetexte input[type="text"],
-textarea {
+.Zonesdetextedroite input[type="text"],input[type="email"] {
   width: 100%;
   padding: 10px;
-  box-sizing: border-box;
-  margin-bottom: 14px;
+  
+  margin-bottom: 15px;
   border: 1px solid #0764a3;
-  font-size: 18px;
-  border-radius: 10px;
+  font-size: 15px;
+  border-radius: 15px;
   background-color: rgb(187, 187, 187);
 }
 
-.Zonesdetexte input[type=submit] {
-  width: 70%;
+.Zonesdetextedroite input[type=submit] {
+  width: fit-content;
   border: none;
   font-size: 18px;
   border-radius: 10px;
@@ -104,7 +112,8 @@ textarea {
   padding: 12px;
 }
 
-.Zonesdetexte input[type=submit]:hover {
+
+.Zonesdetextedroite input[type=submit]:hover {
   background-color: #017ed1;
 }
 
