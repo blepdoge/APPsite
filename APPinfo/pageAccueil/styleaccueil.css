@@ -104,6 +104,11 @@ body{
   color :black
 }
 
+.mainWrapper{
+  display: flex;
+  flex-direction: column;
+}
+
 
 
 /*--------------------BAS DE PAGE ICI------------------*/
