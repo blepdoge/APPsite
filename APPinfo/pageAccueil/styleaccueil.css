@@ -10,7 +10,6 @@ a {
   color: white;
 }
 
-
 /*--------------------HAUT DE PAGE ICI------------------*/
 header {
   display: flex;
@@ -21,6 +20,7 @@ header {
   background-color: #0764a3;
   padding-left: 6px;
   width: auto;
+  z-index: 9;
 }
 
 .textelogo {
@@ -39,7 +39,7 @@ header {
 
 .navlien {
   list-style: none;
-  
+
   padding-left: 0px;
   margin-left: 20px;
 }
@@ -59,99 +59,158 @@ header {
 
 /*----------------------MILIEU DE PAGE-----------------*/
 
-body{
-    font-family: 'Poppins';
+body {
+  font-family: "Poppins";
 }
 
-.titleZone{
-    text-align: center;
-    width: 100%;
+.titleZone {
+  text-align: center;
+  width: 100%;
+  height: fit-content;
+  background-image: linear-gradient(
+    180deg,
+    rgba(217, 217, 217, 0) 0%,
+    #ffffff 65.62%
+  ), url('fondlaboaccueil.png');
+  background-size: cover;
+
 }
 
-.fondImageLabo{
-    max-height: 100%;
-    max-width: 100%;
+.imageLaboFond {
+  max-height: 100%;
+  max-width: 100%;
+  display:none;
+}
+.coverGradient {
+  position: absolute;
+  top: 78px;
+  left: 0;
+  width: 100%;
+  height: 952px;
+  
 }
 
+.textTitleZone {
+  position: absolute;
+  top: 78px;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  z-index: 2;
+  width: 1200px;
+  max-height: 952px;
+}
+
+.titleZone h1 {
+  font-size: 120px;
+  color: #0764a3;
+  text-shadow: rgb(71, 71, 71) 3px 5px 2px;
+}
+
+.titleZone h2{
+  font-size: 35px;
+  color: black;
+}
+
+.mainWrapper{
+  display: flex;
+  flex-direction: column;
+}
+
+.boutonQuiz {
+  border-radius: 18px;
+  background: #ffffff;
+  border: none;
+  box-shadow: 8px 8px 12px #a1a1a1, -8px -8px 12px #ffffff;
+  width: fit-content;
+  height: fit-content;
+  padding: 20px;
+  font-size: 30px;
+}
+
+.boutonQuiz:active {
+  background: #e0e0e0;
+  box-shadow: 6px 6px 6px #a1a1a1, -6px -6px 6px #ffffff;
+}
 
 /*--------------------BAS DE PAGE ICI------------------*/
 footer {
-    display: flex;
-    align-items: center;
-            /* position: fixed; LIGNE A RETIREr POUR LES GROSSES PAGES*/
-    background: linear-gradient(
-      90.58deg,
-      rgba(53, 53, 53) 30.81%,
-      rgba(7, 100, 163) 74.18%
-    );
-    width: auto;
-    float:bottom;
-  }
-  
-  .logobottom {
-    
-    margin: 20px 7px;
-  }
-  
-  .infoFooterContainer {
-    display: flex;
-    align-items: center;
-  }
-  
-  .infoFooter {
-    list-style: none;
-    padding-left: 0px;
-    margin-left: 7px;
-  }
-  
-  .infoFooter li {
-    font-size: 16px;
-  }
-  
-  .line {   /*Sert a dessiner la ligne noire pour séparer*/
-    width: 1px;
-    height: 80px;
-    border-left: 4px solid black;
-    margin-left: 23px;
-  }
-  
-  /*------------newsletter-----------*/
-  
-  .newsletterContainer {
-    display: flex;
-    justify-content: flex-end;
-    flex: 1 0 175px;
-    margin-right: 20px;
-  }
-  
-  .newsletterContainer p {
-    font-family: "Poppins";
-    font-size: 16px;
-    color: white;
-    line-height: 0px;
-  }
-  
-  .newsletterContainer input[type="text"] {
-    height: 25px;
-    width: 250px;
-    font-size: 16px;
-    border-radius: 15px;
-    margin-right: 12px;
-    padding-left: 8px;
-  }
-  
-  .newsletterContainer input[type="submit"] {
-    height: fit-content;
-    width: 90px;
-    font-size: 16px;
-    background-color: #44c767;
-    border-radius: 15px;
-    border: none;
-    padding: 5px 5px;
-    text-shadow: 0px 1px 0px #2f6627;
-  }
-  
-  .newsletterContainer input[type="submit"]:hover {
-    background-color: #5cbf2a;
-  }
-  
+  display: flex;
+  align-items: center;
+  /* position: fixed; LIGNE A RETIREr POUR LES GROSSES PAGES*/
+  background: linear-gradient(
+    90.58deg,
+    rgba(53, 53, 53) 30.81%,
+    rgba(7, 100, 163) 74.18%
+  );
+  width: auto;
+  float: bottom;
+}
+
+.logobottom {
+  margin: 20px 7px;
+}
+
+.infoFooterContainer {
+  display: flex;
+  align-items: center;
+}
+
+.infoFooter {
+  list-style: none;
+  padding-left: 0px;
+  margin-left: 7px;
+}
+
+.infoFooter li {
+  font-size: 16px;
+}
+
+.line {
+  /*Sert a dessiner la ligne noire pour séparer*/
+  width: 1px;
+  height: 80px;
+  border-left: 4px solid black;
+  margin-left: 23px;
+}
+
+/*------------newsletter-----------*/
+
+.newsletterContainer {
+  display: flex;
+  justify-content: flex-end;
+  flex: 1 0 175px;
+  margin-right: 20px;
+}
+
+.newsletterContainer p {
+  font-family: "Poppins";
+  font-size: 16px;
+  color: white;
+  line-height: 0px;
+}
+
+.newsletterContainer input[type="text"] {
+  height: 25px;
+  width: 250px;
+  font-size: 16px;
+  border-radius: 15px;
+  margin-right: 12px;
+  padding-left: 8px;
+}
+
+.newsletterContainer input[type="submit"] {
+  height: fit-content;
+  width: 90px;
+  font-size: 16px;
+  background-color: #44c767;
+  border-radius: 15px;
+  border: none;
+  padding: 5px 5px;
+  text-shadow: 0px 1px 0px #2f6627;
+}
+
+.newsletterContainer input[type="submit"]:hover {
+  background-color: #5cbf2a;
+}
