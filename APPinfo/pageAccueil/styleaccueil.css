@@ -102,10 +102,25 @@ body {
   text-shadow: rgb(71, 71, 71) 3px 5px 2px;
 }
 
-.textTitleZone h2,
-a {
+.textTitleZone h2 {
   font-size: 35px;
   color: black;
+}
+
+.boutonQuiz {
+  border-radius: 18px;
+  background: #ffffff;
+  border: none;
+  box-shadow: 8px 8px 12px #a1a1a1, -8px -8px 12px #ffffff;
+  width: fit-content;
+  height: fit-content;
+  padding: 20px;
+  font-size: 30px;
+}
+
+.boutonQuiz:active {
+  background: #e0e0e0;
+  box-shadow: 6px 6px 6px #a1a1a1, -6px -6px 6px #ffffff;
 }
 
 /*--------------------BAS DE PAGE ICI------------------*/
