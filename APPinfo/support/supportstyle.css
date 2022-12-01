@@ -1,0 +1,141 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+header {
+    display: flex;
+    position: sticky;
+    top: 0;
+    justify-content: flex-end;
+    align-items: center;
+    background-color: #0764a3;
+    padding-left: 6px;
+    width: auto;
+  }
+
+body
+{
+    background-color  : #ffffff;
+}
+
+.textelogo {
+    flex: 2;
+    margin-right: auto;
+    font-family: "Poppins";
+    font-size: 28px;
+    text-decoration: none;
+    color: white;
+    padding-left: 6px;
+  }
+
+.div1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.div2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    position: absolute;
+    width: 752px;
+    height: 300px;
+    left: 241px;
+    top: 500px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: -0.017em;
+    padding-left : 20px;
+    
+    background: #ffffff;
+    border: 1px solid #000000;
+    border-radius: 20px;
+}
+
+.nature {
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 752px;
+    height: 50px;
+    left: 241px;
+    top: 140px;
+
+    background: #D9D9D9;
+    border: 1px solid #000000;
+    border-radius: 20px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: -0.017em;
+    padding-left : 20px;   
+    }
+   
+.quelbox {
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 752px;
+    height: 50px;
+    left: 241px;
+    top: 300px;
+
+    background: #D9D9D9;
+    border: 1px solid #000000;
+    border-radius: 20px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: -0.017em;
+    padding-left : 20px;   
+    }
+
+.text{
+    text-align:center;
+    
+    position: absolute;
+    top: 6px;
+    }
+
+.commentaires{
+    position: absolute;
+    top: 130px;
+
+    background: #D9D9D9;
+
+    color: rgba(0, 0, 0, 0.5);
+    
+    }
+
+.envoyer {
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 317px;
+    height: 51px;
+    left: 458px;
+    top: 850px;
+
+    background: #0764A3;
+    border: 1px solid #000000;
+    border-radius: 20px;
+
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 24px;
+    line-height: 36px;
+    text-align: center;
+    letter-spacing: -0.017em;
+
+    color: #ffffff;
+}
