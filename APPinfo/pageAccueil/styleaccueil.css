@@ -134,6 +134,32 @@ body {
   box-shadow: 6px 6px 6px #a1a1a1, -6px -6px 6px #ffffff;
 }
 
+.mainContent1 {
+  display: flex;
+  flex-direction: row;
+  margin-top:69px;
+
+}
+
+.colonneDroiteMilieuAccueil {
+  display: flex;
+  flex-direction: column;
+  font-size: 28px;
+  margin-left: 25px;
+  width: 40%;
+  text-align: center;
+  padding:20px;
+  align-items: center;
+}
+
+.imageProtoLabbox {
+  scale:calc(85%) ;
+}
+.labboxlogosmall {
+  scale:calc(85%);
+}
+
+
 /*--------------------BAS DE PAGE ICI------------------*/
 footer {
   display: flex;
