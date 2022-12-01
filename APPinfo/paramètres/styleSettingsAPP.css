@@ -61,7 +61,31 @@ header {
 
   display: flex;
   flex: row;
-  justify-content: center;
+
+
+}
+
+.containerset1 {
+
+  display: flex;
+  flex: row;
+  justify-content: left;
+  width: 20%;
+  border: black solid 3px;
+  margin-left: 50px;
+
+}
+
+.containerset2 {
+
+  display: flex;
+  flex: row;
+  justify-content: start;
+  margin-right: 50px;
+  padding-bottom: 1px;
+  width: 75%;
+  border: black solid 3px;
+  border-left: none;
 
 }
 
@@ -84,12 +108,26 @@ header {
   font-family: "Poppins";
   line-height: 0px;
   padding : 15px;
+  width: 100%;
+}
+
+.Zonesdetextegauche {
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  font-size: 18px;
+  font-family: "Poppins";
+  line-height: 0px;
+  padding : 15px;
+  width: 90%;
 }
 
 
 .partiedroite {
   display: flex;
   flex-direction: column;
+  width: 80%;
+
 }
 
 .Zonesdetextedroite input[type="text"],input[type="email"],select {
