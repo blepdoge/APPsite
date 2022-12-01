@@ -64,6 +64,10 @@ body {
 }
 
 .titleZone {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   text-align: center;
   width: 100%;
   height: fit-content;
@@ -74,6 +78,7 @@ body {
     ),
     url("fondlaboaccueil.png");
   background-size: cover;
+
 }
 
 
@@ -86,6 +91,7 @@ body {
 .titleZone h2 {
   font-size: 35px;
   color: black;
+  width:70%;
 }
 
 .mainWrapper {
