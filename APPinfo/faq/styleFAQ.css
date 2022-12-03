@@ -24,6 +24,7 @@ header {
   background-color: #0764a3;
   padding-left: 6px;
   width: auto;
+  z-index:3;
 }
 
 .textelogo {
@@ -154,6 +155,7 @@ footer {
 .liste{
     width: 1000px;
     margin:auto;
+    z-index: 1;
 }
 
 .questions{
@@ -227,5 +229,3 @@ textarea{
     display: none;
     position: relative;
 }
-
-.questions:hover .dropdown-content{display: block;}
