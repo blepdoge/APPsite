@@ -83,15 +83,16 @@ body {
 
 
 .titleZone h1 {
+  line-height: 120px;
   font-size: 120px;
   color: #0764a3;
   text-shadow: rgb(71, 71, 71) 3px 5px 2px;
 }
 
 .titleZone h2 {
-  font-size: 35px;
+  font-size: 30px;
   color: black;
-  width:70%;
+  width:85%;
   margin-top:0;
 }
 
@@ -139,7 +140,14 @@ body {
 
 .imageProtoLabbox {
   scale:calc(85%) ;
+  transition-duration: 0.5s;
 }
+
+.imageProtoLabbox:hover {
+  transform:scale(1.1);
+  transition-duration: 0.25s;
+}
+
 .labboxlogosmall {
   scale:calc(85%);
 }
