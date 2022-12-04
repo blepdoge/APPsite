@@ -1,9 +1,11 @@
 <!DOCTYPE html>
+<html>
 <head>
     <title>Commander une LabBox</title>
     <link rel="stylesheet" href="popupGraphesStyle.css" />
   </head>
 
+  <!-- à soit changer en header logged in soit enlever if bien mis en pop up-->
   <header>
     <img
       class="logotop"
@@ -16,54 +18,61 @@
       <p style="margin: 18px">SORSEN</p>
     </div>
 
-    <nav>
-      <ul class="navlien">
-        <li><a href="#">FAQ</a></li>
-        <!--mettre le lien vers la FAQ-->
-        <li style="color: gray">|</li>
-        <li><a href="#">Connexion</a></li>
-        <!--mettre le lien vers la page de co-->
-      </ul>
-    </nav>
-  </header>
+  </header>  
+<!-- à soit changer en header logged in soit enlever if bien mis en pop up-->
 
-  <body style="margin: 0">
-  </body>
+<body style="margin: 0">
 
-  <!--Bas de page-->
-  <footer>
-    <img class="logobottom" src="assets/SorsenFull.png" width="100" height="90" />
+  <div class="titleZoneGraphes">
+    <h1><strong>Labbox 1 - Salle 401</strong></h1>
 
-    <div class="infoFooterContainer">
-      <ul class="infoFooter">
-        <li>SORSEN ENTREPRISE</li>
-        <li>10 rue de Vanves</li>
-        <li>91230 Issy-les-Moulineaux</li>
-      </ul>
+    <div class = "dateHeure">
+      <p id="date"></p>
+        <script>
+        document.getElementById("date").innerHTML = Date();
+        </script>
     </div>
+    
+  </div>
 
-    <div class="line"></div>
+  <div class = "boutonsSessions">
+    <button class="boutonSessionStart"> Lancer la session </button>
+    <button class="boutonSessionStop"> Arrêter la session </button>
+    <button class="boutonSessionExporter">Exporter les données</button>
+  </div>
 
-    <div class="infoFooterContainer">
-      <ul class="navlien">
-        <li><a href="#">CGU</a></li>
-        <li><a href="#">Partenaires</a></li>
-        <li><a href="mailto:contactsorsen@sorsen.fr">Nous contacter</a></li>
-      </ul>
-    </div>
+  <div class="maincontentGraphes">
+    <div class="GraphesLigneHaut"> <!--3 premiers graphes-->
+      <div class="containersGraphes"> <!--Concentration CO2-->
+        <img src="GraphTemplate.png" alt="logoAnalyse" />  
+      </div> <!--fin Concentration CO2-->
+        
+      <div class="containersGraphes"> <!--Concentration CO-->
+        <img src="GraphTemplate.png" alt="logoAnalyse" />
+      </div> <!--fin Concentration CO-->
 
-    <div class="newsletterContainer">
-      <form action="#">
-        <!--ici link le code phph pour s'abonner a la newsletter-->
+      <div class="containersGraphes"> <!--Volume Sonore-->
+        <img src="GraphTemplate.png" alt="logoAnalyse" />
+      </div> <!--fin Volume Sonore-->
+      
+    </div> <!--fin 3 premiers graphes-->
+    
 
-        <p>Abonnez-vous à notre newsletter ! <br /></p>
-        <input
-          type="text"
-          placeholder="Adresse mail"
-          name="mail"
-          required
-        />
-        <input type="submit" value="S'abonner" />
-      </form>
-    </div>
-  </footer>
+    <div class="GraphesLigneBas"> <!--2 derniers graphes-->
+      <div class="containersGraphes"><!--Fréquence Cardiaque-->
+        <img src="GraphTemplate.png" alt="logoBienetre" />  
+      </div> <!-- fin Fréquence Cardiaque-->
+
+      <div class="containersGraphes"><!--Température-->
+        <img src="GraphTemplate.png" alt="logoAnalyse" />
+      </div><!--fin Température-->
+      
+    </div> <!--fin 2 derniers graphes-->
+  </div>
+</body>
+
+
+  
+  </html>
+
+  <!--https://www.cssscript.com/categories/chart-graph/ lien pour faire les graphes quand on sera plus avancés-->

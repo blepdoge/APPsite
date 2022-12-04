@@ -53,7 +53,137 @@ header {
   .navlien li a:hover {
     color: rgb(19, 24, 92);
   }
+/* -------------------fin haut de page-----------------*/
 
+/*--------------------Main Contents--------------------*/
+
+body {
+  font-family: "Poppins";
+}
+
+.titleZoneGraphes {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  margin-top:30px;
+  font-size: 25px;
+}
+
+.titleZone h1 {
+  font-size: 80px;
+  color: black;
+  width:85%;
+}
+
+.dateHeure {
+  font-size: 20px;
+}
+
+.dateHeure p {
+  margin-top: 10px;
+  margin-bottom: 25px;
+}
+
+.boutonsSessions {
+  display: flex;
+  margin-left: 70px;
+  margin-right: 70px;
+  justify-content: center;
+}
+
+.boutonSessionStart {
+  border-radius: 18px;
+  background: #CEFCB9;
+  border: 1px solid #000000;
+  box-shadow: 8px 8px 12px #a1a1a1, -8px -8px 12px #ffffff;
+  width: fit-content;
+  height: fit-content;
+  padding: 20px;
+  font-size: 20px;
+  margin-left: 30px;
+}
+
+.boutonSessionStart:active {
+  background: #ADFF87;
+  box-shadow: 6px 6px 6px #a1a1a1, -6px -6px 6px #ffffff;
+}
+
+.boutonSessionStop {
+  border-radius: 18px;
+  background: #FFA7A7;
+  border: 1px solid #000000;
+  box-shadow: 8px 8px 12px #a1a1a1, -8px -8px 12px #ffffff;
+  width: fit-content;
+  height: fit-content;
+  padding: 20px;
+  font-size: 20px;
+  margin-left: 30px;
+  margin-right: 30px;
+}
+
+.boutonSessionStop:active {
+  background: #FF7373;
+  box-shadow: 6px 6px 6px #a1a1a1, -6px -6px 6px #ffffff;
+}
+
+.boutonSessionExporter {
+  border-radius: 18px;
+  background: #D9D9D9;
+  border: 1px solid #000000;
+  box-shadow: 8px 8px 12px #a1a1a1, -8px -8px 12px #ffffff;
+  width: fit-content;
+  height: fit-content;
+  padding: 20px;
+  font-size: 20px;
+  margin-right: 30px;
+}
+
+.boutonSessionExporter:active {
+  background: #A3A3A3;
+  box-shadow: 6px 6px 6px #a1a1a1, -6px -6px 6px #ffffff;
+}
+
+.maincontentGraphes {
+  display: flex;
+  flex-direction: column;
+  margin-top:30px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.GraphesLigneHaut{
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 25px;
+  width: 40%;
+  padding:20px;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.GraphesLigneBas{
+  display: flex;
+  flex-direction: row;
+  margin-top: 25px;
+  width: 40%;
+  padding:20px;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.containersGraphes {
+  background-color: #b5b4b4;
+  border-radius: 16px;
+  padding: 25px;
+  margin-left: 30px;
+  margin-right: 30px;
+  transition-duration: 0.5s;
+}
+
+/*------------------fin Main Contents--------------------*/
 
 /*--------------------BAS DE PAGE ICI------------------*/
 footer {
