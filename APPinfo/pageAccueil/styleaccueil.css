@@ -122,6 +122,12 @@ body {
   flex-direction: row;
   margin-top:69px;
   justify-content: space-between;
+  background-image: linear-gradient(
+      to bottom,
+      #ffffff,
+      #c8d3da 
+    );
+
 
 }
 
@@ -175,7 +181,8 @@ body {
 }
 
 .containersBlabla {
-  background-color: #b5b4b4;
+  background-color: #0764A3;
+  color: #ffffff;
   border-radius: 16px;
   box-shadow: 2px 2px 6px gray;
   padding: 25px;
@@ -194,6 +201,11 @@ body {
   padding:50px;
   font-size:28px;
   justify-content: space-between;
+  background-image: linear-gradient(
+      to bottom,
+      #c8d3da,
+      #8fa9bb 
+    );
 }
 
 .content2info {
@@ -202,8 +214,8 @@ body {
   align-items: center;
   text-align: center;
   border-radius: 25px;
-  background-color: #a1a1a1;
-  color:black;
+  background-color: #0764A3;
+  color: #ffffff;
   width:35%;
   height:fit-content;
   padding: 25px;
@@ -214,13 +226,13 @@ body {
   font-size: 24px;
   padding:10px;
   border-radius: 12px;
-  background-color: #ffffff;
+  background-color: #adbdc7;
   width: fit-content;
   border: none;
 }
 
 .formaccessbtn:hover {
-  background-color: #c4c4c4;
+  background-color: #93a9b7;
   
 }
 
@@ -228,8 +240,6 @@ body {
   width:35%;
   margin-right: 75px;
 }
-
-
 
 
 
