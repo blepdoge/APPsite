@@ -228,14 +228,16 @@ footer {
     text-decoration: none;
 }
 
-.contrôle{
-    width:150px;
-    border-radius: 15px;
-    margin: 50px;
-    text-align: center;
+.controle{
+  width:fit-content;
+  border-radius: 15px;
+  margin: 50px;
+  text-align: center;
+  font-family: 'Poppins';
+  font-size:28px
 }
 
-.contrôle:hover {
+.controle:hover {
   cursor:pointer
 }
 
