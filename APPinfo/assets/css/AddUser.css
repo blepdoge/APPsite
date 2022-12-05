@@ -5,11 +5,12 @@ body
 }
 
 .titre {
-    position: absolute;
-    width: 463px;
-    height: 35px;
-    left: 423px;
-    top: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    margin-top: 20px;
+
 
     font-family: 'Poppins';
     font-style: normal;
@@ -20,19 +21,35 @@ body
 
     color: #000000;
 }
+
+.formulaire{
+    width:450px;
+    margin:auto;
+}
+
+.nomPrenom {
+    display: flex;
+    flex-direction: row;
+}
+
+.FormZone {
+    display: flex;
+    flex-direction: column;
+}
+
 .nom {
     box-sizing: border-box;
 
-    position: absolute;
-    width: 363px;
-    height: 52px;
-    left: 241px;
-    top: 94px;
+    position: relative;
+    display:block;
+    margin:auto;
+    margin-top: 20px;
+    width:450px;
 
+    
     background: #D9D9D9;
     border: 1px solid #000000;
-    border-radius: 20px;
-
+    border-radius: 10px;
     font-family: 'Poppins';
     font-style: normal;
     font-weight: 400;
@@ -43,22 +60,22 @@ body
     
     color: rgba(0, 0, 0, 0.5);
     
-    }
+}
 
 
 .prenom {
     box-sizing: border-box;
 
-    position: absolute;
-    width: 363px;
-    height: 52px;
-    left: 630px;
-    top: 94px;
+    position: relative;
+    display:block;
+    margin:auto;
+    margin-top: 20px;
+    width:450px;
+
     
     background: #D9D9D9;
     border: 1px solid #000000;
-    border-radius: 20px;
-    position: absolute;
+    border-radius: 10px;
 
     font-family: 'Poppins';
     font-style: normal;
@@ -69,20 +86,21 @@ body
     padding-left : 20px;
     
     color: rgba(0, 0, 0, 0.5);
-    }
+}
 
 .nomlab {
     box-sizing: border-box;
 
-    position: absolute;
-    width: 752px;
-    height: 51px;
-    left: 241px;
-    top: 171px;
+    position: relative;
+    display:block;
+    margin:auto;
+    margin-top: 20px;
+    width:450px;
+
     
     background: #D9D9D9;
     border: 1px solid #000000;
-    border-radius: 20px;
+    border-radius: 10px;
 
     font-family: 'Poppins';
     font-style: normal;
@@ -93,20 +111,20 @@ body
     padding-left : 20px;
     
     color: rgba(0, 0, 0, 0.5);
-    }
+}
 
 .email {
     box-sizing: border-box;
 
-    position: absolute;
-    width: 752px;
-    height: 52px;
-    left: 241px;
-    top: 246px;
+    position: relative;
+    display:block;
+    margin:auto;
+    margin-top: 20px;
+    width:450px;
     
     background: #D9D9D9;
     border: 1px solid #000000;
-    border-radius: 20px;
+    border-radius: 10px;
 
     font-family: 'Poppins';
     font-style: normal;
@@ -117,20 +135,19 @@ body
     padding-left : 20px;
     
     color: rgba(0, 0, 0, 0.5);
-    }
+}
 
 .numtel {
     box-sizing: border-box;
-
-    position: absolute;
-    width: 752px;
-    height: 52px;
-    left: 241px;
-    top: 322px;
+    position: relative;
+    display:block;
+    margin:auto;
+    margin-top: 20px;
+    width:450px;
 
     background: #D9D9D9;
     border: 1px solid #000000;
-    border-radius: 20px;
+    border-radius: 10px;
 
     font-family: 'Poppins';
     font-style: normal;
@@ -141,20 +158,20 @@ body
     padding-left : 20px;
     
     color: rgba(0, 0, 0, 0.5);
-    }
+}
 
 .adresse {
     box-sizing: border-box;
+    display:block;
+    margin:auto;
+    margin-top: 20px;
+    width:450px;
 
-    position: absolute;
-    width: 752px;
-    height: 52px;
-    left: 241px;
-    top: 398px;
+
 
     background: #D9D9D9;
     border: 1px solid #000000;
-    border-radius: 20px;
+    border-radius: 10px;
 
     font-family: 'Poppins';
     font-style: normal;
@@ -165,20 +182,21 @@ body
     padding-left : 20px;
     
     color: rgba(0, 0, 0, 0.5);
-    }
+}
 
 .statut {
     box-sizing: border-box;
+    width:450px;
 
-    position: absolute;
-    width: 752px;
-    height: 50px;
-    left: 241px;
-    top: 471px;
+
+    
+    display:block;
+    margin:auto;
+    margin-top: 20px;
 
     background: #D9D9D9;
     border: 1px solid #000000;
-    border-radius: 20px;
+    border-radius: 10px;
 
     font-family: 'Poppins';
     font-style: normal;
@@ -189,24 +207,14 @@ body
     padding-left : 20px;
     
     color: rgba(0, 0, 0, 0.5);
-    }
-
-.addUserDiv {
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
-
 
 
 .confirmer {
     box-sizing: border-box;
 
-    position: absolute;
-    width: 317px;
-    height: 51px;
-    left: 458px;
-    top: 550px;
+    position: relative;
+    margin:auto;
 
     background: #0764A3;
     border: 1px solid #000000;
@@ -219,4 +227,13 @@ body
     line-height: 36px;
     text-align: center;
     letter-spacing: -0.017em;
+    display:block;
+    margin-top: 20px;
+}
+
+.centrageligne{
+    display: flex block;
+    justify-content: center;
+    flex-direction: column;
+    width:450px;
 }
