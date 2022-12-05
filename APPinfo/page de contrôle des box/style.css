@@ -213,10 +213,9 @@ footer {
 .box{
     padding: 15px;
     border-radius: 15px;
-    border-style:groove;
     background-color: rgb(102, 102, 102);
-    width:185px;
-    height:185px;
+    width:250px;
+    height:fit-content;
     margin: 50px;
     text-align: center;
     color:white;
