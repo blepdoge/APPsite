@@ -76,7 +76,7 @@ body {
       rgba(217, 217, 217, 0) 0%,
       #ffffff 65.62%
     ),
-    url("fondlaboaccueil.png");
+    url("../images/fondlaboaccueil.png");
   background-size: cover;
 
 }
