@@ -91,7 +91,6 @@ header {
 
 
 .contenuPage {
-
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -117,21 +116,32 @@ header {
   flex-direction: column;
   font-size: 18px;
   font-family: "Poppins";
-  line-height: 0px;
+
   padding : 15px;
-  width: 90%;
+  width: 100%;
 }
 
 
 .partiedroite {
   display: flex;
   flex-direction: column;
-  width: 80%;
+  padding:10px;
+  width: 100%;
+  height:100%;
 
 }
 
+.infolabotxt {
+  height: fit-content;
+  margin-bottom: 220px;
+}
+
+.infousertxt {
+  margin-bottom: 350px;
+}
+
 .Zonesdetextedroite input[type="text"],input[type="email"],select {
-  width: 100%;
+  
   padding: 10px;
   
   margin-bottom: 15px;
