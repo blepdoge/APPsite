@@ -86,8 +86,8 @@ header {
 #search-bar-box {
   display: inline;
   background-color: transparent;
-  width: 450px;
-  height: 35px;
+  width: fit-content;
+  height: fit-content;
   position: relative;
   padding: 10px 10px;
   text-align: center;
