@@ -1,3 +1,15 @@
+<?php
+// Initialize the session
+session_start();
+ 
+// Check if the user is logged in, if not then redirect him to login page
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+    header("location: pageLogin.php");
+    exit;
+}
+?>
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -60,7 +72,7 @@
       <li><a href="pageSettings.html">Paramètres</a></li>
       <li><a href="ContrôleBox.html">Administration</a></li>
       <li>
-        <a href="#">Déconnexion</a>
+        <a href="logout.php">Déconnexion</a>
         <!--ici faudra link le logout.php-->
       </li>
     </ul>
@@ -69,7 +81,7 @@
 
 <body>
 <div class="titre">
-    <h1>Bonjour, Testuser</h1>
+    <h1>Bonjour, <br> <b><?php echo htmlspecialchars($_SESSION["prenomUser"]); ?></b></h1>
 </div>
 
 <div class="trombone">
@@ -77,64 +89,47 @@
 </div>
 
 <div class="boxes">
-    <div class="box">
-        <img src="assets/images/rondvert.png" alt="icône" style="width:20px;height:20px;float:left;">
-        <a href="#"><img src="assets/images/stylo.png" alt="icône" style="width:20px;height:20px;float:right"></a>
-        <br>
-        <a href="pageGraphes.html">
-        <img src="assets/images/imagebox.png" alt="image" style="width:170px;">
-        <p>Box 1</p>
-        </a>
-    </div>
-    <div class="box">
-        <img src="assets/images/rondvert.png" alt="icône" style="width:20px;height:20px;float:left;">
-        <a href="#"><img src="assets/images/stylo.png" alt="icône" style="width:20px;height:20px;float:right;"></a>
-        <br>
-        <a href="pageGraphes.html">
-        <img src="assets/images/imagebox.png" alt="image" style="width:170px;">
-        <p>Box 2</p>
-        </a>
-    </div>
-    <div class="box">
-        <img src="assets/images/rondvert.png" alt="icône" style="width:20px;height:20px;float:left;">
-        <a href="#"><img src="assets/images/stylo.png" alt="icône" style="width:20px;height:20px;float:right;"></a>
-        <br>
-        <a href="pageGraphes.html">
-        <img src="assets/images/imagebox.png" alt="image" style="width:170px;">
-        <p>Box 3</p>
-        </a>
-    </div>
+
+    <?php
+
+    // Connexion a notre bdd
+    $db = new mysqli('localhost', 'root', '', 'mydb');
+
+    // check si il y a un erreur de co
+    if ($db->connect_error) {
+      die("Connection failed: " . $db->connect_error);
+    }
+
+    // faire la requete sql en fonction du labo de la session actuelle
+    $query = "SELECT nomBox FROM labboxtable WHERE laboratoires_idlaboratoires =" . $_SESSION["idLabo"];
+    $result = $db->query($query);
+
+
+    // recheck pour des erreurs encore
+    if (!$result) {
+      die("Query failed: " . $db->error);
+    }
+
+    // on loop a travers tous les rangées renvoyées par sql et on fait des divs a chaque fois, avec le nom de la box
+    while ($row = $result->fetch_assoc()) {
+      echo '<div class="box">
+      <img src="assets/images/rondvert.png" alt="icône" style="width:20px;height:20px;float:left;">
+      <a href="#"><img src="assets/images/stylo.png" alt="icône" style="width:20px;height:20px;float:right"></a>
+      <br>
+      <a href="pageGraphes.html">
+      <img src="assets/images/imagebox.png" alt="image" style="width:170px;">
+      <p>' . $row['nomBox'] . '</p>
+      </a>
+  </div>';
+    }
+
+    // Close the database connection
+    $db->close();
+
+    ?>
+
 </div>
 
-<div class="boxes">
-    <div class="box">
-        <img src="assets/images/rondvert.png" alt="icône" style="width:20px;height:20px;float:left;">
-        <a href="#"><img src="assets/images/stylo.png" alt="icône" style="width:20px;height:20px;float:right;"></a>
-        <br>
-        <a href="pageGraphes.html">
-        <img src="assets/images/imagebox.png" alt="image" style="width:170px;">
-        <p>Box 4</p>
-        </a>
-    </div>
-    <div class="box">
-        <img src="assets/images/rondvert.png" alt="icône" style="width:20px;height:20px;float:left;;">
-        <a href="#"><img src="assets/images/stylo.png" alt="icône" style="width:20px;height:20px;float:right;"></a>
-        <br>
-        <a href="pageGraphes.html">
-        <img src="assets/images/imagebox.png" alt="image" style="width:170px;">
-        <p>Box 5</p>
-        </a>
-    </div>
-    <div class="box">
-        <img src="assets/images/rondvert.png" alt="icône" style="width:20px;height:20px;float:left;">
-        <a href="#"><img src="assets/images/stylo.png" alt="icône" style="width:20px;height:20px;float:right;"></a>
-        <br>
-        <a href="pageGraphes.html">
-        <img src="assets/images/imagebox.png" alt="image" style="width:170px;">
-        <p>Box 6</p>
-        </a>
-    </div>
-</div>
 </body>
 
 <footer>
