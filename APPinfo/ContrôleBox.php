@@ -33,7 +33,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
    
 
   <div class="userSearchBar">
-    <form action="#" id="searchForm"> <!--rediriger vers userSearch avec les params en head-->
+    <form method = "GET" action="userList.php" id="searchForm"> <!--rediriger vers userSearch avec les params en head-->
       
         <input type="text" id="userSearchBar" name="userSearchBar" placeholder="Chercher un utilisateur">
         <button type="submit" id="searchUser" name="searchUser">Chercher</button>
@@ -123,7 +123,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
   </div>';
     }
 
-    // Close the database connection
+    // fermer bdd
     $db->close();
 
     ?>

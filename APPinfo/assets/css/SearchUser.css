@@ -126,21 +126,34 @@ header {
   padding-left: 0;
   margin : 5px 10px
 }
-/* Corps de la page */
+/* ---------------------Corps de la page-------------------------- */
 
 .conteneur {
   display: flex;
+  margin-top: 20px;
+  
   justify-content: center;
   align-items: center;
   flex-direction: row;
 }
 
+.largelistwrapper{
+  margin-top:20px;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100%;
+  margin-bottom: 40px;
+}
+
 .conteneurline {
   display: flex;
 	flex-direction: row;
+  width: 90%;
 	flex-wrap: nowrap;
-	justify-content: space-around;
-	align-items: baseline;
+	justify-content: space-between;
+	align-items: center;
 	align-content: stretch;
   border-bottom : thin solid;
 }
@@ -151,7 +164,9 @@ header {
 }
 
 #search-bar-box {
-  display: inline;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
   background-color: transparent;
   width: fit-content;
   height: fit-content;
@@ -183,14 +198,14 @@ header {
 footer {
   display: flex;
   align-items: center;
-          /* position: fixed; LIGNE A RETIREr POUR LES GROSSES PAGES*/
+  position:absolute;
   background: linear-gradient(
     90.58deg,
     rgba(53, 53, 53) 30.81%,
     rgba(7, 100, 163) 74.18%
   );
-  width: auto;
-  float:bottom;
+  width: 100%;
+  bottom:0;
 }
 
 .logobottom {
