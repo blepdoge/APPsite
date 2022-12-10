@@ -6,7 +6,8 @@
 </head>
 
 <header>
-    <img
+  <div class="sideheader">
+     <img
       class="logotop"
       src="assets/images/logosorsen_crop.png"
       width="60"
@@ -16,16 +17,54 @@
     <div class="textelogo">
       <p style="margin: 18px">SORSEN</p>
     </div>
+  </div>
+   
 
-    <nav>
-      <ul class="navlien">
-        <li><a href="#">FAQ</a></li>
-        <!--mettre le lien vers la FAQ-->
-        <li style="color: gray">|</li>
-        <li><a href="#">Connexion</a></li>
-        <!--mettre le lien vers la page de co-->
-      </ul>
-    </nav>
+  <div class="userSearchBar">
+    <form action="#" id="searchForm"> <!--rediriger vers userSearch avec les params en head-->
+      
+        <input type="text" id="userSearchBar" name="userSearchBar" placeholder="Chercher un utilisateur">
+        <button type="submit" id="searchUser" name="searchUser">Chercher</button>
+        
+    </form>
+  </div>    
+
+  <script>
+    function showOptions() {
+
+      const element = document.querySelector(".options");
+      if(element.classList.contains('show')==false){
+        element.classList.add("show");// affiche le menu
+      }else{
+        element.classList.remove("show");
+      }
+      // cache le menu
+      //ce menu vous est apporté par louis-marie
+    }
+  </script>
+
+  <nav>
+    <ul class="navlien">
+      <li><a href="FAQ.html">FAQ</a></li>
+      <!--mettre le lien vers la FAQ-->
+      <li style="color: gray">|</li>
+      <li id="monCompte" onclick="showOptions()">
+        <a href="#">Mon compte</a>
+      </li>
+      <!--mettre le lien vers la page de co-->
+    </ul>
+  </nav>
+
+  <div class="options">
+    <ul>
+      <li><a href="pageSettings.html">Paramètres</a></li>
+      <li><a href="ContrôleBox.html">Administration</a></li>
+      <li>
+        <a href="#">Déconnexion</a>
+        <!--ici faudra link le logout.php-->
+      </li>
+    </ul>
+  </div>
 </header>
 
 <body>
@@ -39,29 +78,29 @@
 
 <div class="boxes">
     <div class="box">
-        <img src="rondvert.png" alt="icône" style="width:20px;height:20px;float:left;">
-        <a href="#"><img src="stylo.png" alt="icône" style="width:20px;height:20px;float:right"></a>
+        <img src="assets/images/rondvert.png" alt="icône" style="width:20px;height:20px;float:left;">
+        <a href="#"><img src="assets/images/stylo.png" alt="icône" style="width:20px;height:20px;float:right"></a>
         <br>
-        <a href="Page des graphes.html">
-        <img src="imagebox.png" alt="image" style="width:170px;">
+        <a href="pageGraphes.html">
+        <img src="assets/images/imagebox.png" alt="image" style="width:170px;">
         <p>Box 1</p>
         </a>
     </div>
     <div class="box">
-        <img src="rondvert.png" alt="icône" style="width:20px;height:20px;float:left;">
-        <a href="#"><img src="stylo.png" alt="icône" style="width:20px;height:20px;float:right;"></a>
+        <img src="assets/images/rondvert.png" alt="icône" style="width:20px;height:20px;float:left;">
+        <a href="#"><img src="assets/images/stylo.png" alt="icône" style="width:20px;height:20px;float:right;"></a>
         <br>
-        <a href="Page des graphes2.html">
-        <img src="imagebox.png" alt="image" style="width:170px;">
+        <a href="pageGraphes.html">
+        <img src="assets/images/imagebox.png" alt="image" style="width:170px;">
         <p>Box 2</p>
         </a>
     </div>
     <div class="box">
-        <img src="rondvert.png" alt="icône" style="width:20px;height:20px;float:left;">
-        <a href="#"><img src="stylo.png" alt="icône" style="width:20px;height:20px;float:right;"></a>
+        <img src="assets/images/rondvert.png" alt="icône" style="width:20px;height:20px;float:left;">
+        <a href="#"><img src="assets/images/stylo.png" alt="icône" style="width:20px;height:20px;float:right;"></a>
         <br>
-        <a href="Page des graphes3.html">
-        <img src="imagebox.png" alt="image" style="width:170px;">
+        <a href="pageGraphes.html">
+        <img src="assets/images/imagebox.png" alt="image" style="width:170px;">
         <p>Box 3</p>
         </a>
     </div>
@@ -69,29 +108,29 @@
 
 <div class="boxes">
     <div class="box">
-        <img src="rondvert.png" alt="icône" style="width:20px;height:20px;float:left;">
-        <a href="#"><img src="stylo.png" alt="icône" style="width:20px;height:20px;float:right;"></a>
+        <img src="assets/images/rondvert.png" alt="icône" style="width:20px;height:20px;float:left;">
+        <a href="#"><img src="assets/images/stylo.png" alt="icône" style="width:20px;height:20px;float:right;"></a>
         <br>
-        <a href="Page des graphes4.html">
-        <img src="imagebox.png" alt="image" style="width:170px;">
+        <a href="pageGraphes.html">
+        <img src="assets/images/imagebox.png" alt="image" style="width:170px;">
         <p>Box 4</p>
         </a>
     </div>
     <div class="box">
-        <img src="rondvert.png" alt="icône" style="width:20px;height:20px;float:left;;">
-        <a href="#"><img src="stylo.png" alt="icône" style="width:20px;height:20px;float:right;"></a>
+        <img src="assets/images/rondvert.png" alt="icône" style="width:20px;height:20px;float:left;;">
+        <a href="#"><img src="assets/images/stylo.png" alt="icône" style="width:20px;height:20px;float:right;"></a>
         <br>
-        <a href="Page des graphes5.html">
-        <img src="imagebox.png" alt="image" style="width:170px;">
+        <a href="pageGraphes.html">
+        <img src="assets/images/imagebox.png" alt="image" style="width:170px;">
         <p>Box 5</p>
         </a>
     </div>
     <div class="box">
-        <img src="rondvert.png" alt="icône" style="width:20px;height:20px;float:left;">
-        <a href="#"><img src="stylo.png" alt="icône" style="width:20px;height:20px;float:right;"></a>
+        <img src="assets/images/rondvert.png" alt="icône" style="width:20px;height:20px;float:left;">
+        <a href="#"><img src="assets/images/stylo.png" alt="icône" style="width:20px;height:20px;float:right;"></a>
         <br>
-        <a href="Page des graphes6.html">
-        <img src="imagebox.png" alt="image" style="width:170px;">
+        <a href="pageGraphes.html">
+        <img src="assets/images/imagebox.png" alt="image" style="width:170px;">
         <p>Box 6</p>
         </a>
     </div>
