@@ -93,8 +93,6 @@ header {
   color: rgb(19, 24, 92);
 }
 
-.monCompte:hover.options {display: block;}
-
 .options {
   display:none;
   position: absolute;
