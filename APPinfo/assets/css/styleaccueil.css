@@ -160,24 +160,28 @@ body {
 
 /* Colonne droite accueil (blabla) */
 
+
 .colonneDroiteMilieuAccueil {
   display: flex;
   flex-direction: row;
   margin-right: 25px;
   width: 40%;
   padding-top: 20px;
+  
 }
 
 .barreGauche {
   width: 40%;
   margin-bottom: 75px;
   margin-right: 16px;
+  
 }
 
 .barreDroite {
   width: 40%;
   margin-top: 75px;
   margin-left: 16px;
+ 
 }
 
 .containersBlabla {
