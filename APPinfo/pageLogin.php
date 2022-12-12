@@ -22,14 +22,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     if(empty(trim($_POST["username"]))){
         $username_err = "Entrez un email.";
     } else{
-        $username = trim($_POST["username"]);
+        $username = htmlspecialchars(trim($_POST["username"]));
     }
     
     // Check if password empty
     if(empty(trim($_POST["password"]))){
         $password_err = "Entrez votre mot de passe";
     } else{
-        $password = trim($_POST["password"]);
+        $password = htmlspecialchars(trim($_POST["password"]));
     }
     
     // Validate credentials
