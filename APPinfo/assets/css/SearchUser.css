@@ -153,6 +153,7 @@ header {
   width: 90%;
 	flex-wrap: nowrap;
 	justify-content: space-between;
+  text-align:start;
 	align-items: center;
 	align-content: stretch;
   border-bottom : thin solid;

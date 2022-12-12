@@ -6,7 +6,12 @@
   </head>
 
   <header>
-    <img class="logotop" src="assets/images/logosorsen_crop.png" width="60" height="60" />
+    <img
+      class="logotop"
+      src="assets/images/logosorsen_crop.png"
+      width="60"
+      height="60"
+    />
 
     <div class="textelogo">
       <p style="margin: 18px">SORSEN</p>
@@ -24,26 +29,26 @@
   </header>
 
   <body>
-    
-
     <div class="titre">
       <h1>FAQ</h1>
       <h2>
-        Vous avez des questions, des interrogations, des doutes, trouvez vos
-        réponses ici
+        Vous avez des questions, des interrogations, des doutes ? Trouvez vos
+        réponses ici !
       </h2>
     </div>
-
 
     <div class="liste">
       <div class="questions">
         <div class="titre-question" id="titre-question1">
-          <p>1) Comment allumer ma labbox?</p>
-          
+          <p>1) Comment allumer ma labbox ?</p>
         </div>
         <div class="dropdown-content" id="dropdown-content1">
           <div class="reponse">
-            <p>Appuyer sur le bouton</p>
+            <p>
+              Appuyez sur le bouton situé sur la base de la boîte. Vérifiez le
+              cable d'alimentation si jamais rien de ne se passe au bout de 30
+              secondes.
+            </p>
           </div>
           <div class="espace-client">
             <p>Espace client</p>
@@ -55,15 +60,16 @@
 
       <div class="questions">
         <div class="titre-question" id="titre-question2">
-          <p>2) Comment faire si les graphiques ne s'actualisent plus</p>
+          <p>2) Comment faire si les graphiques ne s'actualisent plus ?</p>
         </div>
         <div class="dropdown-content" id="dropdown-content2">
           <div class="reponse">
             <p>
-              Depuis la page sur laquelle vous voyez les graphes de la labbox
+              Depuis la page sur laquelle vous voyez les graphes de la LabBox
               concernée, cliquez sur "lancer la session". Si ça ne marche pas,
-              éteignez votre labbox et rallumez la. Si ça ne marche pas,
-              contactez le service client
+              éteignez votre LabBox et rallumez la. Si ça ne marche pas,
+              contactez le service client via la popup de support rapide en bas
+              à droite de l'écran.
             </p>
           </div>
           <div class="espace-client">
@@ -76,20 +82,21 @@
 
       <div class="questions">
         <div class="titre-question" id="titre-question3">
-          <p>3) Y a t'il une garantie pour ma labbox?</p>
+          <p>3) Y a t'il une garantie pour ma LabBox?</p>
         </div>
         <div class="dropdown-content" id="dropdown-content3">
           <div class="reponse">
             <p>
-              La labbox n'est pas garantie, l'achat d'une labbox est définitif.
+              La labbox est garantie pendant 2 ans, mais l'achat d'une labbox
+              est définitif.
               <br />
-              Afin d'éviter d'abîmer votre labbox, évitez de la mouiller ou de
-              la placer à des températures très élevées ou très basses. Dans ces
+              Afin d'éviter d'abîmer votre LabBox, évitez de la mouiller ou de
+              l'exposer à des températures très élevées ou très basses. Dans ces
               cas, la température sera détectée et provoquera une alerte mais la
-              labbox risque de ne plus fonctionner correctement. Si la labbox
+              LabBox risque de ne plus fonctionner correctement. Si la LabBox
               permet de sauver des vies, il est évident qu'il vaut mieux qu'elle
-              soit détruite plutôt qu'inutiliser. Il faut garder en tête
-              l'importance d'une vie humaine par rapport au prix d'une labbox.
+              soit détruite plutôt qu'inutilisée. Il faut garder en tête
+              l'importance d'une vie humaine par rapport au prix d'une LabBox.
             </p>
           </div>
           <div class="espace-client">
@@ -104,16 +111,16 @@
         <div class="titre-question" id="titre-question4">
           <p>
             4) Quels signaux indiquent qu'un seuil fixé de CO2, CO, vitesse de
-            coeur, température ou volume sonore est dépassé.?
+            coeur, température ou volume sonore est dépassé ?
           </p>
         </div>
         <div class="dropdown-content" id="dropdown-content4">
           <div class="reponse">
             <p>
-              Si la labbox détecte un problemme dans les conditions de travail
-              d'un laborentin, un signal sonore vous en alertera et la labbox
-              deviendra rouge sur la page de contrôle des box. En cliquant
-              dessus vous verrez en rouge lequel des paramètres pose problème.
+              Si la labbox détecte un problème dans les conditions de travail
+              d'un laborantin, un signal sonore vous en alertera et le graphique
+              correspondant deviendra rouge. Cela voudra dire qu'une valeur
+              critique serea atteinte.
             </p>
           </div>
           <div class="espace-client">
@@ -126,15 +133,16 @@
 
       <div class="questions">
         <div class="titre-question" id="titre-question5">
-          <p>5) Comment contacter le service client?</p>
+          <p>5) Comment contacter le service client ?</p>
         </div>
         <div class="dropdown-content" id="dropdown-content5">
           <div class="reponse">
             <p>
-              Vous trouverez tout en bas de la page d'accueil un numéro à
-              appeler mais qui ne répondra que si vous avez beaucoup de chance.
-              Vous pouvez aussi écrire un mail à l'adresse qui se trouve au même
-              endroit, et nous vous répondrons dans les plus brefs délais :)
+              Vous trouverez tout en bas de la page d'accueil un mail auquel
+              vous pouvez écrire et nous vous répondrons dans les plus brefs
+              délais :) Si vous n'avez pas de réponse en quelques jours, reférez
+              vous à votre administrateur qui dispose d'un lien direct avec nos
+              équipes.
             </p>
           </div>
           <div class="espace-client">
@@ -147,30 +155,43 @@
     </div>
 
     <script>
-        let titres = new Array("titre-question1","titre-question2","titre-question3","titre-question4","titre-question5");
-        let reponses = new Array("dropdown-content1","dropdown-content2","dropdown-content3","dropdown-content4","dropdown-content5");
-        for (var i = 0; i < titres.length; i++){
-            
-            const targetDiv = document.getElementById(reponses[i]);
-            const btn = document.getElementById(titres[i]);
-            console.log(targetDiv);
-            console.log(btn);
-            btn.onclick = function () {
-            if (targetDiv.style.display !== "none") {
-                targetDiv.style.display = "none";
-            } else {
-                targetDiv.style.display = "block";
-            }
-            };
-        }
-        
+      let titres = new Array(
+        "titre-question1",
+        "titre-question2",
+        "titre-question3",
+        "titre-question4",
+        "titre-question5"
+      );
+      let reponses = new Array(
+        "dropdown-content1",
+        "dropdown-content2",
+        "dropdown-content3",
+        "dropdown-content4",
+        "dropdown-content5"
+      );
+      for (var i = 0; i < titres.length; i++) {
+        const targetDiv = document.getElementById(reponses[i]);
+        const btn = document.getElementById(titres[i]);
+        console.log(targetDiv);
+        console.log(btn);
+        btn.onclick = function () {
+          if (targetDiv.style.display !== "none") {
+            targetDiv.style.display = "none";
+          } else {
+            targetDiv.style.display = "block";
+          }
+        };
+      }
     </script>
-
-      
   </body>
 
   <footer>
-    <img class="logobottom" src="assets/images/SorsenFull.png" width="100" height="90" />
+    <img
+      class="logobottom"
+      src="assets/images/SorsenFull.png"
+      width="100"
+      height="90"
+    />
 
     <div class="infoFooterContainer">
       <ul class="infoFooter">

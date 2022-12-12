@@ -2,7 +2,7 @@
 // Initialize the session
 session_start();
  
-// Check if the user is already logged in, if yes then redirect him to welcome page
+// Check if the user is already logged in, if yes redirect him to welcome page
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
     header("location: ContrôleBox.php");
     exit;
@@ -18,14 +18,14 @@ $username_err = $password_err = $login_err = "";
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
  
-    // Check if username is empty
+    // Check if username empty
     if(empty(trim($_POST["username"]))){
         $username_err = "Entrez un email.";
     } else{
         $username = trim($_POST["username"]);
     }
     
-    // Check if password is empty
+    // Check if password empty
     if(empty(trim($_POST["password"]))){
         $password_err = "Entrez votre mot de passe";
     } else{
@@ -79,7 +79,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                     // Username doesn't exist, display a generic error message
                     $login_err = "Email invalide.";
                 }
-            } else{
+            } else{ //if statement doesnt execute
                 echo "Oups! Quelque chose s'est mal passé. Réessayez plus tard.";
             }
 
