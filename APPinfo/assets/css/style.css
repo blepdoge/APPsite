@@ -213,7 +213,7 @@ footer {
 .titre{
     text-align: center;
     margin:auto;
-    width: 440px;
+    width: fit-content;
 }
 
 .liste{

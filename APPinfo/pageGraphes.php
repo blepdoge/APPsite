@@ -18,12 +18,12 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     
 <header>
     <div class="sideheader">
-       <img
+       <a href="pageAccueil.html"><img
         class="logotop"
         src="assets/images/logosorsen_crop.png"
         width="60"
         height="60"
-      />
+      /></a>
   
       <div class="textelogo">
         <p style="margin: 18px">SORSEN</p>
@@ -79,7 +79,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
 <body>
 <div class="titre">
-    <h1>LabBox 1 - Salle 401</h1>
+    <h1>
+      <?php echo urldecode($_GET["currentBoxID"])?>
+    </h1>
 </div>
 
 <div class="trombone">
@@ -87,8 +89,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 </div>
 
 <div class = "boutonsSessions">
-    <button class="boutonSessionStart"> Lancer la session </button>
-    <button class="boutonSessionStop"> Arrêter la session </button>
+    <button class="boutonSessionStart">Lancer la session</button>
+    <button class="boutonSessionStop">Arrêter la session</button>
     <button class="boutonSessionExporter">Exporter les données</button>
   </div>
 

@@ -103,7 +103,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   </head>
 
   <header>
-    <img class="logotop" src="assets/images/logosorsen_crop.png" width="60" height="60" />
+    <a href="pageAccueil.html"><img class="logotop" src="assets/images/logosorsen_crop.png" width="60" height="60"/></a>
 
     <div class="textelogo">
       <p style="margin: 18px">SORSEN</p>
@@ -111,10 +111,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     <nav>
       <ul class="navlien">
-        <li><a href="#">FAQ</a></li>
+        <li><a href="FAQ.html">FAQ</a></li>
         <!--mettre le lien vers la FAQ-->
         <li style="color: gray">|</li>
-        <li><a href="#">Connexion</a></li>
+        <li><a href="pageLogin.php">Connexion</a></li>
         <!--mettre le lien vers la page de co-->
       </ul>
     </nav>

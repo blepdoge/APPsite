@@ -21,7 +21,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 
 <header>
   <div class="sideheader">
-    <img class="logotop" src="assets/images/logosorsen_crop.png" width="60" height="60" />
+    <a href="pageAccueil.html"><img class="logotop" src="assets/images/logosorsen_crop.png" width="60" height="60" /></a>
 
     <div class="textelogo">
       <p style="margin: 18px">SORSEN</p>
