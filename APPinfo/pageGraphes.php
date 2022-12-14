@@ -76,16 +76,20 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 </header>
 
 <script>
+  function display_c() {
+    var refresh = 1000; // Refresh rate in milli seconds
+    mytime = setTimeout('display_ct()', refresh)
+  }
   function display_ct() {
-  var x = new Date()
-  var x1= 1+ "/" + x.getDate() + x.getMonth() + "/" + x.getFullYear(); 
-  x1 = x1 + " - " +  x.getHours( )+ ":" +  x.getMinutes() + ":" +  x.getSeconds();
-  document.getElementById('horloge').innerHTML = x1;
-  display_c();
+    var x = new Date();
+    var x1 = x.getDate() + "/" + (x.getMonth() + 1) + "/" + x.getFullYear();
+    x1 = x1 + " - " + x.getHours() + ":" + x.getMinutes() + ":" + x.getSeconds();
+    document.getElementById('horloge').innerHTML = x1;
+    display_c();
   }
 </script>
 
-<body>
+<body onload=display_ct()>
   <div class="titre">
     <h1>
       <?php echo urldecode($_GET["currentBoxID"]) ?>
@@ -93,7 +97,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
   </div>
 
   <div class="trombone">
-    <p id = "horloge">
+    <p id="horloge">
     </p>
   </div>
 
@@ -108,46 +112,46 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
       <h3>Concentration en CO2</h3>
       <img src="assets/images/graphe.png" alt="graphe" style="width:280px;">
       <div class="indic">
-          <p>500 ppm</p>
+        <p>500 ppm</p>
       </div> <!--fin div indic -->
     </div> <!--ferme div graphe -->
-  
-    
+
+
     <div class="graphe">
-      <h3>Concentration en CO</h3>       
+      <h3>Concentration en CO</h3>
       <img src="assets/images/graphe.png" alt="graphe" style="width:280px;">
       <div class="indic">
-          <p>45 ppm</p>
+        <p>45 ppm</p>
       </div> <!--fin div indic -->
     </div> <!--ferme div graphe -->
-  
+
 
     <div class="graphe">
       <h3>Volume sonore</h3>
       <img src="assets/images/graphe.png" alt="graphe" style="width:280px;">
       <div class="indic">
-          <p>20 dB</p>
+        <p>20 dB</p>
       </div> <!--fin div indic -->
     </div> <!--ferme div graphe -->
-  
-  
+
+
     <div class="graphe">
       <h3>Fréquence cardiaque</h3>
       <img src="assets/images/graphe.png" alt="graphe" style="width:280px;">
       <div class="indic">
-          <p>150 bpm</p>
+        <p>150 bpm</p>
       </div> <!--fin div indic -->
     </div> <!--ferme div graphe -->
-  
+
 
     <div class="graphe">
       <h3>Température</h3>
-      <img src="assets/images/graphe.png" alt="graphe" style="width:280px;">  
+      <img src="assets/images/graphe.png" alt="graphe" style="width:280px;">
       <div class="indic">
-          <p>20°</p>
+        <p>20°</p>
       </div> <!--fin div indic -->
     </div> <!--ferme div graphe -->
-  
+
   </div>
 </body>
 
