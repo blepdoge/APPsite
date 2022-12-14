@@ -83,7 +83,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
   function display_ct() {
     var x = new Date();
     var x1 = x.getDate() + "/" + (x.getMonth() + 1) + "/" + x.getFullYear();
-    x1 = x1 + " - " + x.getHours() + ":" + x.getMinutes() + ":" + x.getSeconds();
+    x1 = x1 + " - " + String(x.getHours()).padStart(2, "0") + ":" + String(x.getMinutes()).padStart(2, "0") + ":" + String(x.getSeconds()).padStart(2, "0");
     document.getElementById('horloge').innerHTML = x1;
     display_c();
   }
