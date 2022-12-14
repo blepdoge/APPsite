@@ -1,3 +1,14 @@
+<?php
+// Initialize the session
+session_start();
+ 
+// Check if the user is logged in, if not then redirect him to login page
+if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
+    header("location: pageLogin.php");
+    exit;
+}
+?>
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -21,13 +32,13 @@
      
   
     <div class="userSearchBar">
-      <form action="#" id="searchForm"> <!--rediriger vers userSearch avec les params en head-->
+    <form method = "GET" action="userList.php" id="searchForm"> <!--rediriger vers userSearch avec les params en head-->
+      
+        <input type="text" id="userSearchBar" name="userSearchBar" placeholder="Chercher un utilisateur">
+        <button type="submit" id="searchUser" name="searchUser">Chercher</button>
         
-          <input type="text" id="userSearchBar" name="userSearchBar" placeholder="Chercher un utilisateur">
-          <button type="submit" id="searchUser" name="searchUser">Chercher</button>
-          
-      </form>
-    </div>    
+    </form>
+  </div>   
   
     <script>
       function showOptions() {
@@ -57,9 +68,9 @@
 
     <div class="options">
       <ul>
-        <li><a href="pageSettings.html">Paramètres</a></li>
-        <li><a href="ContrôleBox.html">Administration</a></li>
-        <li><a href="#">Déconnexion</a>
+        <li><a href="pageSettings.php">Paramètres</a></li>
+        <li><a href="ContrôleBox.php">Administration</a></li>
+        <li><a href="logout.php">Déconnexion</a>
           <!--ici faudra link le logout.php-->
         </li>
       </ul>

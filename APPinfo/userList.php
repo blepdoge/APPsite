@@ -56,7 +56,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 
   <div class="options">
     <ul>
-      <li><a href="pageSettings.html">Paramètres</a></li>
+      <li><a href="pageSettings.php">Paramètres</a></li>
       <li><a href="ContrôleBox.php">Administration</a></li>
       <li>
         <a href="logout.php">Déconnexion</a>

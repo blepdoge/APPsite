@@ -69,7 +69,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
   <div class="options">
     <ul>
-      <li><a href="pageSettings.html">Paramètres</a></li>
+      <li><a href="pageSettings.php">Paramètres</a></li>
       <li><a href="ContrôleBox.html">Administration</a></li>
       <li>
         <a href="logout.php">Déconnexion</a>
@@ -116,7 +116,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
       <img src="assets/images/rondvert.png" alt="icône" style="width:20px;height:20px;float:left;">
       <a href="#"><img src="assets/images/stylo.png" alt="icône" style="width:20px;height:20px;float:right"></a>
       <br>
-      <a href="pageGraphes.html">
+      <a href="pageGraphes.php">
       <img src="assets/images/imagebox.png" alt="image" style="width:170px;">
       <p>' . $row['nomBox'] . '</p>
       </a>
