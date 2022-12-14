@@ -17,6 +17,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 <head>
   <title>Commander une LabBox</title>
   <link rel="stylesheet" href="assets/css/SearchUser.css" />
+  <meta charset="utf-8" />
 </head>
 
 <header>

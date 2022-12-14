@@ -1,35 +1,49 @@
 <!DOCTYPE html>
 <html>
-<head>
+  <head>
     <title>supportbox</title>
     <link rel="stylesheet" href="assets/css/supportstyle.css" />
-    <header>
-        <div class="textelogo">
-          <p style="margin: 18px">Support Labbox</p>
-        </div>
-    </header>
-</head>
-<body style="margin: 0">
-<form action="#">
-    <div class="div1">       
-        <select class ="nature" name="nature" id="nature" value="nature">
-            <option>Quelle est la nature de votre problème?</option>
-            <option value="Sur une des labbox">Sur une des labbox</option>
-            <option value="Autre">Autre</option>
+  </head>
+  <header>
+    <div class="textelogo">
+      <p style="margin: 18px">Support Labbox</p>
+    </div>
+  </header>
+
+  <body style="margin: 0">
+    <form action="#">
+      <div class="div1">
+        <select class="nature" name="nature" id="nature" value="nature">
+          <option>Quelle est la nature de votre problème?</option>
+          <option value="Sur une des labbox">Sur une des labbox</option>
+          <option value="Autre">Autre</option>
         </select>
-        <select class ="quelbox" name="quelbox" id="quelbox" value="quelbox">
-            <option>Sur quelle labbox rencontrez vous un problème?</option>
-            <option value="labbox n°1 (192.178.0.1)">labbox n°1 (192.178.0.1)</option>
-            <option value="labbox n°2 (192.178.0.2)">labbox n°2 (192.178.0.2)</option>
+        <select class="quelbox" name="quelbox" id="quelbox" value="quelbox">
+          <option>Sur quelle labbox rencontrez vous un problème?</option>
+          <option value="labbox n°1 (192.178.0.1)">
+            labbox n°1 (192.178.0.1)
+          </option>
+          <option value="labbox n°2 (192.178.0.2)">
+            labbox n°2 (192.178.0.2)
+          </option>
         </select>
-    </div>
-    <div class ="div2">
-        <p class="text">Merci de nous décrire précisément la nature du problème, un administrateur vous répondra dans les plus brefs délais.</p>
-        <textarea class="commentaires" id="commentaires" name="commentaires" rows="8" cols="80"></textarea>
-    </div>
-    <div class="div1"> 
-        <input class="envoyer" type="submit" value="Envoyer"/>
-    </div>
-</form>
-</body>
+      </div>
+      <div class="div2">
+        <p class="text">
+          Merci de nous décrire précisément la nature du problème, un
+          administrateur vous répondra dans les plus brefs délais.
+        </p>
+        <textarea
+          class="commentaires"
+          id="commentaires"
+          name="commentaires"
+          rows="8"
+          cols="80"
+        ></textarea>
+      </div>
+      <div class="div1">
+        <input class="envoyer" type="submit" value="Envoyer" />
+      </div>
+    </form>
+  </body>
 </html>

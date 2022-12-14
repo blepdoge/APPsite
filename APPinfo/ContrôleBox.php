@@ -16,6 +16,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 <head>
   <title>Panneau de contrôle</title>
   <link rel="stylesheet" href="assets/css/style.css">
+  <meta charset="utf-8" />
 </head>
 
 <header>
