@@ -38,6 +38,7 @@ header {
 
 .logotop {
   margin-right: auto;
+  display:flex;
 }
 
 .navlien {

@@ -38,6 +38,9 @@ header {
   color: white;
   padding-left: 6px;
 }
+.logotop {
+  display:flex;
+}
 
 .userSearchBar {
   display:flex;
