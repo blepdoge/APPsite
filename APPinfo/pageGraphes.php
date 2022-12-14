@@ -119,7 +119,6 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
       </div> <!--fin div indic -->
     </div> <!--ferme div graphe -->
   
-
   
     <div class="graphe">
       <h3>Fréquence cardiaque</h3>
