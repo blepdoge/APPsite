@@ -128,48 +128,10 @@ header {
   margin : 5px 10px
 }
 
-/*--------------------BAS DE PAGE ICI------------------*/
-footer {
-  display: flex;
-  align-items: center;
-          /* position: fixed; LIGNE A RETIREr POUR LES GROSSES PAGES*/
-  background: linear-gradient(
-    90.58deg,
-    rgba(53, 53, 53) 30.81%,
-    rgba(7, 100, 163) 74.18%
-  );
-  width: auto;
-  float:bottom;
-}
-
-.logobottom {
-  
-  margin: 20px 7px;
-}
-
-.infoFooterContainer {
-  display: flex;
-  align-items: center;
-}
-
-.infoFooter {
-  list-style: none;
-  padding-left: 0px;
-  margin-left: 7px;
-}
-
-.infoFooter li {
-  font-size: 16px;
-}
-
-.line {   /*Sert a dessiner la ligne noire pour séparer*/
-  width: 1px;
-  height: 80px;
-  border-left: 4px solid black;
-  margin-left: 23px;
-}
 
 .graphe {
+  display: flex;
+  flex-direction: column;
   background-color: #b5b4b4;
   border-radius: 16px;
   padding: 25px;
@@ -247,6 +209,48 @@ footer {
   background: #A3A3A3;
   box-shadow: 2px 2px 2px #a1a1a1, -6px -6px 6px #ffffff;
 }
+
+/*--------------------BAS DE PAGE ICI------------------*/
+footer {
+  display: flex;
+  align-items: center;
+          /* position: fixed; LIGNE A RETIREr POUR LES GROSSES PAGES*/
+  background: linear-gradient(
+    90.58deg,
+    rgba(53, 53, 53) 30.81%,
+    rgba(7, 100, 163) 74.18%
+  );
+  width: auto;
+  float:bottom;
+}
+
+.logobottom {
+  
+  margin: 20px 7px;
+}
+
+.infoFooterContainer {
+  display: flex;
+  align-items: center;
+}
+
+.infoFooter {
+  list-style: none;
+  padding-left: 0px;
+  margin-left: 7px;
+}
+
+.infoFooter li {
+  font-size: 16px;
+}
+
+.line {   /*Sert a dessiner la ligne noire pour séparer*/
+  width: 1px;
+  height: 80px;
+  border-left: 4px solid black;
+  margin-left: 23px;
+}
+
 
 /*------------newsletter-----------*/
 
@@ -349,11 +353,13 @@ footer {
 
 
 /* Container for flexboxes */
-.boxes{
-    margin:auto;
-    display: flex;
-    flex-wrap: wrap;
-    max-width: fit-content;
+
+.boxesWrapper{
+  margin:auto;
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  justify-content: center;
 }
 
 .box{
@@ -387,18 +393,6 @@ footer {
   cursor:pointer
 }
 
-.graphe{
-    padding: 10px;
-    border-radius: 15px;
-    background-color:rgb(187, 187, 187);
-    width:380px;
-    height:380px;
-    margin: 50px;
-    text-align: center;
-}
-
 .indic{
     text-align:center;
-    float:left;
-    width:40px;
 }

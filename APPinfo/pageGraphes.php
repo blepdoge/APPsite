@@ -92,70 +92,52 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     <button class="boutonSessionExporter">Exporter les données</button>
   </div>
 
-  <div class="boxes">
+  <div class="boxesWrapper">
     <div class="graphe">
       <h3>Concentration en CO2</h3>
-
-      <div class="boxes">
-        <div class="indic">
+      <img src="assets/images/graphe.png" alt="graphe" style="width:280px;">
+      <div class="indic">
           <p>500 ppm</p>
-        </div>
-        <div>
-          <img src="assets/images/graphe.png" alt="graphe" style="width:280px;">
-        </div>
-      </div>
-    </div>
+      </div> <!--fin div indic -->
+    </div> <!--ferme div graphe -->
+  
+    
     <div class="graphe">
-      <h3>Concentration en CO</h3>
-
-      <div class="boxes">
-        <div class="indic">
+      <h3>Concentration en CO</h3>       
+      <img src="assets/images/graphe.png" alt="graphe" style="width:280px;">
+      <div class="indic">
           <p>45 ppm</p>
-        </div>
-        <div>
-          <img src="assets/images/graphe.png" alt="graphe" style="width:280px;">
-        </div>
-      </div>
-    </div>
+      </div> <!--fin div indic -->
+    </div> <!--ferme div graphe -->
+  
+
     <div class="graphe">
       <h3>Volume sonore</h3>
-
-      <div class="boxes">
-        <div class="indic">
+      <img src="assets/images/graphe.png" alt="graphe" style="width:280px;">
+      <div class="indic">
           <p>20 dB</p>
-        </div>
-        <div>
-          <img src="assets/images/graphe.png" alt="graphe" style="width:280px;">
-        </div>
-      </div>
-    </div>
-  </div>
+      </div> <!--fin div indic -->
+    </div> <!--ferme div graphe -->
+  
 
-  <div class="boxes">
+  
     <div class="graphe">
       <h3>Fréquence cardiaque</h3>
-
-      <div class="boxes">
-        <div class="indic">
+      <img src="assets/images/graphe.png" alt="graphe" style="width:280px;">
+      <div class="indic">
           <p>150 bpm</p>
-        </div>
-        <div>
-          <img src="assets/images/graphe.png" alt="graphe" style="width:280px;">
-        </div>
-      </div>
-    </div>
+      </div> <!--fin div indic -->
+    </div> <!--ferme div graphe -->
+  
+
     <div class="graphe">
       <h3>Température</h3>
-
-      <div class="boxes">
-        <div class="indic">
+      <img src="assets/images/graphe.png" alt="graphe" style="width:280px;">  
+      <div class="indic">
           <p>20°</p>
-        </div>
-        <div>
-          <img src="assets/images/graphe.png" alt="graphe" style="width:280px;">
-        </div>
-      </div>
-    </div>
+      </div> <!--fin div indic -->
+    </div> <!--ferme div graphe -->
+  
   </div>
 </body>
 
