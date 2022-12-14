@@ -75,6 +75,16 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
   </div>
 </header>
 
+<script>
+  function display_ct() {
+  var x = new Date()
+  var x1= 1+ "/" + x.getDate() + x.getMonth() + "/" + x.getFullYear(); 
+  x1 = x1 + " - " +  x.getHours( )+ ":" +  x.getMinutes() + ":" +  x.getSeconds();
+  document.getElementById('horloge').innerHTML = x1;
+  display_c();
+  }
+</script>
+
 <body>
   <div class="titre">
     <h1>
@@ -83,7 +93,8 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
   </div>
 
   <div class="trombone">
-    <p>Date Heure</p>
+    <p id = "horloge">
+    </p>
   </div>
 
   <div class="boutonsSessions">
