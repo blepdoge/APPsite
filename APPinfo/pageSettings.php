@@ -59,7 +59,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
       <!--mettre le lien vers la FAQ-->
       <li style="color: gray">|</li>
       <li onclick="showOptions()">
-        <a href="pageLogin.php">Mon compte</a>
+        <a href="#">Mon compte</a>
       </li>
       <!--mettre le lien vers la page de co-->
     </ul>
