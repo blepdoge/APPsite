@@ -177,11 +177,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     </div>
 
     <div class="newsletterContainer">
-      <form action="#">
+      <form action="newslettergrab.php" method="POST">
         <!--ici link le code phph pour s'abonner a la newsletter-->
 
         <p>Abonnez-vous à notre newsletter ! <br /></p>
-        <input type="text" placeholder="Adresse mail" name="mail" required />
+        <input type="text" placeholder="Adresse mail" name="mail" id="mail" required />
         <input type="submit" value="S'abonner" />
       </form>
     </div>
