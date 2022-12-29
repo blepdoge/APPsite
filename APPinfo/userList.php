@@ -169,12 +169,15 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
   </div>
 
   <div class="newsletterContainer">
-    <form action="newslettergrab.php" method="POST">
-      <!--ici link le code phph pour s'abonner a la newsletter-->
-
-      <p>Abonnez-vous à notre newsletter ! <br /></p>
-      <input type="text" placeholder="Adresse mail" name="mail" id="mail" required />
-      <input type="submit" value="S'abonner" />
-    </form>
-  </div>
+      <form id="newsletterForm">
+        <!--ici link le code phph pour s'abonner a la newsletter-->
+        <div id="result"></div>
+        <p>Abonnez-vous à notre newsletter ! <br /></p>
+        <input type="text" id="email" placeholder="Adresse mail" name="email" required />
+        <input type="submit" name="submitemail" value="S'abonner" />
+      </form>
+    </div>
+    
+    <!-- Display the result of the AJAX request -->
+    <script src="newsletterlink.js"></script>
 </footer>
