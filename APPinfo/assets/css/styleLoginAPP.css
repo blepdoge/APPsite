@@ -1,15 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
-}
+
 body{
   margin: 0;
   padding: 0;
   background: solid white;
   height: 100vh;
+  font-family: 'Poppins';
   overflow: hidden;
 }
 .center{
@@ -82,7 +78,7 @@ form .txt_field{
 .pass:hover{
   text-decoration: underline;
 }
-input[type="submit"]{
+.center input[type="submit"]{
   width: 100%;
   height: 50px;
   border: 1px solid;
@@ -95,7 +91,7 @@ input[type="submit"]{
   outline: none;
   margin-bottom: 20px;
 }
-input[type="submit"]:hover{
+.center input[type="submit"]:hover{
   border-color: #2691d9;
   transition: .5s;
 }
@@ -222,7 +218,6 @@ footer {
   font-size: 16px;
   color: white;
   line-height: 0px;
-  margin-bottom: 20px;
 }
 
 .newsletterContainer input[type="text"] {
@@ -231,19 +226,17 @@ footer {
   font-size: 16px;
   border-radius: 15px;
   margin-right: 12px;
-  
   padding-left: 8px;
 }
 
 .newsletterContainer input[type="submit"] {
   height: fit-content;
-  
-  width: fit-content;
+  width: 90px;
   font-size: 16px;
   background-color: #44c767;
   border-radius: 15px;
   border: none;
-  padding: 10px 10px;
+  padding: 5px 5px;
   text-shadow: 0px 1px 0px #2f6627;
 }
 
