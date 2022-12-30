@@ -76,7 +76,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
       <form action="">
         <input id="input" type="text" name="userSearchBar" placeholder="Chercher un utilisateur">
         <button type="submit" id="searchUser" name="searchUser">Chercher</button>
-        <img src="assets/images/ajouter.png" alt="addUser" width="30" height="30" />
+        <img class="disablednotadmin" src="assets/images/ajouter.png" alt="addUser" width="30" height="30" />
       </form>
     </div>
   </div>
@@ -133,8 +133,8 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
         <p>' . $user["email"] . '</p>
         
         <p>' . $adminPermission . '</p>
-        <img src="assets/images/parametre.png" alt= "Logo param" width="30" height="30" />
-        <img src="assets/images/supprimer.png" alt= "Logo delete" width="30" height="30" />
+        <img class="disablednotadmin" src="assets/images/parametre.png" alt= "Logo param" width="30" height="30" />
+        <img class="disablednotadmin" src="assets/images/supprimer.png" alt= "Logo delete" width="30" height="30" />
       </div>';
     }}
 
@@ -144,6 +144,21 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     ?>
 
   </div>
+
+
+
+  <script>
+    // recupere la variable php des permissions
+    var adminPerm = <?php echo json_encode($_SESSION['adminPerm']); ?>;
+
+    // check la valeur
+    if (adminPerm == '0') {
+      // Si la valeur est 0, c'est un user, donc on regarde les elts qui ont la classe
+      document.querySelectorAll('.disablednotadmin').forEach(function (element) {
+        element.setAttribute('disabled', '');
+      });
+    }
+  </script>
 
 </body>
 <!--Bas de page-->

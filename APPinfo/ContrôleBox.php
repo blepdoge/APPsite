@@ -106,7 +106,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     while ($row = mysqli_fetch_assoc($result)) {
       echo '<div class="box">
       <img src="assets/images/rondvert.png" alt="icône" style="width:20px;height:20px;float:left;">
-      <a href="#"><img src="assets/images/stylo.png" alt="icône" style="width:20px;height:20px;float:right"></a>
+      <a href="#"><img class="disablednotadmin" src="assets/images/stylo.png" alt="icône" style="width:20px;height:20px;float:right"></a>
       <br>
       <a href="pageGraphes.php?currentBoxID=' . urlencode($row['nomBox']) . '">
       <img src="assets/images/imagebox.png" alt="image" style="width:170px;">
@@ -121,6 +121,21 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     ?>
 
   </div>
+
+
+
+  <script>
+    // recupere la variable php des permissions
+    var adminPerm = <?php echo json_encode($_SESSION['adminPerm']); ?>;
+
+    // check la valeur
+    if (adminPerm == '0') {
+      // Si la valeur est 0, c'est un user, donc on regarde les elts qui ont la classe
+      document.querySelectorAll('.disablednotadmin').forEach(function (element) {
+        element.setAttribute('disabled', '');
+      });
+    }
+  </script>
 
 </body>
 

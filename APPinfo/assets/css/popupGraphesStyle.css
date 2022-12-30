@@ -41,26 +41,12 @@ body {
 
 .containersGraph {
   background-color: #FFFFFF;
-  border-radius: 16px;
-  padding: 25px;
-  padding-top: 20px;
-  margin-top: 70px;
-  margin-left: 375px;
-  margin-right: 375px;
   font-size: 23px;
   text-align: center;
 }
 
-.containersGraphHorsLimite {
+.grapheHorsLimite {
   background-color: #f12424;
-  border-radius: 16px;
-  padding: 25px;
-  padding-top: 10px;
-  margin-top: 130px;
-  margin-left: 375px;
-  margin-right: 375px;
-  font-size: 23px;
-  text-align: center;
 }
 
 .GraphetValeurText {

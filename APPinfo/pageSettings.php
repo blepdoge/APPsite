@@ -41,6 +41,7 @@ mysqli_close($link);
   <title>Paramètres</title>
   <link rel="stylesheet" href="assets/css/styleSettingsAPP.css" />
   <meta charset="utf-8" />
+
 </head>
 
 <header>
@@ -101,6 +102,8 @@ mysqli_close($link);
 </header>
 
 <body style="margin: 0">
+
+
   <div class="contenuPage">
     <h2>Paramètres</h2>
     <form action="#">
@@ -120,10 +123,12 @@ mysqli_close($link);
         <div class="containerset2">
           <div class="Zonesdetextedroite">
             <div class="partiedroite">
-              <input type="text" placeholder="Laboratoire" value="<?php echo htmlspecialchars($nomLabo); ?>" />
-              <input type="email" placeholder="Adresse E-mail Laboratoire"
+              <input type="text" class="disablednotadmin" placeholder="Laboratoire"
+                value="<?php echo htmlspecialchars($nomLabo); ?>" />
+              <input type="email" class="disablednotadmin" placeholder="Adresse E-mail Laboratoire"
                 value="<?php echo htmlspecialchars($emailLabo); ?>" />
-              <input type="text" placeholder="Domiciliation" value="<?php echo htmlspecialchars($adresseLabo); ?>" />
+              <input type="text" class="disablednotadmin" placeholder="Domiciliation"
+                value="<?php echo htmlspecialchars($adresseLabo); ?>" />
             </div>
 
             <p></p>
@@ -136,7 +141,7 @@ mysqli_close($link);
                 value="<?php echo htmlspecialchars($_SESSION["email"]); ?>" />
               <input type="text" placeholder="Adresse"
                 value="<?php echo htmlspecialchars($_SESSION["adresseUser"]); ?>" />
-              <input type="text" placeholder="Permission" value="<?php if ($_SESSION["adminPerm"] == 1) {
+              <input type="text" class="disablednotadmin" placeholder="Permission" value="<?php if ($_SESSION["adminPerm"] == 1) {
               $adminPermission = "Administrateur";
             } else {
               $adminPermission = "Utilisateur";
@@ -164,6 +169,21 @@ mysqli_close($link);
       </div>
     </form>
   </div>
+
+  <script>
+    // recupere la variable php des permissions
+    var adminPerm = <?php echo json_encode($_SESSION['adminPerm']); ?>;
+
+    // check la valeur
+    if (adminPerm == '0') {
+      // Si la valeur est 0, c'est un user, donc on regarde les elts qui ont la classe
+      document.querySelectorAll('.disablednotadmin').forEach(function (element) {
+        element.setAttribute('disabled', '');
+      });
+    }
+  </script>
+
+
 </body>
 
 <!--Bas de page-->
