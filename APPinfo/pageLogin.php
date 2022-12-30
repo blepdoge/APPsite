@@ -181,7 +181,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         <!--ici link le code phph pour s'abonner a la newsletter-->
         <div id="result"></div>
         <p>Abonnez-vous à notre newsletter ! <br /></p>
-        <input type="text" id="email" placeholder="Adresse mail" name="email" required />
+        <input type="email" id="email" placeholder="Adresse mail" name="email" required />
         <input type="submit" name="submitemail" value="S'abonner" />
       </form>
     </div>
