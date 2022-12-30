@@ -7,8 +7,32 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
   header("location: pageLogin.php");
   exit;
 }
-?>
 
+// Connect to the database
+require_once "config.php";
+
+// Select the data from the laboratoires table
+$sql = "SELECT nomLabo, adresseLabo, emailLabo FROM laboratoires";
+$result = mysqli_query($link, $sql);
+
+// Check if the query was successful
+if (mysqli_num_rows($result) > 0) {
+  // Store the data in variables for each row
+  while ($row = mysqli_fetch_assoc($result)) {
+    $nomLabo = $row["nomLabo"];
+    $adresseLabo = $row["adresseLabo"];
+    $emailLabo = $row["emailLabo"];
+  }
+} else {
+  $nomLabo = "Données manquantes";
+  $adresseLabo = "Données manquantes";
+  $emailLabo = "Données manquantes";
+}
+
+// Close the connection
+mysqli_close($link);
+
+?>
 
 <!DOCTYPE html>
 <html>
@@ -70,7 +94,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
       <li><a href="ContrôleBox.php">Administration</a></li>
       <li>
         <a href="logout.php">Déconnexion</a>
-        <!--ici faudra link le logout.php-->
+        <!--ici link le logout.php-->
       </li>
     </ul>
   </div>
@@ -96,21 +120,30 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
         <div class="containerset2">
           <div class="Zonesdetextedroite">
             <div class="partiedroite">
-              <input type="text" placeholder="Laboratoire" required />
-              <input type="email" placeholder="Adresse E-mail Laboratoire" required />
-              <input type="text" placeholder="Domiciliation" required />
-              <input type="text" placeholder="Téléphone Laboratoire" required />
+              <input type="text" placeholder="Laboratoire" value="<?php echo htmlspecialchars($nomLabo); ?>" />
+              <input type="email" placeholder="Adresse E-mail Laboratoire"
+                value="<?php echo htmlspecialchars($emailLabo); ?>" />
+              <input type="text" placeholder="Domiciliation" value="<?php echo htmlspecialchars($adresseLabo); ?>" />
             </div>
 
             <p></p>
 
             <div class="partiedroite">
-              <input type="text" placeholder="Nom" required />
-              <input type="text" placeholder="Prénom" required />
-              <input type="email" placeholder="Adresse E-mail" required />
-              <input type="text" placeholder="Mot de passe" required />
-              <input type="text" placeholder="Téléphone" required />
-              <input type="text" placeholder="Permission" required />
+              <input type="text" placeholder="Nom" value="<?php echo htmlspecialchars($_SESSION["nomUser"]); ?>" />
+              <input type="text" placeholder="Prénom"
+                value="<?php echo htmlspecialchars($_SESSION["prenomUser"]); ?>" />
+              <input type="email" placeholder="Adresse E-mail"
+                value="<?php echo htmlspecialchars($_SESSION["email"]); ?>" />
+              <input type="text" placeholder="Adresse"
+                value="<?php echo htmlspecialchars($_SESSION["adresseUser"]); ?>" />
+              <input type="text" placeholder="Permission" value="<?php if ($_SESSION["adminPerm"] == 1) {
+              $adminPermission = "Administrateur";
+            } else {
+              $adminPermission = "Utilisateur";
+            }
+            ;
+            echo htmlspecialchars($adminPermission); ?>" />
+              <input type="text" placeholder="Changer le mot de passe" />
             </div>
 
             <p></p>
@@ -156,17 +189,17 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
   </div>
 
   <div class="newsletterContainer">
-      <form id="newsletterForm">
-        <!--ici link le code phph pour s'abonner a la newsletter-->
-        <div id="result"></div>
-        <p>Abonnez-vous à notre newsletter ! <br /></p>
-        <input type="text" id="email" placeholder="Adresse mail" name="email" required />
-        <input type="submit" name="submitemail" value="S'abonner" />
-      </form>
-    </div>
-    
-    <!-- Display the result of the AJAX request -->
-    <script src="newsletterlink.js"></script>
+    <form id="newsletterForm">
+      <!--ici link le code phph pour s'abonner a la newsletter-->
+      <div id="result"></div>
+      <p>Abonnez-vous à notre newsletter ! <br /></p>
+      <input type="text" id="email" placeholder="Adresse mail" name="email" required />
+      <input type="submit" name="submitemail" value="S'abonner" />
+    </form>
+  </div>
+
+  <!-- Display the result of the AJAX request -->
+  <script src="newsletterlink.js"></script>
 </footer>
 
 </html>

@@ -96,25 +96,14 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     <?php
 
     // Connexion a notre bdd
-    $db = new mysqli('localhost', 'root', '', 'mydb');
-
-    // check si il y a un erreur de co
-    if ($db->connect_error) {
-      die("Connection failed: " . $db->connect_error);
-    }
+    require_once "config.php";
 
     // faire la requete sql en fonction du labo de la session actuelle
     $query = "SELECT nomBox FROM labboxtable WHERE laboratoires_idlaboratoires =" . $_SESSION["idLabo"];
-    $result = $db->query($query);
-
-
-    // recheck pour des erreurs encore
-    if (!$result) {
-      die("Query failed: " . $db->error);
-    }
+    $result = mysqli_query($link, $query);
 
     // on loop a travers tous les rangées renvoyées par sql et on fait des divs a chaque fois, avec le nom de la box
-    while ($row = $result->fetch_assoc()) {
+    while ($row = mysqli_fetch_assoc($result)) {
       echo '<div class="box">
       <img src="assets/images/rondvert.png" alt="icône" style="width:20px;height:20px;float:left;">
       <a href="#"><img src="assets/images/stylo.png" alt="icône" style="width:20px;height:20px;float:right"></a>
@@ -127,7 +116,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     }
 
     // fermer bdd
-    $db->close();
+    mysqli_close($link);
 
     ?>
 
@@ -157,15 +146,15 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
   </div>
 
   <div class="newsletterContainer">
-      <form id="newsletterForm">
-        <!--ici link le code phph pour s'abonner a la newsletter-->
-        <div id="result"></div>
-        <p>Abonnez-vous à notre newsletter ! <br /></p>
-        <input type="text" id="email" placeholder="Adresse mail" name="email" required />
-        <input type="submit" name="submitemail" value="S'abonner" />
-      </form>
-    </div>
-    
-    <!-- Display the result of the AJAX request -->
-    <script src="newsletterlink.js"></script>
+    <form id="newsletterForm">
+      <!--ici link le code phph pour s'abonner a la newsletter-->
+      <div id="result"></div>
+      <p>Abonnez-vous à notre newsletter ! <br /></p>
+      <input type="text" id="email" placeholder="Adresse mail" name="email" required />
+      <input type="submit" name="submitemail" value="S'abonner" />
+    </form>
+  </div>
+
+  <!-- Display the result of the AJAX request -->
+  <script src="newsletterlink.js"></script>
 </footer>
