@@ -103,7 +103,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 
 
   <div id="popup" class="popup" style="display:none;">
-    <iframe id="graphframe"></iframe>
+    <iframe id="graphframe" frameborder="0"></iframe>
   </div>
 
   <!-- Add the overlay div -->
@@ -143,7 +143,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     </div> <!--ferme div graphe -->
 
 
-    <div class="graphe" onclick="showPopup('popupGraphesFrequenceCardiaque.html')">
+    <div class="graphe" onclick="showPopup('popupGraphesBPM.html')">
       <h3>Fréquence cardiaque</h3>
       <img src="assets/images/graphe.png" alt="graphe" style="width:280px;">
       <div class="indic">
