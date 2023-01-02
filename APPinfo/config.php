@@ -1,5 +1,5 @@
 <?php
-/* Database credentials for local app database */
+/* Database credential for local app database */
 define('DB_SERVER', 'localhost');
 define('DB_USERNAME', 'root');
 define('DB_PASSWORD', '');
