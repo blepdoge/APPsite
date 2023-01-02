@@ -66,6 +66,11 @@ header {
   color: #0764a3;
 }
 
+#searchform {
+  display: flex;
+  align-items: center;
+}
+
 #searchUser {
   width:fit-content;
   width : fit-content;
@@ -154,7 +159,7 @@ header {
 .conteneurline {
   display: flex;
 	flex-direction: row;
-  width: 90%;
+  width: 100%;
 	flex-wrap: nowrap;
 	justify-content: space-between;
   text-align:start;
@@ -162,6 +167,7 @@ header {
 	align-content: stretch;
   border-bottom : thin solid;
 }
+
 
 .seperate {
   color : #0764a3;

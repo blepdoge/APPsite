@@ -73,7 +73,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 
   <div class="conteneur">
     <div id="search-bar-box">
-      <form action="">
+      <form action="" id="searchform">
         <input id="input" type="text" name="userSearchBar" placeholder="Chercher un utilisateur">
         <button type="submit" id="searchUser" name="searchUser">Chercher</button>
         <img class="disablednotadmin" src="assets/images/ajouter.png" alt="addUser" width="30" height="30" />
@@ -125,17 +125,18 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
       } else {
         $adminPermission = "Utilisateur";
       }
-      echo '<div class="conteneurline">
-        <img src="assets/images/personne.png" alt="Logo personne" width="30" height="30" />
-        <p>' . $user["prenom"] . '</p>
-        <p>' . $user["nom"] . '</p>
-        <p class="seperate">I</p>
-        <p>' . $user["email"] . '</p>
-        
-        <p>' . $adminPermission . '</p>
-        <img class="disablednotadmin" src="assets/images/parametre.png" alt= "Logo param" width="30" height="30" />
-        <img class="disablednotadmin" src="assets/images/supprimer.png" alt= "Logo delete" width="30" height="30" />
-      </div>';
+      echo '<table>
+      <tr class="conteneurline">
+        <td width="60"><img src="assets/images/personne.png" alt="Logo personne" width="30" height="30" /></td>
+        <td width="200"><p>' . $user["prenom"] . '</p></td>
+        <td width="200"><p>' . $user["nom"] . '</p></td>
+        <td width="60" class="seperate"><p>I</p></td>
+        <td width="400"><p>' . $user["email"] . '</p></td>
+        <td width="200"><p>' . $adminPermission . '</p></td>
+        <td width="60"><img class="disablednotadmin" src="assets/images/parametre.png" alt= "Logo param" width="30" height="30" /></td>
+        <td width="30"><img class="disablednotadmin" src="assets/images/supprimer.png" alt= "Logo delete" width="30" height="30" /></td>
+      </tr>
+    </table>';
     }}
 
     // Fermeture de la bdd
