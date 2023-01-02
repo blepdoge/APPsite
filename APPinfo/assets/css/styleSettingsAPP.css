@@ -212,10 +212,26 @@ header {
   margin-bottom: 340px;
 }
 
-.Zonesdetextedroite input[type="text"],input[type="email"],select {
-  
+.Zonesdetextedroite input[type="text"] {
   padding: 10px;
-  
+  margin-bottom: 15px;
+  border: 1px solid #0764a3;
+  font-size: 15px;
+  border-radius: 15px;
+  background-color: rgb(187, 187, 187);
+}
+
+.Zonesdetextedroite input[type="email"] {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #0764a3;
+  font-size: 15px;
+  border-radius: 15px;
+  background-color: rgb(187, 187, 187);
+}
+
+.Zonesdetextedroite select {
+  padding: 10px;
   margin-bottom: 15px;
   border: 1px solid #0764a3;
   font-size: 15px;
