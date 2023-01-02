@@ -37,13 +37,14 @@ try {
     $mail->Body    = "
     Un nouveau laboratoire s'interesse à nous !
     Voici la fiche de contact associée.
-    Nom: $name
-    Prénom: $first_name
-    Poste dans le laboratoire: $position
-    E-mail: $email
-    Nom du laboratoire: $lab_name
-    Adresse postale du laboratoire: $lab_address
-    Motivation:
+    Nom : $name
+    Prénom : $first_name
+    Poste dans le laboratoire : $position
+    E-mail : $email
+    Nom du laboratoire : $lab_name
+    Adresse postale du laboratoire : $lab_address
+    
+    Motivation :
     $motivation
     ";
 

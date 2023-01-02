@@ -256,7 +256,7 @@ footer {
   line-height: 0px;
 }
 
-.newsletterContainer input[type="text"] {
+.newsletterContainer input[type="email"] {
   height: 25px;
   width: 250px;
   font-size: 16px;
