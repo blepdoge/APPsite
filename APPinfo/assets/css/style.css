@@ -293,6 +293,23 @@ footer {
     color:white;
 }
 
+.plus{
+  border-radius: 50%;
+  background-color: rgb(102, 102, 102);
+  width:47px;
+  height:47px;
+  margin: auto;
+  text-align: center;
+}
+
+.plus a{
+  color:rgb(0, 94, 255);
+}
+
+.plus:hover{
+  cursor:pointer
+}
+
 .box a{
     text-align: center;
     color:white;

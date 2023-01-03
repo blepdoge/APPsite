@@ -112,7 +112,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
       <img src="assets/images/imagebox.png" alt="image" style="width:170px;">
       <p>' . $row['nomBox'] . '</p>
       </a>
-  </div>';
+      </div>';
     }
 
     // fermer bdd
@@ -121,6 +121,13 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     ?>
 
   </div>
+
+  <div class="plus">
+    <a href=AjoutBox.php><h1>+</h1></a>
+  </div>
+
+  <br>
+  <br>
 
 
 
