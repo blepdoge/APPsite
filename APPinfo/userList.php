@@ -98,10 +98,10 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
       $search = $db->real_escape_string($_GET['userSearchBar']);
 
       // Generer la requete SQL en cherchant par nom ou prenom
-      $searchquery = "SELECT prenom, nom, email, adminPerm FROM users WHERE nom = '" . $search . "'OR prenom = '" . $search . "'";
+      $searchquery = "SELECT prenom, nom, email, adminPerm FROM users WHERE nom = '" . $search . "'OR prenom = '" . $search . "' ";
     } else {
       // si rien de renvoyé alors on affiche tout
-      $searchquery = "SELECT * FROM users";
+      $searchquery = "SELECT * FROM users ORDER BY nom asc";
     }
 
     // faire la requete sql en fonction de la query plus haut
