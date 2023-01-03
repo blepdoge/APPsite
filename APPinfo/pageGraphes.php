@@ -77,11 +77,12 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 
 <script>
   function display_c() {
-    var refresh = 1000; // Refresh rate in milli seconds
+    var refresh = 1000; // rafraichissemnt des infos en ms
     mytime = setTimeout('display_ct()', refresh)
   }
   function display_ct() {
     var x = new Date();
+    //on remplit avec des zéros si ca fait pas la bonne taille!
     var x1 = String(x.getDate()).padStart(2,"0") + "/" + String((x.getMonth() + 1)).padStart(2,"0") + "/" + x.getFullYear();
     x1 = x1 + " - " + String(x.getHours()).padStart(2, "0") + ":" + String(x.getMinutes()).padStart(2, "0") + ":" + String(x.getSeconds()).padStart(2, "0");
     document.getElementById('horloge').innerHTML = x1;
