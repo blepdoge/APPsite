@@ -1,5 +1,5 @@
 <?php 
-//tbtkhnmjjinpglxg
+//include libs
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
