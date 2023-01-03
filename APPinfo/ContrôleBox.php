@@ -1,8 +1,8 @@
 <?php
-// Initialize the session
+// recuperer la session
 session_start();
 
-// Check if the user is logged in, if not then redirect him to login page
+// verifier si l'utilisateur est connecté sinon le rediriger
 if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
   header("location: pageLogin.php");
   exit;
@@ -177,6 +177,6 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     </form>
   </div>
 
-  <!-- Display the result of the AJAX request -->
+  <!-- afficher le resultat de la requete AJAX -->
   <script src="newsletterlink.js"></script>
 </footer>
