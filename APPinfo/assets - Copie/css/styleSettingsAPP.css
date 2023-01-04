@@ -1,16 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
 
-body{
-  font-family: "Poppins";
-  margin:0;
-}
-
 li,
 a {
   font-family: "Poppins";
   text-decoration: none;
   color: white;
-  
 }
 
 
@@ -132,6 +126,133 @@ header {
   padding-left: 0;
   margin : 5px 10px
 }
+
+/*--------------------MILIEU DE PAGE ICI------------------*/
+
+.containerset {
+
+  display: flex;
+  flex: row;
+
+
+}
+
+.containerset1 {
+
+  display: flex;
+  flex: row;
+  justify-content: left;
+  width: 20%;
+  border: black solid 3px;
+  margin-left: 50px;
+
+}
+
+.containerset2 {
+
+  display: flex;
+  flex: row;
+  justify-content: start;
+  margin-right: 50px;
+  padding-bottom: 1px;
+  width: 75%;
+  border: black solid 3px;
+  border-left: none;
+
+}
+
+
+.contenuPage {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+}
+
+.Zonesdetextedroite {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  font-size: 18px;
+  font-family: "Poppins";
+  line-height: 0px;
+  padding : 15px;
+  width: 100%;
+}
+
+.Zonesdetextegauche {
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  font-size: 18px;
+  font-family: "Poppins";
+
+  padding : 15px;
+  width: 100%;
+}
+
+
+.partiedroite {
+  display: flex;
+  flex-direction: column;
+  padding:10px;
+  width: 100%;
+  height:100%;
+
+}
+
+.infolabotxt {
+  height: fit-content;
+  margin-bottom: 160px;
+}
+
+.infousertxt {
+  margin-bottom: 340px;
+}
+
+.Zonesdetextedroite input[type="text"] {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #0764a3;
+  font-size: 15px;
+  border-radius: 15px;
+  background-color: rgb(187, 187, 187);
+}
+
+.Zonesdetextedroite input[type="email"] {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #0764a3;
+  font-size: 15px;
+  border-radius: 15px;
+  background-color: rgb(187, 187, 187);
+}
+
+.Zonesdetextedroite select {
+  padding: 10px;
+  margin-bottom: 15px;
+  border: 1px solid #0764a3;
+  font-size: 15px;
+  border-radius: 15px;
+  background-color: rgb(187, 187, 187);
+}
+
+.Zonesdetextedroite input[type=submit] {
+  width: fit-content;
+  border: none;
+  font-size: 18px;
+  border-radius: 10px;
+  background-color: #0764a3;
+  padding: 12px;
+}
+
+
+.Zonesdetextedroite input[type=submit]:hover {
+  background-color: #017ed1;
+}
+
 /*--------------------BAS DE PAGE ICI------------------*/
 footer {
   display: flex;
@@ -211,168 +332,4 @@ footer {
 
 .newsletterContainer input[type="submit"]:hover {
   background-color: #5cbf2a;
-}
-
-/*--------------------------------------------------------------------------------------------------------------------------------*/
-.titre{
-    text-align: center;
-    margin:auto;
-    width: fit-content;
-}
-
-.liste{
-    width: 1000px;
-    margin:auto
-}
-
-.questions{
-    margin:20px;
-    padding: 10px;
-}
-
-.questions p{
-    margin-left:10px;
-    margin: 5px;
-}
-
-.titre-question{
-    border:2px solid rgb(101, 101, 101);
-    background-color: rgb(175, 175, 175);
-    border-radius: 10px;
-}
-
-.reponse{
-    border:1px solid rgb(101, 101, 101);
-    margin-left:30px;
-    background-color: rgb(219, 219, 219);
-    margin-right:10px
-}
-
-.espace-client{
-    border:1px solid rgb(101, 101, 101);
-    margin-left:30px;
-    margin-right:10px
-}
-
-.trombone{
-    border:1px solid rgb(219, 219, 219);
-    background-color: rgb(219, 219, 219);
-    width: 150px;
-    border-bottom-right-radius: 20px;
-    border-top-right-radius: 20px;
-    text-align: center;
-}
-
-
-.pagination{
-    border:3px solid rgb(38, 0, 255);
-    background-color: rgb(0, 94, 255);
-    text-align: center;
-    margin:auto;
-    width: 40px;
-}
-
-
-/* Container for flexboxes */
-.boxes{
-    margin:auto;
-    display: flex;
-    flex-wrap: wrap;
-    max-width: 80%;
-    justify-content: center;
-}
-
-.box{
-    padding: 15px;
-    border-radius: 15px;
-    background-color: rgb(102, 102, 102);
-    width:250px;
-    height:fit-content;
-    margin: 50px;
-    text-align: center;
-    color:white;
-}
-
-.container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.plus{
-  border:none;
-  border-radius: 50%;
-  background-color: rgb(102, 102, 102);
-  width:47px;
-  height:47px;
-  text-align: center;
-  color:rgb(0, 94, 255);
-}
-
-.plus:hover{
-  cursor:pointer;
-}
-
-
-.box a{
-    text-align: center;
-    color:white;
-    text-decoration: none;
-}
-
-.contrôle{
-    width:150px;
-    border-radius: 15px;
-    margin: 50px;
-    text-align: center;
-}
-
-.contrôle:hover {
-  cursor:pointer;
-}
-
-.graphe{
-    padding: 10px;
-    border-radius: 15px;
-    background-color:rgb(187, 187, 187);
-    width:380px;
-    height:380px;
-    margin: 50px;
-    text-align: center;
-}
-
-.indic{
-    text-align:center;
-    float:left;
-    width:40px;
-}
-
-
-.overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.5);
-  z-index: 1000;
-}
-/* Add styles for the popup div */
-.popup {
-  position: fixed;
-  height:512px;
-  width:782px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background-color: white;
-  padding: 20px;
-  border-radius: 5px;
-  z-index: 1001;
-  transition: all ease 0.5s;
-}
-
-.popup iframe{
-  width:100%;
-  height:100%;
 }

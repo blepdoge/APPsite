@@ -81,6 +81,14 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 </header>
 
 <body>
+<div id="popup" class="popup" style="display:none;">
+    <iframe id="graphframe" frameborder="0"></iframe>
+  </div>
+
+  <!-- Add the overlay div -->
+  <div id="overlay" class="overlay" style="display:none;"></div>
+
+
   <div class="titre">
     <h1>Bonjour, <b>
         <?php echo htmlspecialchars($_SESSION["prenomUser"]); ?>
@@ -122,8 +130,12 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 
   </div>
 
-  <div class="plus">
-    <a href=AjoutBox.php><h1>+</h1></a>
+  <div class="container">
+    <div style="width:fitcontent;">
+    <button class="plus" onclick="showPopup('AjoutBox.php')">
+      <h1>+</h1>
+    </button>
+    </div>
   </div>
 
   <br>
@@ -144,6 +156,37 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     }
   </script>
 
+  <script>
+    // Function to show the popup
+    function showPopup(datapopup) {
+      // Get the iframe element
+      var frame = document.getElementById("graphframe");
+      // Set the src attribute
+      frame.src = datapopup;
+      // Get the popup and overlay elements
+      var popup = document.getElementById("popup");
+      var overlay = document.getElementById("overlay");
+      // Show the popup and overlay
+      popup.style.display = "block";
+      overlay.style.display = "block";
+    }
+
+    // Function to hide the popup
+    function hidePopup() {
+      // Get the popup and overlay elements
+      var popup = document.getElementById("popup");
+      var overlay = document.getElementById("overlay");
+      // Hide the popup and overlay
+      popup.style.display = "none";
+      overlay.style.display = "none";
+      var frame = document.getElementById("graphframe");
+      // Set the src attribute
+      frame.src = "";
+    }
+
+    // Add an event listener to the overlay to hide the popup when clicked
+    document.getElementById("overlay").addEventListener("click", hidePopup);
+  </script>
 </body>
 
 <footer>

@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+body{
+  margin: 0;
+  padding: 0;
+  background: solid white;
+  height: 100vh;
+  font-family: 'Poppins';
+  overflow: hidden;
+}
+.center{
+  position: absolute;
+  top: 45%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 400px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 10px 10px 15px rgba(0,0,0,0.05);
+}
+.center h1{
+  text-align: center;
+  padding: 20px 0;
+  border-bottom: 1px solid silver;
+}
+.center form{
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+form .txt_field{
+  position: relative;
+  border-bottom: 2px solid #adadad;
+  margin: 30px 0;
+}
+.txt_field input{
+  width: 100%;
+  padding: 0 5px;
+  height: 40px;
+  font-size: 16px;
+  border: none;
+  background: none;
+  outline: none;
+}
+.txt_field label{
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  color: #adadad;
+  transform: translateY(-50%);
+  font-size: 16px;
+  pointer-events: none;
+  transition: .5s;
+}
+.txt_field span::before{
+  content: '';
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: #2691d9;
+  transition: .5s;
+}
+.txt_field input:focus ~ label,
+.txt_field input:valid ~ label{
+  top: -5px;
+  color: #2691d9;
+}
+.txt_field input:focus ~ span::before,
+.txt_field input:valid ~ span::before{
+  width: 100%;
+}
+.pass{
+  margin: -5px 0 20px 5px;
+  color: #a6a6a6;
+  cursor: pointer;
+}
+.pass:hover{
+  text-decoration: underline;
+}
+.center input[type="submit"]{
+  width: 100%;
+  height: 50px;
+  border: 1px solid;
+  background: #2691d9;
+  border-radius: 25px;
+  font-size: 18px;
+  color: #e9f4fb;
+  font-weight: 700;
+  cursor: pointer;
+  outline: none;
+  margin-bottom: 20px;
+}
+.center input[type="submit"]:hover{
+  border-color: #2691d9;
+  transition: .5s;
+}
+.signup_link{
+  margin: 30px 0;
+  text-align: center;
+  font-size: 16px;
+  color: #666666;
+}
+.signup_link a{
+  color: #2691d9;
+  text-decoration: none;
+}
+.signup_link a:hover{
+  text-decoration: underline;
+}
+
+li,
+a {
+  font-family: "Poppins";
+  text-decoration: none;
+  color: white;
+}
+
+header {
+  display: flex;
+  position: sticky;
+  top: 0;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: #0764a3;
+  padding-left: 6px;
+  width: auto;
+  z-index: 9;
+}
+
+.textelogo {
+  flex: 2;
+  margin-right: auto;
+  font-family: "Poppins";
+  font-size: 28px;
+  text-decoration: none;
+  color: white;
+  padding-left: 6px;
+}
+
+.logotop {
+  margin-right: auto;
+  display:flex;
+}
+
+.navlien {
+  list-style: none;
+
+  padding-left: 0px;
+  margin-left: 20px;
+}
+
+.navlien li {
+  display: inline-block;
+  padding: 0px 12px;
+}
+
+.navlien li a {
+  font-size: 20px;
+}
+
+.navlien li a:hover {
+  color: rgb(19, 24, 92);
+}
+
+footer {
+  display: flex;
+  align-items: center;
+  position: fixed;
+  background: linear-gradient(
+    90.58deg,
+    rgba(53, 53, 53) 30.81%,
+    rgba(7, 100, 163) 74.18%
+  );
+  width: 100%;
+  float: bottom;
+  bottom:0;
+}
+
+.logobottom {
+  margin: 20px 7px;
+}
+
+.infoFooterContainer {
+  display: flex;
+  align-items: center;
+}
+
+.infoFooter {
+  list-style: none;
+  padding-left: 0px;
+  margin-left: 7px;
+}
+
+.infoFooter li {
+  font-size: 16px;
+}
+
+.line {
+  /*Sert a dessiner la ligne noire pour séparer*/
+  width: 1px;
+  height: 80px;
+  border-left: 4px solid black;
+  margin-left: 23px;
+}
+
+/*------------newsletter-----------*/
+
+.newsletterContainer {
+  display: flex;
+  justify-content: flex-end;
+  flex: 1 0 175px;
+  margin-right: 20px;
+}
+
+.newsletterContainer p {
+  font-family: "Poppins";
+  font-size: 16px;
+  color: white;
+  line-height: 0px;
+}
+
+.newsletterContainer input[type="email"] {
+  height: 25px;
+  width: 250px;
+  font-size: 16px;
+  border-radius: 15px;
+  margin-right: 12px;
+  padding-left: 8px;
+}
+
+.newsletterContainer input[type="submit"] {
+  height: fit-content;
+  width: 90px;
+  font-size: 16px;
+  background-color: #44c767;
+  border-radius: 15px;
+  border: none;
+  padding: 5px 5px;
+  text-shadow: 0px 1px 0px #2f6627;
+}
+
+.newsletterContainer input[type="submit"]:hover {
+  background-color: #5cbf2a;
+}
