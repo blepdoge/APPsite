@@ -313,6 +313,23 @@ footer {
   cursor:pointer;
 }
 
+.formajout{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.annul{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width:fit-content;
+  position: absolute;
+  right:50px;
+  bottom:25px;
+  margin-right: 50px;
+  margin-bottom: 25px;
+}
 
 .box a{
     text-align: center;
