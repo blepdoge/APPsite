@@ -1,48 +1,35 @@
 <?php
 
 // Connect to the database
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "mydb";
-
-// Create a connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check the connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+require_once "config.php";
 
 // Check if the form has been submitted
 if (isset($_POST['email'])) {
     // Get the email from the form
-    $email = mysqli_real_escape_string($conn, $_POST['email']);
+    $email = mysqli_real_escape_string($link, $_POST['email']);
 
     // Check if the email field is empty
     if (empty($email)) {
-        echo 'Erreurr: Vous devez rentrer un email.';
+        echo 'Erreur: Vous devez rentrer un email.';
     } else {
         // Check if the email already exists in the database
-        $sql = "SELECT email FROM newsletters WHERE email='$email'";
-        $result = $conn->query($sql);
+        $query = "SELECT email FROM newsletters WHERE email='$email'";
+        $result = mysqli_query($link, $query);
         if ($result->num_rows > 0) {
             echo 'Erreur: Cet email est déjà abonné à notre newsletter !';
         } else {
             // Insert the email into the newsletter table
-            $sql = "INSERT INTO newsletters (email) VALUES ('$email')";
-            if ($conn->query($sql) === TRUE) {
+            $query = "INSERT INTO newsletters (email) VALUES ('$email')";
+            if (mysqli_query($link, $sql) === TRUE) {
                 echo "Merci de vous êtres abonné à notre newsletter !";
             } else {
-                echo "Error: " . $sql . "<br>" . $conn->error;
+                echo "Erreur au cours de l'ajout: " . "<br>" . mysqli_error($link);
             }
         }
     }
 }
 
 // Close the connection
-$conn->close();
+mysqli_close($link);
 
 ?>
-
-

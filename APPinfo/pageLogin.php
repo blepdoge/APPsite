@@ -22,14 +22,14 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     if(empty(trim($_POST["username"]))){
         $username_err = "Entrez un email.";
     } else{
-        $username = htmlspecialchars(trim($_POST["username"]));
+        $username = mysqli_real_escape_string($link,trim($_POST["username"]));
     }
     
     // Check if password empty
     if(empty(trim($_POST["password"]))){
         $password_err = "Entrez votre mot de passe";
     } else{
-        $password = htmlspecialchars(trim($_POST["password"]));
+        $password = mysqli_real_escape_string($link,trim($_POST["password"]));
     }
     
     // Validate credentials
@@ -68,7 +68,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION["adminPerm"] = $adminPerm;
                             $_SESSION["idLabo"] = $idLabo;                              
                             
-                            // Redirect user to welcome page
+                            // Redirect user to control page
                             header("location: ContrôleBox.php");
                         } else{
                             // Password is not valid, display a generic error message
