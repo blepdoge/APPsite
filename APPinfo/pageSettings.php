@@ -106,7 +106,7 @@ mysqli_close($link);
 
   <div class="contenuPage">
     <h2>Paramètres</h2>
-    <form action="#">
+    <form action="settingsupdate.php" method="POST">
       <div class="containerset">
         <div class="containerset1">
           <div class="Zonesdetextegauche">
@@ -124,23 +124,23 @@ mysqli_close($link);
           <div class="Zonesdetextedroite">
             <div class="partiedroite">
               <input type="text" class="disablednotadmin" placeholder="Laboratoire"
-                value="<?php echo htmlspecialchars($nomLabo); ?>" />
+                value="<?php echo htmlspecialchars($nomLabo); ?>" name="nomLabo" />
               <input type="email" class="disablednotadmin" placeholder="Adresse E-mail Laboratoire"
-                value="<?php echo htmlspecialchars($emailLabo); ?>" />
+                value="<?php echo htmlspecialchars($emailLabo); ?>" name="emailLabo" />
               <input type="text" class="disablednotadmin" placeholder="Domiciliation"
-                value="<?php echo htmlspecialchars($adresseLabo); ?>" />
+                value="<?php echo htmlspecialchars($adresseLabo); ?>" name="adresseLabo"/>
             </div>
 
             <p></p>
 
             <div class="partiedroite">
-              <input type="text" placeholder="Nom" value="<?php echo htmlspecialchars($_SESSION["nomUser"]); ?>" />
+              <input type="text" placeholder="Nom" value="<?php echo htmlspecialchars($_SESSION["nomUser"]); ?>" name="nom"/>
               <input type="text" placeholder="Prénom"
-                value="<?php echo htmlspecialchars($_SESSION["prenomUser"]); ?>" />
+                value="<?php echo htmlspecialchars($_SESSION["prenomUser"]); ?>" name="prenom"/>
               <input type="email" placeholder="Adresse E-mail"
-                value="<?php echo htmlspecialchars($_SESSION["email"]); ?>" />
+                value="<?php echo htmlspecialchars($_SESSION["email"]); ?>" name="email"/>
               <input type="text" placeholder="Adresse"
-                value="<?php echo htmlspecialchars($_SESSION["adresseUser"]); ?>" />
+                value="<?php echo htmlspecialchars($_SESSION["adresseUser"]); ?>" name="adresse"/>
               <input type="text" class="disablednotadmin" placeholder="Permission"  disabled value="<?php if ($_SESSION["adminPerm"] == 1) {
               $adminPermission = "Administrateur";
             } else {
@@ -148,7 +148,7 @@ mysqli_close($link);
             }
             ;
             echo htmlspecialchars($adminPermission); ?>" />
-              <input type="text" placeholder="Changer le mot de passe" />
+              <input type="text" placeholder="Changer le mot de passe" name="motdepasse"/>
             </div>
 
             <p></p>
