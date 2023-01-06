@@ -82,8 +82,16 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 
 <body>
 <div id="popup" class="popup" style="display:none;">
-    <iframe id="graphframe" frameborder="0"></iframe>
+  <iframe id="graphframe" frameborder="0"></iframe>
+  <div class=annul style="right:150px;">
+    <button onclick="hidePopup()"> Terminé
+    </button>
   </div>
+  <div class=annul>
+    <button onclick="hidePopup(), href='ContrôleBox.php'"> Annuler
+    </button>
+  </div>
+</div>
 
   <!-- Add the overlay div -->
   <div id="overlay" class="overlay" style="display:none;"></div>
@@ -182,6 +190,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
       var frame = document.getElementById("graphframe");
       // Set the src attribute
       frame.src = "";
+      <?php header("location:ContrôleBox.php") ?> //CA MARCHE PAS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     }
 
     // Add an event listener to the overlay to hide the popup when clicked

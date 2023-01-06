@@ -42,26 +42,28 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
             
         // Close connection
         mysqli_close($link);
+
       }
+      
   ?>
     
+  <div style="padding:50px;">
+    <h3>Si vous avez acheté une nouvelle Box, nous vous remercions, et vous prions de bien vouloir lui donner un nom.</h3>
+    <h3>En cliquant sur confirmer, vous l'ajouterez à votre écran.</h3>
+  </div>
+
+
+
   <div class=formajout>
     <form action= "<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
-      nom de la Box:
+      Nom de la Box:
       <input type="text" name="nomBox">
       <span class="invalid-feedback" style="color:red"><?php echo $nomBox_err; ?></span>
       <input type="submit" value="Confirmer">
     </form>
   </div>
 
-  <div class=annul>
-    <button onclick="window.location.href = 'ContrôleBox.php';">
-      Annuler
-    </button>
-  <div>
-
-
-    
+  
 
 
 
