@@ -106,8 +106,8 @@ mysqli_close($link);
 
   <div class="contenuPage">
     <h2>Paramètres</h2>
-    <p>Pour afficher les valeurs mises à jour, veuillez vous reconnecter.</p>
-    <form action="settingsupdate.php" method="POST">
+    <p id="resultat"></p>
+    <form action="" method="POST" id="settingschanges">
       <div class="containerset">
         <div class="containerset1">
           <div class="Zonesdetextegauche">
@@ -125,23 +125,23 @@ mysqli_close($link);
           <div class="Zonesdetextedroite">
             <div class="partiedroite">
               <input type="text" class="disablednotadmin" placeholder="Laboratoire"
-                value="<?php echo htmlspecialchars($nomLabo); ?>" name="nomLabo" />
+                value="<?php echo htmlspecialchars($nomLabo); ?>" name="nomLabo" id="nomLabo"/>
               <input type="email" class="disablednotadmin" placeholder="Adresse E-mail Laboratoire"
-                value="<?php echo htmlspecialchars($emailLabo); ?>" name="emailLabo" />
+                value="<?php echo htmlspecialchars($emailLabo); ?>" name="emailLabo" id="emailLabo"/>
               <input type="text" class="disablednotadmin" placeholder="Domiciliation"
-                value="<?php echo htmlspecialchars($adresseLabo); ?>" name="adresseLabo"/>
+                value="<?php echo htmlspecialchars($adresseLabo); ?>" name="adresseLabo" id="adresseLabo"/>
             </div>
 
             <p></p>
 
             <div class="partiedroite">
-              <input type="text" placeholder="Nom" value="<?php echo htmlspecialchars($_SESSION["nomUser"]); ?>" name="nom"/>
+              <input type="text" placeholder="Nom" value="<?php echo htmlspecialchars($_SESSION["nomUser"]); ?>" name="nom" id="nom"/>
               <input type="text" placeholder="Prénom"
-                value="<?php echo htmlspecialchars($_SESSION["prenomUser"]); ?>" name="prenom"/>
+                value="<?php echo htmlspecialchars($_SESSION["prenomUser"]); ?>" name="prenom" id="prenom"/>
               <input type="email" placeholder="Adresse E-mail"
-                value="<?php echo htmlspecialchars($_SESSION["email"]); ?>" name="email"/>
+                value="<?php echo htmlspecialchars($_SESSION["email"]); ?>" name="email" id="email"/>
               <input type="text" placeholder="Adresse"
-                value="<?php echo htmlspecialchars($_SESSION["adresseUser"]); ?>" name="adresse"/>
+                value="<?php echo htmlspecialchars($_SESSION["adresseUser"]); ?>" name="adresse" id="adresse"/>
               <input type="text" class="disablednotadmin" placeholder="Permission"  disabled value="<?php if ($_SESSION["adminPerm"] == 1) {
               $adminPermission = "Administrateur";
             } else {
@@ -149,7 +149,7 @@ mysqli_close($link);
             }
             ;
             echo htmlspecialchars($adminPermission); ?>" />
-              <input type="text" placeholder="Changer le mot de passe" name="motdepasse"/>
+              <input type="text" placeholder="Changer le mot de passe" name="motdepasse" id="motdepasse"/>
             </div>
 
             <p></p>
@@ -169,6 +169,7 @@ mysqli_close($link);
         </div>
       </div>
     </form>
+    <script src="settingsupdate.js"></script>
   </div>
 
   <script>
