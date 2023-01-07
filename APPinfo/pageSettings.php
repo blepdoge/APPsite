@@ -18,10 +18,10 @@ $result = mysqli_query($link, $sql);
 // Check if the query was successful
 if (mysqli_num_rows($result) > 0) {
   // Store the data in variables for each row
-  while ($row = mysqli_fetch_assoc($result)) {
-    $nomLabo = $row["nomLabo"];
-    $adresseLabo = $row["adresseLabo"];
-    $emailLabo = $row["emailLabo"];
+  while ($rowLabData = mysqli_fetch_assoc($result)) {
+    $nomLabo = $rowLabData["nomLabo"];
+    $adresseLabo = $rowLabData["adresseLabo"];
+    $emailLabo = $rowLabData["emailLabo"];
   }
 } else {
   $nomLabo = "Données manquantes";
@@ -146,8 +146,8 @@ mysqli_close($link);
               $adminPermission = "Administrateur";
             } else {
               $adminPermission = "Utilisateur";
-            }
-            ;
+            } //crée une nouvelle variable avec la version ecrite des permissions
+            ;//puis ecrit la nouvelle variable dans l'input
             echo htmlspecialchars($adminPermission); ?>" />
               <input type="text" placeholder="Changer le mot de passe" name="motdepasse" id="motdepasse"/>
             </div>

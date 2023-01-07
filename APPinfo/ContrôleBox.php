@@ -119,14 +119,14 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     $result = mysqli_query($link, $query);
 
     // on loop a travers tous les rangées renvoyées par sql et on fait des divs a chaque fois, avec le nom de la box
-    while ($row = mysqli_fetch_assoc($result)) {
+    while ($rowBoxData = mysqli_fetch_assoc($result)) {
       echo '<div class="box">
       <img src="assets/images/rondvert.png" alt="icône" style="width:20px;height:20px;float:left;">
       <a href="#"><img class="disablednotadmin" src="assets/images/stylo.png" alt="icône" style="width:20px;height:20px;float:right"></a>
       <br>
-      <a href="pageGraphes.php?currentBoxID=' . urlencode($row['nomBox']) . '">
+      <a href="pageGraphes.php?currentBoxID=' . urlencode($rowBoxData['nomBox']) . '">
       <img src="assets/images/imagebox.png" alt="image" style="width:170px;">
-      <p>' . $row['nomBox'] . '</p>
+      <p>' . $rowBoxData['nomBox'] . '</p>
       </a>
       </div>';
     }
