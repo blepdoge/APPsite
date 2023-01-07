@@ -106,6 +106,7 @@ mysqli_close($link);
 
   <div class="contenuPage">
     <h2>Paramètres</h2>
+    <p>Pour afficher les valeurs mises à jour, veuillez vous reconnecter.</p>
     <form action="settingsupdate.php" method="POST">
       <div class="containerset">
         <div class="containerset1">
