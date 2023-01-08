@@ -84,7 +84,8 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 <div id="popup" class="popup" style="display:none;">
   <iframe id="graphframe" frameborder="0"></iframe>
   <div class=annul style="right:150px;">
-    <button onclick="hidePopup()"> Terminé
+    <button onclick="hidePopup()"> 
+      Terminé
     </button>
   </div>
   <div class=annul>
@@ -119,14 +120,14 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     $result = mysqli_query($link, $query);
 
     // on loop a travers tous les rangées renvoyées par sql et on fait des divs a chaque fois, avec le nom de la box
-    while ($rowBoxData = mysqli_fetch_assoc($result)) {
+    while ($row = mysqli_fetch_assoc($result)) {
       echo '<div class="box">
       <img src="assets/images/rondvert.png" alt="icône" style="width:20px;height:20px;float:left;">
       <a href="#"><img class="disablednotadmin" src="assets/images/stylo.png" alt="icône" style="width:20px;height:20px;float:right"></a>
       <br>
-      <a href="pageGraphes.php?currentBoxID=' . urlencode($rowBoxData['nomBox']) . '">
+      <a href="pageGraphes.php?currentBoxID=' . urlencode($row['nomBox']) . '">
       <img src="assets/images/imagebox.png" alt="image" style="width:170px;">
-      <p>' . $rowBoxData['nomBox'] . '</p>
+      <p>' . $row['nomBox'] . '</p>
       </a>
       </div>';
     }
@@ -190,7 +191,6 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
       var frame = document.getElementById("graphframe");
       // Set the src attribute
       frame.src = "";
-      <?php header("location:ContrôleBox.php") ?> //CA MARCHE PAS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
     }
 
     // Add an event listener to the overlay to hide the popup when clicked
