@@ -74,7 +74,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     <div id="search-bar-box">
       <form action="" id="searchform">
         <input id="input" type="text" name="userSearchBar" placeholder="Chercher un utilisateur">
-        <button type="submit" id="searchUser" name="searchUser">Chercher</button>
+        <button type="submit" id="searchUser">Chercher</button>
         <img class="disablednotadmin" src="assets/images/ajouter.png" alt="addUser" width="30" height="30" />
       </form>
     </div>
