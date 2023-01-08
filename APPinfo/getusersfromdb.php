@@ -1,16 +1,11 @@
 <?php
     // Connexion a notre bdd
-    $db = new mysqli('localhost', 'root', '', 'mydb');
-
-    // check si il y a un erreur de co
-    if ($db->connect_error) {
-      die("Connection failed: " . $db->connect_error);
-    }
+    require_once "config.php";
 
     //si qqc est passé en param get, on l'affecte a une variable, sinon, display tout
     if (isset($_GET['userSearchBar']) && !empty($_GET['userSearchBar'])) {
       // Sanitize les inputs pour eviter une injection sql
-      $search = $db->real_escape_string($_GET['userSearchBar']);
+      $search = mysqli_real_escape_string($link,$_GET['userSearchBar']);
 
       // Generer la requete SQL en cherchant par nom ou prenom
       $searchquery = "SELECT prenom, nom, email, adminPerm FROM users WHERE nom = '" . $search . "'OR prenom = '" . $search . "' ";
@@ -20,11 +15,11 @@
     }
 
     // faire la requete sql en fonction de la query plus haut
-    $resultSearch = $db->query($searchquery);
+    $resultSearch = mysqli_query($link,$searchquery);
 
     // recheck pour des erreurs encore
     if (!$resultSearch) {
-      die("Query failed: " . $db->error);
+      die("Query failed: " . mysqli_error($link));
     }
 
     if($resultSearch->num_rows==0){
@@ -32,7 +27,7 @@
       <h2 style="margin-top:80px">Pas de résultat correspondant, essayez autre chose...<h2>';
     }else{
     // on loop a travers tous les rangées renvoyées par sql et on fait des divs a chaque fois, avec le nom de la box
-    while ($user = $resultSearch->fetch_assoc()) {
+    while ($user = mysqli_fetch_assoc($resultSearch)) {
       
 
       if ($user["adminPerm"] == 1) {
@@ -55,6 +50,6 @@
     }}
 
     // Fermeture de la bdd
-    $db->close();
+    mysqli_close($link);
 
     ?>
