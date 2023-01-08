@@ -142,7 +142,7 @@ mysqli_close($link);
                 value="<?php echo htmlspecialchars($_SESSION["email"]); ?>" name="email" id="email"/>
               <input type="text" placeholder="Adresse"
                 value="<?php echo htmlspecialchars($_SESSION["adresseUser"]); ?>" name="adresse" id="adresse"/>
-              <input type="text" class="disablednotadmin" placeholder="Permission"  disabled value="<?php if ($_SESSION["adminPerm"] == 1) {
+              <input type="text" class="disablednotadmin" placeholder="Permission" disabled value="<?php if ($_SESSION["adminPerm"] == 1) {
               $adminPermission = "Administrateur";
             } else {
               $adminPermission = "Utilisateur";

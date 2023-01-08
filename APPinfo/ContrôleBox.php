@@ -46,6 +46,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     function showOptions() {
 
       const element = document.querySelector(".options");
+
       if (element.classList.contains('show') == false) {
         element.classList.add("show");// affiche le menu
       } else {
@@ -139,7 +140,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
   </div>
 
   <div class="container">
-    <div style="width:fitcontent;">
+    <div style="width:fitcontent">
     <button class="plus" onclick="showPopup('AjoutBox.php')">
       <h1>+</h1>
     </button>
@@ -166,11 +167,11 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 
   <script>
     // Function to show the popup
-    function showPopup(datapopup) {
+    function showPopup(filepopup) {
       // Get the iframe element
       var frame = document.getElementById("graphframe");
       // Set the src attribute
-      frame.src = datapopup;
+      frame.src = filepopup;
       // Get the popup and overlay elements
       var popup = document.getElementById("popup");
       var overlay = document.getElementById("overlay");
@@ -190,7 +191,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
       var frame = document.getElementById("graphframe");
       // Set the src attribute
       frame.src = "";
-      <?php header("location:ContrôleBox.php") ?> //CA MARCHE PAS!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+      <?php header("location:ContrôleBox.php") ?> //CA MARCHE PAS!!!!
     }
 
     // Add an event listener to the overlay to hide the popup when clicked
