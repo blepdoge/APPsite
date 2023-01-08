@@ -104,7 +104,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 
 
   <div id="popup" class="popup" style="display:none;">
-    <iframe id="graphframe" frameborder="0"></iframe>
+    <iframe id="graphframe" frameborder="0" ></iframe>
   </div>
 
   <!-- Add the overlay div -->
@@ -165,11 +165,11 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 
   <script>
     // Function to show the popup
-    function showPopup(datapopup) {
+    function showPopup(filepopup) {
       // Get the iframe element
       var frame = document.getElementById("graphframe");
       // Set the src attribute
-      frame.src = datapopup;
+      frame.src = filepopup;
       // Get the popup and overlay elements
       var popup = document.getElementById("popup");
       var overlay = document.getElementById("overlay");

@@ -174,8 +174,7 @@
       for (var i = 0; i < titres.length; i++) {
         const targetDiv = document.getElementById(reponses[i]);
         const btn = document.getElementById(titres[i]);
-        console.log(targetDiv);
-        console.log(btn);
+        
         btn.onclick = function () {
           if (targetDiv.style.display !== "none") {
             targetDiv.style.display = "none";
