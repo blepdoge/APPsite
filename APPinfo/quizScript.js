@@ -1,20 +1,18 @@
 (function () {
-  // Functions
+
   function buildQuiz() {
-    // variable to store the HTML output
+    //variable pour stocker ce qui sera renvoyé au HTML
     const output = [];
 
-    // for each question...
     myQuestions.forEach(
       (currentQuestion, questionNumber) => {
 
-        // variable to store the list of possible answers
+        //variable pour stocker la liste des réponses
         const answers = [];
 
-        // and for each available answer...
         for (letter in currentQuestion.answers) {
 
-          // ...add an HTML radio button
+          //génère les radio boutons avec leurs lettres à côté
           answers.push(
             `<label>
               <input type="radio" name="question${questionNumber}" value="${letter}">
@@ -102,8 +100,8 @@
   }
 
   // Variables
-  const quizContainer = document.getElementById('quiz');
-  const resultsContainer = document.getElementById('results');
+  var quizContainer = document.getElementById('quiz');
+  var resultsContainer = document.getElementById('results');
   const submitButton = document.getElementById('submit');
   const myQuestions = [
     {
