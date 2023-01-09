@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Bienvenue chez Sorsen!</title>
+    <link rel="stylesheet" href="assets/css/quizStyle.css" />
+  </head>
+
+  <header>
+    <a href="pageAccueil.html"><img class="logotop" src="assets/images/logosorsen_crop.png" width="60" height="60" /></a>
+
+    <div class="textelogo">
+      <p style="margin: 18px">SORSEN</p>
+    </div>
+
+    <nav>
+      <ul class="navlien">
+        <li><a href="FAQ.html">FAQ</a></li>
+        <li style="color: gray">|</li>
+        <li><a href="pageLogin.php">Connexion</a></li>
+      </ul>
+    </nav>
+  </header>
+ <!--------------------------------------------------------HAUT DE PAGE------------------------------------------------------------>
+ 
+ 
+
+ <body style="margin: 0">
+
+    <div class="mainWrapper">
+      <h1>Quiz : Connaissez-vous bien les dangers en laboratoire ?</h1>
+
+        <div id="quiz" class="divDisplay" ></div>
+        <button id="submit">Voir mon résultat</button>
+        <div id="results" class="divDisplay"></div>
+
+    </div>
+
+    <script class src="quizScript.js"></script>
+
+ </body>
+
+<!---------------------------------------------------------BAS DE PAGE------------------------------------------------------------->
+  <footer>
+    <img class="logobottom" src="assets/images/SorsenFull.png" width="100" height="90" />
+
+    <div class="infoFooterContainer">
+      <ul class="infoFooter">
+        <li>SORSEN ENTREPRISE</li>
+        <li>10 rue de Vanves</li>
+        <li>91230 Issy-les-Moulineaux</li>
+      </ul>
+    </div>
+
+    <div class="line"></div>
+
+    <div class="infoFooterContainer">
+      <ul class="navlien">
+        <li><a href="#">CGU</a></li>
+        <li><a href="#">Partenaires</a></li>
+        <li><a href="mailto:contactsorsen@sorsen.fr">Nous contacter</a></li>
+      </ul>
+    </div>
+
+    
+    <div class="newsletterContainer">
+      <form id="newsletterForm">
+        <!--ici link le code phph pour s'abonner a la newsletter-->
+        <div id="result"></div>
+        <p>Abonnez-vous à notre newsletter ! <br /></p>
+        <input type="email" id="email" placeholder="Adresse mail" name="email" required />
+        <input type="submit" name="submitemail" value="S'abonner" />
+      </form>
+    </div>
+    
+    <!-- Display the result of the AJAX request -->
+    <script src="newsletterlink.js"></script>
+
+  </footer>
+</html>
