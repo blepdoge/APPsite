@@ -3,12 +3,12 @@
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
-require 'C:\Users\lmszy\Desktop\APP INFO\xampp\htdocs\APPinfo\vendor\autoload.php';
+require '\vendor\autoload.php';
 
 // Instantiate the PHPMailer class
 $mail = new PHPMailer();
 
-// Set up the form data
+// recuperer les données post
 $name = $_POST['inputNom'];
 $first_name = $_POST['prenom'];
 $position = $_POST['poste'];
@@ -18,7 +18,7 @@ $lab_address = $_POST['adressePostale'];
 $motivation = $_POST['msgMotiv'];
 
 try {
-    // Set up the server and sender information
+    // setup des données serveurs
     $mail->SMTPDebug = 2;                                       // Enable verbose debug output
     $mail->isSMTP();                                            // Set mailer to use SMTP
     $mail->Host       = 'smtp.gmail.com';                       // Specify main and backup SMTP servers
@@ -28,11 +28,11 @@ try {
     $mail->SMTPSecure = 'tls';                                  // Enable TLS encryption, `ssl` also accepted
     $mail->Port       = 587;                                    // TCP port to connect to
 
-    // Set the recipient and sender
+    // destinataire et expediteur
     $mail->setFrom('lm.szymko@gmail.com', 'LabBox Inquiry');
     $mail->addAddress('blep.doge@gmail.com', 'LabBox Team');     // Add a recipient
 
-    // Set the email subject and body
+    // infos de l'email
     $mail->Subject = 'LabBox Inquiry';
     $mail->Body    = "
     Un nouveau laboratoire s'interesse à nous !
@@ -48,7 +48,7 @@ try {
     $motivation
     ";
 
-    // Send the email
+    // Envoi du mail
     $mail->send();
     echo 'Message has been sent';
     header('Location: pageCommande.html');

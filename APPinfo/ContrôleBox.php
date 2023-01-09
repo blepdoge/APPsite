@@ -167,34 +167,34 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
   </script>
 
   <script>
-    // Function to show the popup
+    // fonction pour afficher la popup
     function showPopup(filepopup) {
-      // Get the iframe element
+      // recup de l'iframe
       var frame = document.getElementById("graphframe");
-      // Set the src attribute
+      // definir la source
       frame.src = filepopup;
-      // Get the popup and overlay elements
+      // recup des elements popup et overlay
       var popup = document.getElementById("popup");
       var overlay = document.getElementById("overlay");
-      // Show the popup and overlay
+      // affichage popup et overlay
       popup.style.display = "block";
       overlay.style.display = "block";
     }
 
     // Function to hide the popup
     function hidePopup() {
-      // Get the popup and overlay elements
+      // recup des elements popup et overlay
       var popup = document.getElementById("popup");
       var overlay = document.getElementById("overlay");
-      // Hide the popup and overlay
+      // cacher popup et overlay
       popup.style.display = "none";
       overlay.style.display = "none";
       var frame = document.getElementById("graphframe");
-      // Set the src attribute
+      // definir la source
       frame.src = "";
     }
 
-    // Add an event listener to the overlay to hide the popup when clicked
+    // Ecouter pour des clicks sur le partie sombre pour sortir de la popup
     document.getElementById("overlay").addEventListener("click", hidePopup);
   </script>
 </body>
@@ -222,7 +222,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 
   <div class="newsletterContainer">
     <form id="newsletterForm">
-      <!--ici link le code phph pour s'abonner a la newsletter-->
+      <!--ici link le code ajax intervient pour s'abonner a la newsletter-->
       <div id="result"></div>
       <p>Abonnez-vous à notre newsletter ! <br /></p>
       <input type="email" id="email" placeholder="Adresse mail" name="email" required />
