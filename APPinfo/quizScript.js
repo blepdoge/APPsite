@@ -1,6 +1,6 @@
-(function(){
+(function () {
   // Functions
-  function buildQuiz(){
+  function buildQuiz() {
     // variable to store the HTML output
     const output = [];
 
@@ -12,7 +12,7 @@
         const answers = [];
 
         // and for each available answer...
-        for(letter in currentQuestion.answers){
+        for (letter in currentQuestion.answers) {
 
           // ...add an HTML radio button
           answers.push(
@@ -38,7 +38,7 @@
     quizContainer.innerHTML = output.join('');
   }
 
-  function showResults(){
+  function showResults() {
 
     // gather answer containers from our quiz
     const answerContainers = quizContainer.querySelectorAll('.answers');
@@ -47,7 +47,7 @@
     let numCorrect = 0;
 
     // for each question...
-    myQuestions.forEach( (currentQuestion, questionNumber) => {
+    myQuestions.forEach((currentQuestion, questionNumber) => {
 
       // find selected answer
       const answerContainer = answerContainers[questionNumber];
@@ -55,7 +55,7 @@
       const userAnswer = (answerContainer.querySelector(selector) || {}).value;
 
       // if answer is correct
-      if(userAnswer === currentQuestion.correctAnswer){
+      if (userAnswer === currentQuestion.correctAnswer) {
         // add to the number of correct answers
         numCorrect++;
 
@@ -63,7 +63,7 @@
         answerContainers[questionNumber].style.color = 'lightgreen';
       }
       // if answer is wrong or blank
-      else{
+      else {
         // color the answers red
         answerContainers[questionNumber].style.color = 'red';
       }
@@ -77,17 +77,17 @@
     slides[currentSlide].classList.remove('active-slide');
     slides[n].classList.add('active-slide');
     currentSlide = n;
-    if(currentSlide === 0){
+    if (currentSlide === 0) {
       previousButton.style.display = 'none';
     }
-    else{
+    else {
       previousButton.style.display = 'inline-block';
     }
-    if(currentSlide === slides.length-1){
+    if (currentSlide === slides.length - 1) {
       nextButton.style.display = 'none';
       submitButton.style.display = 'inline-block';
     }
-    else{
+    else {
       nextButton.style.display = 'inline-block';
       submitButton.style.display = 'none';
     }
@@ -136,7 +136,7 @@
     }
   ];
 
-  // Kick things off
+
   buildQuiz();
 
   // Pagination
