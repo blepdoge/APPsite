@@ -1,117 +1,155 @@
+(function(){
+  // Functions
+  function buildQuiz(){
+    // variable to store the HTML output
+    const output = [];
 
-var myQuestions = [
-  {
-    question: "Quel est le rythme cardiaque normal d'un individu en bonne santé ?",
-    answers: {
-      a: '60 à 100 battements par minute',
-      b: '100 à 140 battements par minute',
-      c: '140 à 180 battements par minute',
-      d: '180 à 220 battements par minute'
-    },
-    correctAnswer: 'a'
-  },
-  {  
-    question: "What is 10/2?",
-    answers: {
-      a: '3',
-      b: '5',
-      c: '115'
-    },
-    correctAnswer: 'b'
-  },
-  {
-    question: "What is 30/3?",
-    answers: {
-      a: '3',
-      b: '5',
-      c: '10'
-    },
-    correctAnswer: 'c'
-  }
-];
+    // for each question...
+    myQuestions.forEach(
+      (currentQuestion, questionNumber) => {
 
-var quizContainer = document.getElementById('quiz');
-var resultsContainer = document.getElementById('results');
-var submitButton = document.getElementById('submit');
+        // variable to store the list of possible answers
+        const answers = [];
 
-function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
+        // and for each available answer...
+        for(letter in currentQuestion.answers){
 
-  function showQuestions(questions, quizContainer){
-    //variable pour stocker ce que le js renvoie au html
-    var output = [];
-    //variable pour stocker les réponses
-    var answers;
+          // ...add an HTML radio button
+          answers.push(
+            `<label>
+              <input type="radio" name="question${questionNumber}" value="${letter}">
+              ${letter} :
+              ${currentQuestion.answers[letter]}
+            </label>`
+          );
+        }
 
-    for(var i=0; i<questions.length; i++){
-      
-      //réinitialisation de la liste des réponses
-      answers = [];
-
-      for(letter in questions[i].answers){
-
-        //génère les radio boutons avec leurs lettres à côté
-        answers.push(
-          '<label>'
-            + '<input type="radio" name="question'+i+'" value="'+letter+'">'
-            + letter + ': '
-            + questions[i].answers[letter]
-          + '</label>'
+        // add this question and its answers to the output
+        output.push(
+          `<div class="slide">
+            <div class="question"> ${currentQuestion.question} </div>
+            <div class="answers"> ${answers.join("")} </div>
+          </div>`
         );
       }
+    );
 
-      // add this question and its answers to the output
-      output.push(
-        '<div class="question">' + questions[i].question + '</div>'
-        + '<div class="answers">' + answers.join('') + '</div>'
-      );
-    }
-
-    // finally combine our output list into one string of html and put it on the page
+    // finally combine our output list into one string of HTML and put it on the page
     quizContainer.innerHTML = output.join('');
   }
 
+  function showResults(){
 
-
-  function showResults(questions, quizContainer, resultsContainer){
-    
     // gather answer containers from our quiz
-    var answerContainers = quizContainer.querySelectorAll('.answers');
-    
+    const answerContainers = quizContainer.querySelectorAll('.answers');
+
     // keep track of user's answers
-    var userAnswer = '';
-    var numCorrect = 0;
-    
+    let numCorrect = 0;
+
     // for each question...
-    for(var i=0; i<questions.length; i++){
+    myQuestions.forEach( (currentQuestion, questionNumber) => {
 
       // find selected answer
-      userAnswer = (answerContainers[i].querySelector('input[name=question'+i+']:checked')||{}).value;
-      
+      const answerContainer = answerContainers[questionNumber];
+      const selector = `input[name=question${questionNumber}]:checked`;
+      const userAnswer = (answerContainer.querySelector(selector) || {}).value;
+
       // if answer is correct
-      if(userAnswer===questions[i].correctAnswer){
+      if(userAnswer === currentQuestion.correctAnswer){
         // add to the number of correct answers
         numCorrect++;
-        
+
         // color the answers green
-        answerContainers[i].style.color = "00b262";
+        answerContainers[questionNumber].style.color = 'lightgreen';
       }
       // if answer is wrong or blank
       else{
         // color the answers red
-        answerContainers[i].style.color = 'd61f00';
+        answerContainers[questionNumber].style.color = 'red';
       }
-    }
+    });
 
     // show number of correct answers out of total
-    resultsContainer.innerHTML = numCorrect + '/' + questions.length + ' réponses correctes!';
+    resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
   }
 
-  showQuestions(questions, quizContainer);
-  
-  submitButton.onclick = function(){
-    showResults(questions, quizContainer, resultsContainer);
+  function showSlide(n) {
+    slides[currentSlide].classList.remove('active-slide');
+    slides[n].classList.add('active-slide');
+    currentSlide = n;
+    if(currentSlide === 0){
+      previousButton.style.display = 'none';
+    }
+    else{
+      previousButton.style.display = 'inline-block';
+    }
+    if(currentSlide === slides.length-1){
+      nextButton.style.display = 'none';
+      submitButton.style.display = 'inline-block';
+    }
+    else{
+      nextButton.style.display = 'inline-block';
+      submitButton.style.display = 'none';
+    }
   }
 
-}
+  function showNextSlide() {
+    showSlide(currentSlide + 1);
+  }
 
-generateQuiz(myQuestions, quizContainer, resultsContainer, submitButton);
+  function showPreviousSlide() {
+    showSlide(currentSlide - 1);
+  }
+
+  // Variables
+  const quizContainer = document.getElementById('quiz');
+  const resultsContainer = document.getElementById('results');
+  const submitButton = document.getElementById('submit');
+  const myQuestions = [
+    {
+      question: "Who invented JavaScript?",
+      answers: {
+        a: "Douglas Crockford",
+        b: "Sheryl Sandberg",
+        c: "Brendan Eich"
+      },
+      correctAnswer: "c"
+    },
+    {
+      question: "Which one of these is a JavaScript package manager?",
+      answers: {
+        a: "Node.js",
+        b: "TypeScript",
+        c: "npm"
+      },
+      correctAnswer: "c"
+    },
+    {
+      question: "Which tool can you use to ensure code quality?",
+      answers: {
+        a: "Angular",
+        b: "jQuery",
+        c: "RequireJS",
+        d: "ESLint"
+      },
+      correctAnswer: "d"
+    }
+  ];
+
+  // Kick things off
+  buildQuiz();
+
+  // Pagination
+  const previousButton = document.getElementById("previous");
+  const nextButton = document.getElementById("next");
+  const slides = document.querySelectorAll(".slide");
+  let currentSlide = 0;
+
+  // Show the first slide
+  showSlide(currentSlide);
+
+  // Event listeners
+  submitButton.addEventListener('click', showResults);
+  previousButton.addEventListener("click", showPreviousSlide);
+  nextButton.addEventListener("click", showNextSlide);
+})();
