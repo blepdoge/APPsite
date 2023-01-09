@@ -85,7 +85,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 <div id="popup" class="popup" style="display:none;">
   <iframe id="graphframe" frameborder="0"></iframe>
   <div class=annul style="right:150px;">
-    <button onclick="hidePopup()"> 
+    <button onclick="hidePopup(), history.go(0)"> 
       Terminé
     </button>
   </div>
@@ -124,7 +124,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     while ($row = mysqli_fetch_assoc($result)) {
       echo '<div class="box">
       <img src="assets/images/rondvert.png" alt="icône" style="width:20px;height:20px;float:left;">
-      <a href="#"><img class="disablednotadmin" src="assets/images/stylo.png" alt="icône" style="width:20px;height:20px;float:right"></a>
+      <img id="Modifnom" class="disablednotadmin" src="assets/images/stylo.png" alt="icône" style="width:20px;height:20px;float:right">
       <br>
       <a href="pageGraphes.php?currentBoxID=' . urlencode($row['nomBox']) . '">
       <img src="assets/images/imagebox.png" alt="image" style="width:170px;">
@@ -137,6 +137,8 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     mysqli_close($link);
 
     ?>
+
+    
 
   </div>
 
@@ -196,6 +198,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 
     // Ecouter pour des clicks sur le partie sombre pour sortir de la popup
     document.getElementById("overlay").addEventListener("click", hidePopup);
+    document.getElementById("Modifnom").addEventListener("click", showPopup('Modifnombox.php?currentBoxID=' . urlencode($row['nomBox']) . ''));
   </script>
 </body>
 
