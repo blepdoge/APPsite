@@ -192,10 +192,6 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
       var frame = document.getElementById("graphframe");
       // Set the src attribute
       frame.src = "";
-<<<<<<< HEAD
-=======
-      <?php header("location:ContrôleBox.php") ?> //CA MARCHE PAS!!!!
->>>>>>> 951e74899a735e08530fdc09293d50d40a1450e3
     }
 
     // Add an event listener to the overlay to hide the popup when clicked
