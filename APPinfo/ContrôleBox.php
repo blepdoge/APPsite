@@ -198,7 +198,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 
     // Ecouter pour des clicks sur le partie sombre pour sortir de la popup
     document.getElementById("overlay").addEventListener("click", hidePopup);
-    document.getElementById("Modifnom").addEventListener("click", showPopup('Modifnombox.php?currentBoxID=' . urlencode($row['nomBox']) . ''));
+   
   </script>
 </body>
 
