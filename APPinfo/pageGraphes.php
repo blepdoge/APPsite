@@ -1,5 +1,5 @@
 <?php
-// Initialize the session
+// recuperer ou initaliser la session
 session_start();
 
 // Check if the user is logged in, if not then redirect him to login page
@@ -164,30 +164,30 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
   </div>
 
   <script>
-    // Function to show the popup
+    // fonction pour afficher la popup
     function showPopup(filepopup) {
-      // Get the iframe element
+      // recup de l'iframe
       var frame = document.getElementById("graphframe");
-      // Set the src attribute
+      // definir la source
       frame.src = filepopup;
-      // Get the popup and overlay elements
+      // recup des elements popup et overlay
       var popup = document.getElementById("popup");
       var overlay = document.getElementById("overlay");
-      // Show the popup and overlay
+      // affichage popup et overlay
       popup.style.display = "block";
       overlay.style.display = "block";
     }
 
     // Function to hide the popup
     function hidePopup() {
-      // Get the popup and overlay elements
+      // recup des elements popup et overlay
       var popup = document.getElementById("popup");
       var overlay = document.getElementById("overlay");
-      // Hide the popup and overlay
+      // cacher popup et overlay
       popup.style.display = "none";
       overlay.style.display = "none";
       var frame = document.getElementById("graphframe");
-      // Set the src attribute
+      // definir la source
       frame.src = "";
     }
 

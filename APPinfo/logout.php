@@ -1,5 +1,5 @@
 <?php
-// Initialize the session
+// recuperer ou initaliser la session
 session_start();
  
 // Unset all of the session variables

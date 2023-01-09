@@ -1,5 +1,5 @@
 <?php
-// Initialize the session
+// recuperer ou initaliser la session
 session_start();
  
 // Check if the user is already logged in, if yes redirect him to welcome page
@@ -8,57 +8,57 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
     exit;
 }
  
-// Include config file
+// infos de connexion bdd
 require_once "config.php";
  
-// Define variables and initialize with empty values
+// Definition variables pour le script
 $username = $password = $nomUser = $prenomUser = $adresseUser = $adminPerm = $idLabo = "";
 $username_err = $password_err = $login_err = "";
  
-// Processing form data when form is submitted
+// manipulation données recues
 if($_SERVER["REQUEST_METHOD"] == "POST"){
  
-    // Check if username empty
+    // verif si email vide
     if(empty(trim($_POST["username"]))){
         $username_err = "Entrez un email.";
     } else{
         $username = mysqli_real_escape_string($link,trim($_POST["username"]));
     }
     
-    // Check if password empty
+    // Cverif si mdp vide
     if(empty(trim($_POST["password"]))){
         $password_err = "Entrez votre mot de passe";
     } else{
         $password = mysqli_real_escape_string($link,trim($_POST["password"]));
     }
     
-    // Validate credentials
+    // Valider les identifiants
     if(empty($username_err) && empty($password_err)){
-        // Prepare a select statement
+        // Preparation de la requete SQL select
         $sql = "SELECT idusers, email, password, nom, prenom, adresse, adminPerm, laboratoires_idlaboratoires FROM users WHERE email = ?";
         
         if($stmt = mysqli_prepare($link, $sql)){
-            // Bind variables to the prepared statement as parameters
+            // asocation des variables a la req en tant que parametres
             mysqli_stmt_bind_param($stmt, "s", $param_username);
             
-            // Set parameters
+            // definition params
             $param_username = $username;
             
-            // Attempt to execute statement
+            // tentative d'execution du statement
             if(mysqli_stmt_execute($stmt)){
-                // Store result
+                // stockage resultats
                 mysqli_stmt_store_result($stmt);
                 
-                // Check if username exists, if yes then verify password
+                // verif username, si existe dans ce cas check mdp
                 if(mysqli_stmt_num_rows($stmt) == 1){                    
-                    // Bind result variables
+                    // assocation des variables aux resultats de la req
                     mysqli_stmt_bind_result($stmt, $id, $username, $hashed_password, $nomUser, $prenomUser, $adresseUser, $adminPerm, $idLabo);
                     if(mysqli_stmt_fetch($stmt)){
                         if(password_verify($password, $hashed_password)){
-                            // Password is correct, so start a new session
+                            // mdp correct donc on crée une session php
                             session_start();
                             
-                            // Store data in session variables
+                            // stockage des données user dans les variables session
                             $_SESSION["loggedin"] = true;
                             $_SESSION["id"] = $id;
                             $_SESSION["email"] = $username;
@@ -68,27 +68,27 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION["adminPerm"] = $adminPerm;
                             $_SESSION["idLabo"] = $idLabo;                              
                             
-                            // Redirect user to control page
+                            // Redirection
                             header("location: ContrôleBox.php");
                         } else{
-                            // Password is not valid, display a generic error message
+                            // mdp non valide donc erreur
                             $login_err = "Mot de passe invalide.";
                         }
                     }
                 } else{
-                    // Username doesn't exist, display a generic error message
+                    // username non valide donc erreur
                     $login_err = "Email invalide.";
                 }
-            } else{ //if statement doesnt execute
+            } else{ // si pb dans le if
                 echo "Oups! Quelque chose s'est mal passé. Réessayez plus tard.";
             }
 
-            // Close statement
+            // fermeture du statement
             mysqli_stmt_close($stmt);
         }
     }
     
-    // Close connection
+    // fermeture connection bdd
     mysqli_close($link);
 }
 ?>
