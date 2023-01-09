@@ -90,7 +90,7 @@ header {
 }
 
 
-.formulaireContact input[type="text"], input[type="email"],
+.formulaireContact input[type="text"], .formulaireContact input[type="email"],
 textarea {
   width: 100%;
   padding: 10px;
