@@ -37,20 +37,19 @@ var submitButton = document.getElementById('submit');
 function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
 
   function showQuestions(questions, quizContainer){
-    // we'll need a place to store the output and the answer choices
+    //variable pour stocker ce que le js renvoie au html
     var output = [];
+    //variable pour stocker les réponses
     var answers;
 
-    // for each question...
     for(var i=0; i<questions.length; i++){
       
-      // first reset the list of answers
+      //réinitialisation de la liste des réponses
       answers = [];
 
-      // for each available answer...
       for(letter in questions[i].answers){
 
-        // ...add an html radio button
+        //génère les radio boutons avec leurs lettres à côté
         answers.push(
           '<label>'
             + '<input type="radio" name="question'+i+'" value="'+letter+'">'
@@ -94,12 +93,12 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
         numCorrect++;
         
         // color the answers green
-        answerContainers[i].style.color = 'lightgreen';
+        answerContainers[i].style.color = "00b262";
       }
       // if answer is wrong or blank
       else{
         // color the answers red
-        answerContainers[i].style.color = 'red';
+        answerContainers[i].style.color = 'd61f00';
       }
     }
 
@@ -107,10 +106,8 @@ function generateQuiz(questions, quizContainer, resultsContainer, submitButton){
     resultsContainer.innerHTML = numCorrect + '/' + questions.length + ' réponses correctes!';
   }
 
-  // show questions right away
   showQuestions(questions, quizContainer);
   
-  // on submit, show results
   submitButton.onclick = function(){
     showResults(questions, quizContainer, resultsContainer);
   }
