@@ -13,7 +13,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 <html>
 
 <head>
-  <title>Popup ajout de box</title>
+  <title>Popup modification du nom de la box</title>
   <link rel="stylesheet" href="assets/css/style.css">
   <meta charset="utf-8" />
 </head>
@@ -29,14 +29,14 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
       if($_SERVER["REQUEST_METHOD"] == "POST"){
 
         if(empty(trim($_POST["nomBox"]))){
-            $nomBox_err = "Donnez un nom à votre Box";
+            $nomBox_err = "Vous n'avez pas entré de nom";
         } else{
             $nomBox=htmlspecialchars(trim($_POST["nomBox"]));
         }
 
         if(empty($nomBox_err)){
             // Ajouter le nom de la box dans la base de données
-            $query = "INSERT INTO labboxtable(nombox, laboratoires_idlaboratoires) VALUES ('$nomBox', '".$_SESSION["idLabo"]."')";
+            $query = "UPDATE labboxtable SET nombox = '$nomBox' WHERE nombox = , laboratoires_idlaboratoires) VALUES ('$nomBox', '".$_SESSION["idLabo"]."')";
             mysqli_query($link, $query);
         }
             
