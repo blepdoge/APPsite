@@ -71,6 +71,14 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 <body style="margin:0">
 
   <div class="conteneur">
+    <p class="returnp">
+      <button class="return" onclick="rtn()">Retourner</button>
+      <script>
+      function rtn() {
+        window.history.back();
+      }
+    </script> 
+    </p>
     <div id="search-bar-box">
       <form action="" id="searchform">
         <input id="input" type="text" name="userSearchBar" placeholder="Chercher un utilisateur">

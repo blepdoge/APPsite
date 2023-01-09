@@ -105,6 +105,14 @@ mysqli_close($link);
 
 
   <div class="contenuPage">
+    <p class="returnp">
+      <button class="return" onclick="rtn()">Retourner</button>
+      <script>
+      function rtn() {
+        window.history.back();
+      }
+    </script> 
+    </p>
     <h2>Paramètres</h2>
     <p id="resultat"></p>
     <form action="" method="POST" id="settingschanges">
@@ -165,6 +173,12 @@ mysqli_close($link);
             <p></p>
 
             <input type="submit" value="Sauvegarder" />
+            <button onclick="rtn()">Retourner</button>
+            <script>
+            function rtn() {
+              window.history.back();
+            } 
+</script>
           </div>
         </div>
       </div>

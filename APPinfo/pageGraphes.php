@@ -97,6 +97,15 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     </h1>
   </div>
 
+    <button class="return" onclick="rtn()">Retourner</button>
+    <script>
+    function rtn() {
+    window.history.back();
+    }
+    </script>
+    
+ 
+
   <div class="trombone">
     <p id="horloge">
     </p>
