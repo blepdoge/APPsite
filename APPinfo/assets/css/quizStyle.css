@@ -86,9 +86,15 @@ body {
 .mainWrapper h1 {
   display: flex;
   text-align: center;
-  font-size: 40px;
+
   padding-left: 10px;
   padding-right: 10px;
+  margin-top: 20px;
+
+  background-color: #444;
+  color: #fff;
+  font-size: 30px;
+  font-weight: 300;
   /*width:85%;*/
 }
 
@@ -122,32 +128,33 @@ body {
 
 button {
   z-index: 100;
-  font-size: 22px;
   background-color: #279;
+
+  font-size: 22px;
   color: #fff;
+
   border: 0px;
   border-radius: 3px;
   padding: 15px;
   cursor: pointer;
-  margin-bottom: 20px;
-  
-}
-#next, #previous, #submit {
-  margin-bottom: 40px;
+  margin: 15px;
 }
 
 button:hover {
   background-color: #38a;
 }
 
+.buttonNav {
+  width: 300px;
+}
+
 /*divs a refaire maybe*/
 .buttonsAll {
   display: flex;
-  flex-direction: column;
+  flex-direction: column; 
 }
 
-
-.buttonsNav {
+.divButtonsNav {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
