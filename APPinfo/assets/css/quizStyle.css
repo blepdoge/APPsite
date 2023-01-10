@@ -107,14 +107,14 @@ body {
   align-items: center;
   text-align: center;
   margin-top: 20px;
-  width: 600px;
-  
+  width: 800px; 
+  height: 260px;
 }
 
 /*test!!*/
 .question {
   font-size: 30px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
 }
 
 .answers {
@@ -140,28 +140,27 @@ button {
   padding: 15px;
   cursor: pointer;
   margin: 10px;
+  width: 300px;
 }
 
 button:hover {
   background-color: #38a;
 }
 
-.buttonNav {
-  width: 300px;
-}
 
 /*divs a refaire maybe*/
 .buttonsAll {
   display: flex;
   flex-direction: column; 
-  margin-top: 25px;
+  margin-top: 22px;
+  align-items: center;
 }
 
 .divButtonsNav {
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  width: 400px;
+  width: 600px;
   padding: 10px;
 }
 /*fin*/
@@ -182,9 +181,11 @@ button:hover {
 }
 
 .quiz-container {
+  display: flex;
   position: relative;
-  height: 250px;
+  height: 260px;
   margin-top: 10px;
+  align-items: center;
   overflow:hidden;
 }
 

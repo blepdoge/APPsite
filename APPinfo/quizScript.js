@@ -1,3 +1,4 @@
+
 (function () {
 
   function buildQuiz() {
@@ -15,14 +16,14 @@
           //génère les radio boutons avec leurs lettres à côté
           answers.push(
             `<label>
-              <input type="radio" name="question${questionNumber}" value="${letter}">
+              <input type="radio" class="radioButtons" name="question${questionNumber}" value="${letter}">
               ${letter} :
               ${currentQuestion.answers[letter]}
             </label>`
           );
         }
 
-        // add this question and its answers to the output
+        //ajoute les questions avec leurs réponses à l'output
         output.push(
           `<div class="slide">
             <div class="question"> ${currentQuestion.question} </div>
@@ -32,7 +33,7 @@
       }
     );
 
-    // finally combine our output list into one string of HTML and put it on the page
+    //la liste de l'output est rassemblée en un seul string et renvoyé sur la page html
     quizContainer.innerHTML = output.join('');
   }
 
@@ -41,10 +42,9 @@
     // gather answer containers from our quiz
     const answerContainers = quizContainer.querySelectorAll('.answers');
 
-    // keep track of user's answers
+    //compteur de bonnes réponses
     let numCorrect = 0;
 
-    // for each question...
     myQuestions.forEach((currentQuestion, questionNumber) => {
 
       // find selected answer
@@ -52,9 +52,8 @@
       const selector = `input[name=question${questionNumber}]:checked`;
       const userAnswer = (answerContainer.querySelector(selector) || {}).value;
 
-      // if answer is correct
+      //vérifie si la réponse est correcte
       if (userAnswer === currentQuestion.correctAnswer) {
-        // add to the number of correct answers
         numCorrect++;
 
         //affiche les réponses en vert
@@ -67,8 +66,14 @@
       }
     });
 
-    // show number of correct answers out of total
+    //pour print le nombre de bonnes réponses
     resultsContainer.innerHTML = `${numCorrect}/${myQuestions.length} réponse(s) correcte(s)!`;
+
+    document.querySelectorAll('.radioButtons').forEach(function (element) {
+      element.setAttribute('disabled', '');
+    });
+    document.getElementById('submit').setAttribute('disabled', '');
+
   }
 
   function showSlide(n) {
@@ -99,7 +104,6 @@
     showSlide(currentSlide - 1);
   }
 
-  // Variables
   var quizContainer = document.getElementById('quiz');
   var resultsContainer = document.getElementById('results');
   const submitButton = document.getElementById('submit');
