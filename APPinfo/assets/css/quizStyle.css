@@ -86,16 +86,18 @@ body {
 .mainWrapper h1 {
   display: flex;
   text-align: center;
+  justify-content: center;
 
-  padding-left: 10px;
-  padding-right: 10px;
-  margin-top: 20px;
+  padding: 20px;
+  /*padding-left: 10px;
+  padding-right: 10px;*/
+  margin-top: 30px;
+  width: 96.5%;
 
   background-color: #444;
   color: #fff;
   font-size: 30px;
   font-weight: 300;
-  /*width:85%;*/
 }
 
 .divDisplay {
@@ -134,10 +136,10 @@ button {
   color: #fff;
 
   border: 0px;
-  border-radius: 3px;
+  border-radius: 10px;
   padding: 15px;
   cursor: pointer;
-  margin: 15px;
+  margin: 10px;
 }
 
 button:hover {
@@ -152,6 +154,7 @@ button:hover {
 .buttonsAll {
   display: flex;
   flex-direction: column; 
+  margin-top: 25px;
 }
 
 .divButtonsNav {
