@@ -314,9 +314,6 @@ footer {
 }
 
 .formajout{
-  display: flex;
-  align-items: center;
-  justify-content: center;
   position: fixed;
   top: 50%;
   left: 50%;
@@ -327,7 +324,7 @@ footer {
   background-color: rgb(0, 94, 255);
   border:none;
   color:white;
-  border-radius: 5px;
+  border-radius: 10px;
   padding: 10px;
   font-size:20px;
 }
