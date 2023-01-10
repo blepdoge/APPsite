@@ -57,18 +57,18 @@
         // add to the number of correct answers
         numCorrect++;
 
-        // color the answers green
-        answerContainers[questionNumber].style.color = 'lightgreen';
+        //affiche les réponses en vert
+        answerContainers[questionNumber].style.color = '#00cc88';
       }
-      // if answer is wrong or blank
+      //si la réponse est fausse ou si pas de réponse
       else {
-        // color the answers red
-        answerContainers[questionNumber].style.color = 'red';
+        //affiche les réponses en rouge
+        answerContainers[questionNumber].style.color = '#f30034';
       }
     });
 
     // show number of correct answers out of total
-    resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
+    resultsContainer.innerHTML = `${numCorrect}/${myQuestions.length} réponse(s) correcte(s)!`;
   }
 
   function showSlide(n) {
@@ -105,20 +105,21 @@
   const submitButton = document.getElementById('submit');
   const myQuestions = [
     {
-      question: "Who invented JavaScript?",
+      question: "Quel est le rythme cardiaque normal d'un individu en bonne santé ?",
       answers: {
-        a: "Douglas Crockford",
-        b: "Sheryl Sandberg",
-        c: "Brendan Eich"
+        a: "60 à 100 battements par minute",
+        b: "100 à 140 battements par minute",
+        c: "140 à 180 battements par minute",
+        d: "180 à 220 battements par minute"
       },
-      correctAnswer: "c"
+      correctAnswer: "a"
     },
     {
-      question: "Which one of these is a JavaScript package manager?",
+      question: "Parmi ces températures, laquelle est la plus idéale pour travailler dans un laboratoire ?",
       answers: {
-        a: "Node.js",
-        b: "TypeScript",
-        c: "npm"
+        a: "23°C",
+        b: "17°C",
+        c: "19°C"
       },
       correctAnswer: "c"
     },
