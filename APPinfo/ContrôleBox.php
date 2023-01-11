@@ -85,12 +85,12 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 <div id="popup" class="popup" style="display:none;">
   <iframe id="graphframe" frameborder="0"></iframe>
   <div class=annul style="right:150px;">
-    <button onclick="hidePopup(), history.go(0)"> 
+    <button onclick="hidePopup(), history.go(0)" class="btnpopup"> 
       Terminé
     </button>
   </div>
   <div class=annul>
-    <button onclick="hidePopup(), href='ContrôleBox.php'"> Annuler
+    <button onclick="hidePopup(), href='ContrôleBox.php'" class="btnpopup"> Annuler
     </button>
   </div>
 </div>
@@ -145,7 +145,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
   <div class="container">
     <div style="width:fitcontent">
     <button class="plus" onclick="showPopup('AjoutBox.php')">
-      <h1>+</h1>
+      <h1 style="margin:0px">+</h1>
     </button>
     </div>
   </div>
