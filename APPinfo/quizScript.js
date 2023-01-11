@@ -57,12 +57,12 @@
         numCorrect++;
 
         //affiche les réponses en vert
-        answerContainers[questionNumber].style.color = '#00cc88';
+        answerContainers[questionNumber].style.color = '#2ea797';
       }
       //si la réponse est fausse ou si pas de réponse
       else {
         //affiche les réponses en rouge
-        answerContainers[questionNumber].style.color = '#f30034';
+        answerContainers[questionNumber].style.color = '#d91536';
       }
     });
 

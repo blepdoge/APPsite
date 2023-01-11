@@ -1,21 +1,32 @@
+<?php
+// Initialize the session
+session_start();
+
+// Check if the user is logged in, if not then redirect him to login page
+if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
+  header("location: pageLogin.php");
+  exit;
+}
+?>
+
 <!DOCTYPE html>
 <html>
   <head>
     <title>Ajouter un nouvel utilisateur</title>
-    <link rel="stylesheet" href="assets/css/AddUser.css" />
+    <link rel="stylesheet" href="assets/css/User.css" />
     <meta charset="utf-8" />
   </head>
 
   <body>
     <p class="titre">Ajouter un nouvel utilisateur</p>
 
-    <form method="post" action="traitement.php">
+    <form method="post" action="TraitementAddUser.php">
       <div class="adduserwrapper">
         <input
           class="prenom"
           type="text"
-          name="prénom"
-          id="prénom"
+          name="prenom"
+          id="prenom"
           placeholder="Prénom"
           required
           size="30"
@@ -32,11 +43,11 @@
           maxlength="30"
         />
         <input
-          class="nomlab"
+          class="idlaboratoire"
           type="text"
-          name="nom du laboratoire"
-          id="nomlaboratoire"
-          placeholder="Nom du laboratoire"
+          name="idlaboratoire"
+          id="idlaboratoire"
+          placeholder="ID du laboratoire"
           required
           size="30"
           maxlength="30"
@@ -44,22 +55,12 @@
         <input
           class="email"
           type="email"
-          name="e-mail"
+          name="email"
           id="email"
           placeholder="E-mail"
           required
           size="30"
           maxlength="75"
-        />
-        <input
-          class="numtel"
-          type="text"
-          name="numéro de téléphone"
-          id="numtelephone"
-          placeholder="Numéro de téléphone"
-          required
-          size="30"
-          maxlength="10"
         />
         <input
           class="adresse"
@@ -82,15 +83,15 @@
         <select
           class="statut"
           name="statut"
-          id="Statut"
-          value="Choisir le statut"
+          id="statut"
+          value="statut"
           required
         >
           <option>Choisir le statut</option>
           <option value="Administrateur">Administrateur</option>
           <option value="Utilisateur">Utilisateur</option>
         </select>
-        <input class="confirmer" type="submit" value="Confirmer" />
+        <input type="submit"class="confirmer" type="submit" value="Ajouter  " />
       </div>
     </form>
   </body>
