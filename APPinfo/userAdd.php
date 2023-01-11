@@ -91,7 +91,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
           <option value="Administrateur">Administrateur</option>
           <option value="Utilisateur">Utilisateur</option>
         </select>
-        <input type="submit"class="confirmer" type="submit" value="submit" />
+        <input type="submit"class="confirmer" type="submit" value="Ajouter  " />
       </div>
     </form>
   </body>
