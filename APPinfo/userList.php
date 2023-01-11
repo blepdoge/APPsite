@@ -21,7 +21,8 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 
 <header>
   <div class="sideheader">
-    <a href="pageAccueil.html"><img class="logotop" src="assets/images/logosorsen_crop.png" width="60" height="60" /></a>
+    <a href="pageAccueil.html"><img class="logotop" src="assets/images/logosorsen_crop.png" width="60"
+        height="60" /></a>
 
     <div class="textelogo">
       <p style="margin: 18px">SORSEN</p>
@@ -70,7 +71,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 
 <body style="margin:0">
 
-<div id="popup" class="popup" style="display:none;">
+  <div id="popup" class="popup" style="display:none;">
     <iframe id="graphframe" frameborder="0"></iframe>
   </div>
 
@@ -78,20 +79,20 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
   <div id="overlay" class="overlay" style="display:none;"></div>
 
   <div class="conteneur">
-  <p class="returnp">
+    <p class="returnp">
       <button class="return" onclick="rtn()">Retourner</button>
       <script>
-      function rtn() {
-        window.history.back();
-      }
-    </script> 
+        function rtn() {
+          window.history.back();
+        }
+      </script>
     </p>
     <div id="search-bar-box">
       <form action="" id="searchform">
         <input id="input" type="text" name="userSearchBar" placeholder="Chercher un utilisateur">
         <button type="submit" id="searchUser" name="searchUser">Chercher</button>
         <div class="graphe" onclick="showPopup('userAdd.php')">
-        <img class="disablednotadmin" src="assets/images/ajouter.png" alt="addUser" width="30" height="30" />
+          <img class="disablednotadmin" src="assets/images/ajouter.png" alt="addUser" width="30" height="30" />
         </div>
       </form>
     </div>
@@ -101,7 +102,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 
     <?php
     require "getusersfromdb.php"
-    ?>
+      ?>
 
   </div>
 
@@ -152,7 +153,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 
 </body>
 <!--Bas de page-->
-<footer>
+<footer id="footer">
   <img class="logobottom" src="assets/images/SorsenFull.png" width="100" height="90" />
 
   <div class="infoFooterContainer">
@@ -174,15 +175,25 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
   </div>
 
   <div class="newsletterContainer">
-      <form id="newsletterForm">
-        <!--ici link le code phph pour s'abonner a la newsletter-->
-        <div id="result"></div>
-        <p>Abonnez-vous à notre newsletter ! <br /></p>
-        <input type="email" id="email" placeholder="Adresse mail" name="email" required />
-        <input type="submit" name="submitemail" value="S'abonner" />
-      </form>
-    </div>
-    
-    <!-- Display the result of the AJAX request -->
-    <script src="newsletterlink.js"></script>
+    <form id="newsletterForm">
+      <!--ici link le code phph pour s'abonner a la newsletter-->
+      <div id="result"></div>
+      <p>Abonnez-vous à notre newsletter ! <br /></p>
+      <input type="email" id="email" placeholder="Adresse mail" name="email" required />
+      <input type="submit" name="submitemail" value="S'abonner" />
+    </form>
+  </div>
+
+  <!-- Display the result of the AJAX request -->
+  <script src="newsletterlink.js"></script>
+<script>
+var table = document.getElementById("tableresultats");
+    var nbLignesTable = table.tBodies[0].rows.length;
+
+    if (nbLignesTable > 6) {
+      var footer = document.getElementById("footer");
+      footer.style.position = "relative";
+    }
+</script>
+
 </footer>

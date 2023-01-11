@@ -28,7 +28,7 @@ if ($resultSearch->num_rows == 0) {
 } else {
   // on loop a travers tous les rangées renvoyées par sql et on fait des divs a chaque fois, avec le nom de la box
 
-  echo '<table>';
+  echo '<table id="tableresultats">';
   while ($user = mysqli_fetch_assoc($resultSearch)) {
 
     if ($user["adminPerm"] == 1) {
