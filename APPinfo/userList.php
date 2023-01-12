@@ -168,7 +168,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 
   <div class="infoFooterContainer">
     <ul class="navlien">
-      <li><a href="#">CGU</a></li>
+      <li><a href="CGU.html">CGU</a></li>
       <li><a href="#">Partenaires</a></li>
       <li><a href="mailto:contactsorsen@sorsen.fr">Nous contacter</a></li>
     </ul>
