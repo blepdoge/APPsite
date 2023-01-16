@@ -17,10 +17,10 @@ let titres = new Array(
     const btn = document.getElementById(titres[i]);
     
     btn.onclick = function () {
-      if (targetDiv.style.display !== "none") {
-        targetDiv.style.display = "none";
-      } else {
+      if (!targetDiv.style.display || targetDiv.style.display == "none") {
         targetDiv.style.display = "block";
+      } else {
+        targetDiv.style.display = "none";
       }
     };
   }
