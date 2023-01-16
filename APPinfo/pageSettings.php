@@ -173,11 +173,7 @@ mysqli_close($link);
             <p></p>
 
             <input type="submit" value="Sauvegarder" />
-            <button onclick="rtn()">Retourner</button>
-            <script>
-            function rtn() {
-              window.history.back();
-            } 
+
 </script>
           </div>
         </div>
