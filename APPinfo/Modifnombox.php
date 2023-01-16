@@ -43,6 +43,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
         // Close connection
         mysqli_close($link);
         
+
       }
       
   ?>
@@ -51,6 +52,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     <h3>Si vous avez acheté une nouvelle Box, nous vous remercions, et vous prions de bien vouloir lui donner un nom.</h3>
     <h3>En cliquant sur confirmer, vous l'ajouterez à votre écran.</h3>
   </div>
+
 
 
   <div class=formajout>

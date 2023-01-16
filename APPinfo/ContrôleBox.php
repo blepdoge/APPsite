@@ -124,11 +124,11 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     while ($row = mysqli_fetch_assoc($result)) {
       echo '<div class="box">
       <img src="assets/images/rondvert.png" alt="icône" style="width:20px;height:20px;float:left;">
-      <img class="disablednotadmin Modifnom" src="assets/images/stylo.png" alt="icône" style="width:20px;height:20px;float:right;">
+      <img class="disablednotadmin Modifnom" src="assets/images/stylo.png" alt="icône" style="width:20px;height:20px;float:right; onclick="showPopup("Modifnombox.php")">
       <br>
       <a href="pageGraphes.php?currentBoxID=' . urlencode($row['nomBox']) . '">
       <img src="assets/images/imagebox.png" alt="image" style="width:170px;">
-      <p>' . $row['nomBox'] . '</p>
+      <p class="titrebox">' . $row['nomBox'] . '</p>
       </a>
       </div>';
     }
@@ -200,9 +200,10 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 
     // Ecouter pour des clicks sur le partie sombre pour sortir de la popup
     document.getElementById("overlay").addEventListener("click", hidePopup);
-    document.querySelectorAll('.Modifnom').forEach(function (element) {
-        element.setAttribute('onclick', 'showPopup("popupetat.html")');
-    });
+    //const titrebox=
+    //document.querySelectorAll('.Modifnom').forEach(function (element) {
+    //    element.setAttribute('onclick', "showPopup("popupetat.php?currentBoxID=' . <?php echo urlencode($row['nomBox'])?> . '")");
+    //});
   </script>
 </body>
 
