@@ -181,6 +181,8 @@ footer {
     background-color: rgb(219, 219, 219);
     margin-right:10px;
     display:block;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
 }
 
 

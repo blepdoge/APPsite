@@ -61,7 +61,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             // stockage des données user dans les variables session
                             $_SESSION["loggedin"] = true;
                             $_SESSION["id"] = $id;
-                            $_SESSION["email"] = $username;
+                            $_SESSION["emailUser"] = $username;
                             $_SESSION["nomUser"] = $nomUser; 
                             $_SESSION["prenomUser"] = $prenomUser; 
                             $_SESSION["adresseUser"] = $adresseUser; 
@@ -170,7 +170,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     <div class="infoFooterContainer">
       <ul class="navlien">
-        <li><a href="#">CGU</a></li>
+        <li><a href="CGU.html">CGU</a></li>
         <li><a href="#">Partenaires</a></li>
         <li><a href="mailto:contactsorsen@sorsen.fr">Nous contacter</a></li>
       </ul>

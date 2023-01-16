@@ -1,8 +1,8 @@
 // Get a reference to the form element
-const form = document.getElementById("newsletterForm");
+const formnsl = document.getElementById("newsletterForm");
 
 // Add an event listener for the submit event
-form.addEventListener("submit", (event) => {
+formnsl.addEventListener("submit", (event) => {
   // Prevent the default form submission behavior
   event.preventDefault();
 

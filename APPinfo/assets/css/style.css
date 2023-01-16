@@ -305,7 +305,6 @@ footer {
   background-color: rgb(102, 102, 102);
   width:47px;
   height:47px;
-  text-align: center;
   color:rgb(0, 94, 255);
 }
 
@@ -315,12 +314,41 @@ footer {
 
 .formajout{
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column;
+  text-align: center;
   position: fixed;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -50%);
+  transform: translate(-50%, -25%);
+  font-size:large;
+}
+
+.invalid-feedback{
+  color:red;
+}
+
+.inpnouvbox{
+  width : 300px;
+  font-size:large;
+  border-color: grey;
+  border-width: 4px;
+  border-radius:15px;
+  color: #0764a3;
+  margin-top: 15px;
+  line-height: 25px;
+  text-align: center;
+}
+
+.btnpopup{
+  background-color: rgb(0, 94, 255);
+  border:none;
+  color:white;
+  border-radius: 10px;
+  padding: 10px;
+  font-size:20px;
+  margin-top: 15px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .annul{

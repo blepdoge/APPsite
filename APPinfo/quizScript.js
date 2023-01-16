@@ -1,30 +1,29 @@
+
 (function () {
-  // Functions
+
   function buildQuiz() {
-    // variable to store the HTML output
+    //variable pour stocker ce qui sera renvoyé au HTML
     const output = [];
 
-    // for each question...
     myQuestions.forEach(
       (currentQuestion, questionNumber) => {
 
-        // variable to store the list of possible answers
+        //variable pour stocker la liste des réponses
         const answers = [];
 
-        // and for each available answer...
         for (letter in currentQuestion.answers) {
 
-          // ...add an HTML radio button
+          //génère les radio boutons avec leurs lettres à côté
           answers.push(
             `<label>
-              <input type="radio" name="question${questionNumber}" value="${letter}">
+              <input type="radio" class="radioButtons" name="question${questionNumber}" value="${letter}">
               ${letter} :
               ${currentQuestion.answers[letter]}
             </label>`
           );
         }
 
-        // add this question and its answers to the output
+        //ajoute les questions avec leurs réponses à l'output
         output.push(
           `<div class="slide">
             <div class="question"> ${currentQuestion.question} </div>
@@ -34,7 +33,7 @@
       }
     );
 
-    // finally combine our output list into one string of HTML and put it on the page
+    //la liste de l'output est rassemblée en un seul string et renvoyé sur la page html
     quizContainer.innerHTML = output.join('');
   }
 
@@ -43,10 +42,9 @@
     // gather answer containers from our quiz
     const answerContainers = quizContainer.querySelectorAll('.answers');
 
-    // keep track of user's answers
+    //compteur de bonnes réponses
     let numCorrect = 0;
 
-    // for each question...
     myQuestions.forEach((currentQuestion, questionNumber) => {
 
       // find selected answer
@@ -54,23 +52,28 @@
       const selector = `input[name=question${questionNumber}]:checked`;
       const userAnswer = (answerContainer.querySelector(selector) || {}).value;
 
-      // if answer is correct
+      //vérifie si la réponse est correcte
       if (userAnswer === currentQuestion.correctAnswer) {
-        // add to the number of correct answers
         numCorrect++;
 
-        // color the answers green
-        answerContainers[questionNumber].style.color = 'lightgreen';
+        //affiche les réponses en vert
+        answerContainers[questionNumber].style.color = '#2ea797';
       }
-      // if answer is wrong or blank
+      //si la réponse est fausse ou si pas de réponse
       else {
-        // color the answers red
-        answerContainers[questionNumber].style.color = 'red';
+        //affiche les réponses en rouge
+        answerContainers[questionNumber].style.color = '#d91536';
       }
     });
 
-    // show number of correct answers out of total
-    resultsContainer.innerHTML = `${numCorrect} out of ${myQuestions.length}`;
+    //pour print le nombre de bonnes réponses
+    resultsContainer.innerHTML = `${numCorrect}/${myQuestions.length} réponse(s) correcte(s)!`;
+
+    document.querySelectorAll('.radioButtons').forEach(function (element) {
+      element.setAttribute('disabled', '');
+    });
+    document.getElementById('submit').setAttribute('disabled', '');
+
   }
 
   function showSlide(n) {
@@ -101,38 +104,59 @@
     showSlide(currentSlide - 1);
   }
 
-  // Variables
-  const quizContainer = document.getElementById('quiz');
-  const resultsContainer = document.getElementById('results');
+  var quizContainer = document.getElementById('quiz');
+  var resultsContainer = document.getElementById('results');
   const submitButton = document.getElementById('submit');
   const myQuestions = [
     {
-      question: "Who invented JavaScript?",
+      question: "Quel est le rythme cardiaque normal d'un individu en bonne santé ?",
       answers: {
-        a: "Douglas Crockford",
-        b: "Sheryl Sandberg",
-        c: "Brendan Eich"
+        a: "60 à 100 battements par minute",
+        b: "100 à 140 battements par minute",
+        c: "140 à 180 battements par minute",
+        d: "180 à 220 battements par minute"
+      },
+      correctAnswer: "a"
+    },
+    {
+      question: "Parmi ces températures, laquelle est la plus idéale pour travailler dans un laboratoire ?",
+      answers: {
+        a: "23°C",
+        b: "17°C",
+        c: "19°C",
+        d: "25°C"
       },
       correctAnswer: "c"
     },
     {
-      question: "Which one of these is a JavaScript package manager?",
+      question: "Quel danger est représenté par le symbole de la tête de mort et les os en croix ?",
       answers: {
-        a: "Node.js",
-        b: "TypeScript",
-        c: "npm"
-      },
-      correctAnswer: "c"
-    },
-    {
-      question: "Which tool can you use to ensure code quality?",
-      answers: {
-        a: "Angular",
-        b: "jQuery",
-        c: "RequireJS",
-        d: "ESLint"
+        a: "Matériau de haute toxicité",
+        b: "Risque corrosifs et irritation de la peau",
+        c: "Nociveté pour l'environnement",
+        d: "Risque de mort ou d'empoisement"
       },
       correctAnswer: "d"
+    },
+    {
+      question: "Où ne devez-vous jamais utiliser ou laisser des matériaux inflammables ?",
+      answers: {
+        a: "Une source de chaleur",
+        b: "Une porte ouverte",
+        c: "Un évier",
+        d: "Dans une réserve"
+      },
+      correctAnswer: "a"
+    },
+    {
+      question: "L'utilisation d'une hotte contribue à vous protéger contre lequel de ces facteurs ?",
+      answers: {
+        a: "Une explosion due à la chaleur",
+        b: "Les substances volatiles toxiques",
+        c: "Une infection bacterielle",
+        d: "Une infection virale"
+      },
+      correctAnswer: "b"
     }
   ];
 

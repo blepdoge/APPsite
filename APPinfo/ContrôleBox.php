@@ -85,12 +85,12 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 <div id="popup" class="popup" style="display:none;">
   <iframe id="graphframe" frameborder="0"></iframe>
   <div class=annul style="right:150px;">
-    <button onclick="hidePopup(), history.go(0)"> 
+    <button onclick="hidePopup(), history.go(0)" class="btnpopup"> 
       Terminé
     </button>
   </div>
   <div class=annul>
-    <button onclick="hidePopup(), href='ContrôleBox.php'"> Annuler
+    <button onclick="hidePopup(), href='ContrôleBox.php'" class="btnpopup"> Annuler
     </button>
   </div>
 </div>
@@ -124,11 +124,11 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     while ($row = mysqli_fetch_assoc($result)) {
       echo '<div class="box">
       <img src="assets/images/rondvert.png" alt="icône" style="width:20px;height:20px;float:left;">
-      <img id="Modifnom" class="disablednotadmin" src="assets/images/stylo.png" alt="icône" style="width:20px;height:20px;float:right">
+      <img class="disablednotadmin Modifnom" src="assets/images/stylo.png" alt="icône" style="width:20px;height:20px;float:right; onclick="showPopup("Modifnombox.php")">
       <br>
       <a href="pageGraphes.php?currentBoxID=' . urlencode($row['nomBox']) . '">
       <img src="assets/images/imagebox.png" alt="image" style="width:170px;">
-      <p>' . $row['nomBox'] . '</p>
+      <p class="titrebox">' . $row['nomBox'] . '</p>
       </a>
       </div>';
     }
@@ -138,22 +138,20 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 
     ?>
 
-    
-
   </div>
-
+  
+  <div >
   <div class="container">
     <div style="width:fitcontent">
-    <button class="plus" onclick="showPopup('AjoutBox.php')">
-      <h1>+</h1>
+    <button class="disablednotadmin plus" onclick="showPopup('AjoutBox.php')">
+      <h1 style="margin:0px">+</h1>
     </button>
     </div>
   </div>
+  </div>
 
   <br>
   <br>
-
-
 
   <script>
     // recupere la variable php des permissions
@@ -198,7 +196,6 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 
     // Ecouter pour des clicks sur le partie sombre pour sortir de la popup
     document.getElementById("overlay").addEventListener("click", hidePopup);
-    document.getElementById("Modifnom").addEventListener("click", showPopup('Modifnombox.php?currentBoxID=' . urlencode($row['nomBox']) . ''));
   </script>
 </body>
 
@@ -217,7 +214,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 
   <div class="infoFooterContainer">
     <ul class="navlien">
-      <li><a href="#">CGU</a></li>
+      <li><a href="CGU.html">CGU</a></li>
       <li><a href="#">Partenaires</a></li>
       <li><a href="mailto:contactsorsen@sorsen.fr">Nous contacter</a></li>
     </ul>

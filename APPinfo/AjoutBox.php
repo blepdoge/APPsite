@@ -54,22 +54,12 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
   </div>
 
 
-
-  <div class=formajout>
-    <form action= "<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+    <form action= "<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post" class=formajout>
       Nom de la Box:
-      <input type="text" name="nomBox">
-      <span class="invalid-feedback" style="color:red"><?php echo $nomBox_err; ?></span>
-      <input type="submit" value="Confirmer">
+      <input type="text" name="nomBox" class="inpnouvbox" />
+      <span class="invalid-feedback"><?php echo $nomBox_err; ?></span>
+      <input type="submit" value="Confirmer" class="btnpopup" />
     </form>
-  </div>
-
-  
-
-
-
-
-
 
 
 

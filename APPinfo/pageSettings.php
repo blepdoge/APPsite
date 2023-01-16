@@ -147,7 +147,7 @@ mysqli_close($link);
               <input type="text" placeholder="Prénom"
                 value="<?php echo htmlspecialchars($_SESSION["prenomUser"]); ?>" name="prenom" id="prenom"/>
               <input type="email" placeholder="Adresse E-mail"
-                value="<?php echo htmlspecialchars($_SESSION["email"]); ?>" name="email" id="email"/>
+                value="<?php echo htmlspecialchars($_SESSION["emailUser"]); ?>" name="email" id="email"/>
               <input type="text" placeholder="Adresse"
                 value="<?php echo htmlspecialchars($_SESSION["adresseUser"]); ?>" name="adresse" id="adresse"/>
               <input type="text" class="disablednotadmin" placeholder="Permission" disabled value="<?php if ($_SESSION["adminPerm"] == 1) {
@@ -214,7 +214,7 @@ mysqli_close($link);
 
   <div class="infoFooterContainer">
     <ul class="navlien">
-      <li><a href="#">CGU</a></li>
+      <li><a href="CGU.html">CGU</a></li>
       <li><a href="#">Partenaires</a></li>
       <li><a href="mailto:contactsorsen@sorsen.fr">Nous contacter</a></li>
     </ul>
