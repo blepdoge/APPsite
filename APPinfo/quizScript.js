@@ -123,19 +123,40 @@
       answers: {
         a: "23°C",
         b: "17°C",
-        c: "19°C"
+        c: "19°C",
+        d: "25°C"
       },
       correctAnswer: "c"
     },
     {
-      question: "Which tool can you use to ensure code quality?",
+      question: "Quel danger est représenté par le symbole de la tête de mort et les os en croix ?",
       answers: {
-        a: "Angular",
-        b: "jQuery",
-        c: "RequireJS",
-        d: "ESLint"
+        a: "Matériau de haute toxicité",
+        b: "Risque corrosifs et irritation de la peau",
+        c: "Nociveté pour l'environnement",
+        d: "Risque de mort ou d'empoisement"
       },
       correctAnswer: "d"
+    },
+    {
+      question: "Où ne devez-vous jamais utiliser ou laisser des matériaux inflammables ?",
+      answers: {
+        a: "Une source de chaleur",
+        b: "Une porte ouverte",
+        c: "Un évier",
+        d: "Dans une réserve"
+      },
+      correctAnswer: "a"
+    },
+    {
+      question: "L'utilisation d'une hotte contribue à vous protéger contre lequel de ces facteurs ?",
+      answers: {
+        a: "Une explosion due à la chaleur",
+        b: "Les substances volatiles toxiques",
+        c: "Une infection bacterielle",
+        d: "Une infection virale"
+      },
+      correctAnswer: "b"
     }
   ];
 
