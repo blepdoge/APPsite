@@ -13,7 +13,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 <html>
 
 <head>
-  <title>LabBox1</title>
+  <title>Données LabBox</title>
   <link rel="stylesheet" href="assets/css/PageDesGraphesStyle.css">
   <meta charset="utf-8" />
 </head>
