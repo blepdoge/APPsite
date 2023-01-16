@@ -23,6 +23,7 @@ if (isset($_POST['prenom'])) {
     $email = mysqli_real_escape_string($conn, $_POST['email']);
     $adresse = mysqli_real_escape_string($conn, $_POST['adresse']);
     $password1 = mysqli_real_escape_string($conn, $_POST['password']);
+    $passwordhash = password_hash($password1, PASSWORD_DEFAULT);
 
     if ($_POST['statut'] == 'Administrateur') {
         $statut = 1;
@@ -36,7 +37,7 @@ if (isset($_POST['prenom'])) {
         echo 'Erreur: Cet utilisateur existe déjà';
     } else {
         // Inserer l'utilisatur dans la base de données
-        $sql = "INSERT INTO users (idusers, nom, prenom, adresse, email, adminPerm, password, laboratoires_idlaboratoires) VALUES (0, '$nom', '$prenom', '$adresse', '$email', '$statut', '$password1', '$idlaboratoire')";
+        $sql = "INSERT INTO users (idusers, nom, prenom, adresse, email, adminPerm, password, laboratoires_idlaboratoires) VALUES (0, '$nom', '$prenom', '$adresse', '$email', '$statut', '$passwordhash', '$idlaboratoire')";
         if ($conn->query($sql) === TRUE) {
             echo '<div class="centrer"><h1> Utilisateur ajouté </h1></div>';
         } else {
