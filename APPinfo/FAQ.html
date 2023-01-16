@@ -52,11 +52,7 @@
               secondes.
             </p>
           </div>
-          <div class="espace-client">
-            <p>Espace client</p>
-            <textarea></textarea>
-            <input type="submit" value="Envoyer" />
-          </div>
+          
         </div>
       </div>
 
@@ -74,11 +70,7 @@
               à droite de l'écran.
             </p>
           </div>
-          <div class="espace-client">
-            <p>Espace client</p>
-            <textarea></textarea>
-            <input type="submit" value="Envoyer" />
-          </div>
+          
         </div>
       </div>
 
@@ -101,11 +93,7 @@
               l'importance d'une vie humaine par rapport au prix d'une LabBox.
             </p>
           </div>
-          <div class="espace-client">
-            <p>Espace client</p>
-            <textarea></textarea>
-            <input type="submit" value="Envoyer" />
-          </div>
+          
         </div>
       </div>
 
@@ -125,11 +113,7 @@
               critique sera atteinte.
             </p>
           </div>
-          <div class="espace-client">
-            <p>Espace client</p>
-            <textarea></textarea>
-            <input type="submit" value="Envoyer" />
-          </div>
+          
         </div>
       </div>
 
@@ -147,43 +131,12 @@
               équipes.
             </p>
           </div>
-          <div class="espace-client">
-            <p>Espace client</p>
-            <textarea></textarea>
-            <input type="submit" value="Envoyer" />
-          </div>
+          
         </div>
       </div>
     </div>
 
-    <script>
-      let titres = new Array(
-        "titre-question1",
-        "titre-question2",
-        "titre-question3",
-        "titre-question4",
-        "titre-question5"
-      );
-      let reponses = new Array(
-        "dropdown-content1",
-        "dropdown-content2",
-        "dropdown-content3",
-        "dropdown-content4",
-        "dropdown-content5"
-      );
-      for (var i = 0; i < titres.length; i++) {
-        const targetDiv = document.getElementById(reponses[i]);
-        const btn = document.getElementById(titres[i]);
-        
-        btn.onclick = function () {
-          if (targetDiv.style.display !== "none") {
-            targetDiv.style.display = "none";
-          } else {
-            targetDiv.style.display = "block";
-          }
-        };
-      }
-    </script>
+    <script src="FaqDisplayScript.js"> //anime les divs</script>
   </body>
 
   <footer>
