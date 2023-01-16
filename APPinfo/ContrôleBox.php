@@ -138,8 +138,6 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 
     ?>
 
-    
-
   </div>
   
   <div >
@@ -154,8 +152,6 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 
   <br>
   <br>
-
-
 
   <script>
     // recupere la variable php des permissions
@@ -200,10 +196,6 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 
     // Ecouter pour des clicks sur le partie sombre pour sortir de la popup
     document.getElementById("overlay").addEventListener("click", hidePopup);
-    //const titrebox=
-    //document.querySelectorAll('.Modifnom').forEach(function (element) {
-    //    element.setAttribute('onclick', "showPopup("popupetat.php?currentBoxID=' . <?php echo urlencode($row['nomBox'])?> . '")");
-    //});
   </script>
 </body>
 

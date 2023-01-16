@@ -7,18 +7,16 @@
 
 <body>
     <div class="titre">
-
+    <h1 id="titre">
+    </h1>
     <?php
 
     // Connexion a notre bdd
     require_once "config.php";
 
-    $nomBox = urldecode($_GET["currentBoxId"]);
-    echo '<h1 onclick="showPopup("AjoutBox.php")">'.$nomBox.'et blablabla</h1>';
-
     // faire la requete sql en fonction du labo de la session actuelle
     $query = "SELECT LocalIP FROM labboxtable WHERE nomBox =" . $nomBox;
-    $adesseIP = mysqli_query($link, $query);
+    $adresseIP = mysqli_query($link, $query);
 
     // fermer bdd
     mysqli_close($link);
@@ -75,6 +73,24 @@
             // Ecouter pour des clicks sur le partie sombre pour sortir de la popup
             document.getElementById("overlay").addEventListener("click", hidePopup);
           </script>
+
+
+            <script>
+            function getParamValue(paramName)
+            {
+                var url = window.location.search.substring(1); //get rid of "?" in querystring
+                var qArray = url.split('&'); //get key-value pairs
+                for (var i = 0; i < qArray.length; i++) 
+                {
+                    var pArr = qArray[i].split('='); //split key and value
+                    if (pArr[0] == paramName) 
+                        return pArr[1]; //return value
+                }
+            }
+            var param1 = getParamValue('currentBoxID');
+            document.getElementById("titre").innerHTML = param1;
+            </script>
+
     </div>    
 </body> 
 </html>   
