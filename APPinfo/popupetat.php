@@ -14,9 +14,16 @@
     // Connexion a notre bdd
     require_once "config.php";
 
+    $nomBox = urldecode($_GET["currentBoxID"]);
+    echo '<form method="POST" action="Modifnombox.php">
+    <input type="text" value="'.$nomBox.'" id="nomLabBox" name="boxNameChanged"></input>
+    <input type="submit" value="Modifier le nom de la box"></input>
+    </form>';
+
     // faire la requete sql en fonction du labo de la session actuelle
-    $query = "SELECT LocalIP FROM labboxtable WHERE nomBox =" . $nomBox;
-    $adresseIP = mysqli_query($link, $query);
+    $query = "SELECT LocalIP FROM labboxtable WHERE nomBox ='" . $nomBox . "'";
+    $resultatquery = mysqli_query($link, $query);
+    $adresseIP = mysqli_fetch_array($resultatquery)[0];
 
     // fermer bdd
     mysqli_close($link);
@@ -75,21 +82,7 @@
           </script>
 
 
-            <script>
-            function getParamValue(paramName)
-            {
-                var url = window.location.search.substring(1); //get rid of "?" in querystring
-                var qArray = url.split('&'); //get key-value pairs
-                for (var i = 0; i < qArray.length; i++) 
-                {
-                    var pArr = qArray[i].split('='); //split key and value
-                    if (pArr[0] == paramName) 
-                        return pArr[1]; //return value
-                }
-            }
-            var param1 = getParamValue('currentBoxID');
-            document.getElementById("titre").innerHTML = param1;
-            </script>
+            
 
     </div>    
 </body> 

@@ -8,8 +8,6 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
   exit;
 }
 ?>
-
-
 <!DOCTYPE html>
 <html>
 
@@ -124,7 +122,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     while ($row = mysqli_fetch_assoc($result)) {
       echo '<div class="box">
       <img src="assets/images/rondvert.png" alt="icône" style="width:20px;height:20px;float:left;">
-      <img class="disablednotadmin Modifnom" src="assets/images/stylo.png" alt="icône" style="width:20px;height:20px;float:right; onclick="showPopup("Modifnombox.php")">
+      <img class="disablednotadmin Modifnom" onclick=showPopup("popupetat.php?currentBoxID='.urlencode($row['nomBox']).'") src="assets/images/stylo.png" alt="icône" style="width:20px;height:20px;float:right; onclick="showPopup("Modifnombox.php")">
       <br>
       <a href="pageGraphes.php?currentBoxID=' . urlencode($row['nomBox']) . '">
       <img src="assets/images/imagebox.png" alt="image" style="width:170px;">
