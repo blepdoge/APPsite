@@ -6,23 +6,27 @@ require_once "config.php";
 $nomBox = "";
 $nomBox_err = "";
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+//traitement du form
+if (isset($_POST["boxNameChanged"])) {
 
+  $nomBox = urldecode($_GET["nombox"]);
+        
   if (empty(trim($_POST["boxNameChanged"]))) {
     $nomBox_err = "Vous n'avez pas entré de nom";
   } else {
-    $nomBox = mysqli_real_escape_string($link, trim($_POST["boxNameChanged"]));
+    $newnomBox = htmlspecialchars(trim($_POST["boxNameChanged"]));
   }
 
   if (empty($nomBox_err)) {
     // Ajouter le nom de la box dans la base de données
-    $query = "UPDATE labboxtable SET nombox = '$nomBox' WHERE nombox = '$nomBox' AND laboratoires_idlaboratoires = ".$_SESSION['idLabo'];
-    mysqli_query($link, $query);
+    $query1 = "UPDATE labboxtable SET nombox = '$newnomBox' WHERE nombox = '$nomBox' AND laboratoires_idlaboratoires = ".$_SESSION['idLabo'];
+    mysqli_query($link, $query1);
   }
 
   // Close connection
   mysqli_close($link);
 
 }
+ 
 
 ?>

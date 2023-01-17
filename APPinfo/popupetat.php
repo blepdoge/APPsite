@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -14,11 +16,19 @@
     // Connexion a notre bdd
     require_once "config.php";
 
+    $newnomBox = "";
+    $nomBox_err = "";
+
+    //form pour changer le nom
     $nomBox = urldecode($_GET["currentBoxID"]);
-    echo '<form method="POST" action="Modifnombox.php">
+    
+    echo '<form method="POST" action="Modifnombox.php?nombox="'.$nomBox.'">
     <input type="text" value="'.$nomBox.'" id="nomLabBox" name="boxNameChanged"></input>
-    <input type="submit" value="Modifier le nom de la box"></input>
+    <input type="submit" value="Modifier le nom de la box"></input> 
     </form>';
+    echo $nomBox_err;
+
+     
 
     // faire la requete sql en fonction du labo de la session actuelle
     $query = "SELECT LocalIP FROM labboxtable WHERE nomBox ='" . $nomBox . "'";
