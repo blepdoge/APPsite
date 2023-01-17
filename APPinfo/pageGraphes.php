@@ -83,7 +83,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
   function display_ct() {
     var x = new Date();
     //on remplit avec des zéros si ca fait pas la bonne taille!
-    var x1 = String(x.getDate()).padStart(2,"0") + "/" + String((x.getMonth() + 1)).padStart(2,"0") + "/" + x.getFullYear();
+    var x1 = String(x.getDate()).padStart(2, "0") + "/" + String((x.getMonth() + 1)).padStart(2, "0") + "/" + x.getFullYear();
     x1 = x1 + " - " + String(x.getHours()).padStart(2, "0") + ":" + String(x.getMinutes()).padStart(2, "0") + ":" + String(x.getSeconds()).padStart(2, "0");
     document.getElementById('horloge').innerHTML = x1;
     display_c();
@@ -97,14 +97,13 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     </h1>
   </div>
 
-    <button class="return" onclick="rtn()">Retourner</button>
-    <script>
+  <button class="return" onclick="rtn()">Retourner</button>
+  <script>
     function rtn() {
-    window.history.back();
+      window.history.back();
     }
-    </script>
-    
- 
+  </script>
+
 
   <div class="trombone">
     <p id="horloge">
@@ -113,7 +112,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 
 
   <div id="popup" class="popup" style="display:none;">
-    <iframe id="graphframe" frameborder="0" ></iframe>
+    <iframe id="graphframe" frameborder="0"></iframe>
   </div>
 
   <!-- Add the overlay div -->
@@ -126,7 +125,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
   </div>
 
   <div class="boxesWrapper">
-    <div class="graphe" onclick="showPopup('popupGraphesCO2.html')">
+    <div class="graphe" onclick="showPopup('popupGraphesCO2.php')">
       <h3>Concentration en CO2</h3>
       <img src="assets/images/graphe.png" alt="graphe" style="width:280px;">
       <div class="indic">
@@ -135,7 +134,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     </div> <!--ferme div graphe -->
 
 
-    <div class="graphe" onclick="showPopup('popupGraphesCO.html')">
+    <div class="graphe" onclick="showPopup('popupGraphesCO.php')">
       <h3>Concentration en CO</h3>
       <img src="assets/images/graphe.png" alt="graphe" style="width:280px;">
       <div class="indic">
@@ -144,7 +143,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     </div> <!--ferme div graphe -->
 
 
-    <div class="graphe" onclick="showPopup('popupGraphesVolume.html')">
+    <div class="graphe" onclick="showPopup('popupGraphesVolume.php')">
       <h3>Volume sonore</h3>
       <img src="assets/images/graphe.png" alt="graphe" style="width:280px;">
       <div class="indic">
@@ -153,7 +152,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     </div> <!--ferme div graphe -->
 
 
-    <div class="graphe" onclick="showPopup('popupGraphesBPM.html')">
+    <div class="graphe" onclick="showPopup('popupGraphesBPM.php')">
       <h3>Fréquence cardiaque</h3>
       <img src="assets/images/graphe.png" alt="graphe" style="width:280px;">
       <div class="indic">
@@ -162,7 +161,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     </div> <!--ferme div graphe -->
 
 
-    <div class="graphe" onclick="showPopup('popupGraphesTemperature.html')">
+    <div class="graphe" onclick="showPopup('popupGraphesTemperature.php')">
       <h3>Température</h3>
       <img src="assets/images/graphe.png" alt="graphe" style="width:280px;">
       <div class="indic">
