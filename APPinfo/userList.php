@@ -198,7 +198,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
   </div>
 
   <!-- Display the result of the AJAX request -->
-  <script src="newsletterlink.js"></script>
+  <script src="assets/js/newsletterlink.js"></script>
 <script>
 var table = document.getElementById("tableresultats");
     var nbLignesTable = table.tBodies[0].rows.length;

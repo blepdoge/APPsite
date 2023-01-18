@@ -111,10 +111,10 @@ mysqli_close($link);
     <p class="returnp">
       <button class="return" onclick="rtn()">Retourner</button>
       <script>
-      function rtn() {
-        window.history.back();
-      }
-    </script> 
+        function rtn() {
+          window.history.back();
+        }
+      </script>
     </p>
     <h2>Paramètres</h2>
     <p id="resultat"></p>
@@ -136,31 +136,32 @@ mysqli_close($link);
           <div class="Zonesdetextedroite">
             <div class="partiedroite">
               <input type="text" class="disablednotadmin" placeholder="Laboratoire"
-                value="<?php echo htmlspecialchars($nomLabo); ?>" name="nomLabo" id="nomLabo"/>
+                value="<?php echo htmlspecialchars($nomLabo); ?>" name="nomLabo" id="nomLabo" />
               <input type="email" class="disablednotadmin" placeholder="Adresse E-mail Laboratoire"
-                value="<?php echo htmlspecialchars($emailLabo); ?>" name="emailLabo" id="emailLabo"/>
+                value="<?php echo htmlspecialchars($emailLabo); ?>" name="emailLabo" id="emailLabo" />
               <input type="text" class="disablednotadmin" placeholder="Domiciliation"
-                value="<?php echo htmlspecialchars($adresseLabo); ?>" name="adresseLabo" id="adresseLabo"/>
+                value="<?php echo htmlspecialchars($adresseLabo); ?>" name="adresseLabo" id="adresseLabo" />
             </div>
 
             <p></p>
 
             <div class="partiedroite">
-              <input type="text" placeholder="Nom" value="<?php echo htmlspecialchars($_SESSION["nomUser"]); ?>" name="nom" id="nom"/>
-              <input type="text" placeholder="Prénom"
-                value="<?php echo htmlspecialchars($_SESSION["prenomUser"]); ?>" name="prenom" id="prenom"/>
+              <input type="text" placeholder="Nom" value="<?php echo htmlspecialchars($_SESSION["nomUser"]); ?>"
+                name="nom" id="nom" />
+              <input type="text" placeholder="Prénom" value="<?php echo htmlspecialchars($_SESSION["prenomUser"]); ?>"
+                name="prenom" id="prenom" />
               <input type="email" placeholder="Adresse E-mail"
-                value="<?php echo htmlspecialchars($_SESSION["emailUser"]); ?>" name="email" id="email"/>
-              <input type="text" placeholder="Adresse"
-                value="<?php echo htmlspecialchars($_SESSION["adresseUser"]); ?>" name="adresse" id="adresse"/>
+                value="<?php echo htmlspecialchars($_SESSION["emailUser"]); ?>" name="email" id="email" />
+              <input type="text" placeholder="Adresse" value="<?php echo htmlspecialchars($_SESSION["adresseUser"]); ?>"
+                name="adresse" id="adresse" />
               <input type="text" class="disablednotadmin" placeholder="Permission" disabled value="<?php if ($_SESSION["adminPerm"] == 1) {
-              $adminPermission = "Administrateur";
-            } else {
-              $adminPermission = "Utilisateur";
-            } //crée une nouvelle variable avec la version ecrite des permissions
-            ;//puis ecrit la nouvelle variable dans l'input
-            echo htmlspecialchars($adminPermission); ?>" />
-              <input type="text" placeholder="Changer le mot de passe" name="motdepasse" id="motdepasse"/>
+                $adminPermission = "Administrateur";
+              } else {
+                $adminPermission = "Utilisateur";
+              } //crée une nouvelle variable avec la version ecrite des permissions
+              ; //puis ecrit la nouvelle variable dans l'input
+              echo htmlspecialchars($adminPermission); ?>" />
+              <input type="text" placeholder="Changer le mot de passe" name="motdepasse" id="motdepasse" />
             </div>
 
             <p></p>
@@ -177,12 +178,12 @@ mysqli_close($link);
 
             <input type="submit" value="Sauvegarder" />
 
-</script>
+            </script>
           </div>
         </div>
       </div>
     </form>
-    <script src="settingsupdate.js"></script>
+    <script src="assets/js/settingsupdate.js"></script>
   </div>
 
   <script>
@@ -234,7 +235,7 @@ mysqli_close($link);
   </div>
 
   <!-- Display the result of the AJAX request -->
-  <script src="newsletterlink.js"></script>
+  <script src="assets/js/newsletterlink.js"></script>
 </footer>
 
 </html>

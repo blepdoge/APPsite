@@ -187,7 +187,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     </div>
     
     <!-- Display the result of the AJAX request -->
-    <script src="newsletterlink.js"></script>
+    <script src="assets/js/newsletterlink.js"></script>
   </footer>
 
 </html>

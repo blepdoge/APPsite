@@ -21,133 +21,77 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 
 // Check the connection
 if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
+  die("Connection failed: " . $conn->connect_error);
 }
 
 ?>
 
 <!DOCTYPE html>
 <html>
-  <head>
-    <title>Profil</title>
-    <link rel="stylesheet" href="assets/css/User.css" />
-    <meta charset="utf-8" />
-  </head>
 
-  <body>
+<head>
+  <title>Profil</title>
+  <link rel="stylesheet" href="assets/css/User.css" />
+  <meta charset="utf-8" />
+</head>
+
+<body>
   <script>
-      function selectElement(id, valueToSelect) {    
-    let element = document.getElementById(id);
-    element.value = valueToSelect;
-}
-    </script>
-  <?php $sql = "SELECT nom, prenom, adresse, email, adminPerm, password, laboratoires_idlaboratoires FROM users WHERE idusers = $userId";
-    $result = $conn->query($sql);
-    while($row = mysqli_fetch_assoc($result)){
-      $prenom = $row['prenom'];
-      $nom = $row['nom'];
-      $adresse = $row['adresse'];
-      $email = $row['email'];
-      $adminPerm = $row['adminPerm'];
-      $password = $row['password'];
-      $idlaboratoires = $row['laboratoires_idlaboratoires'];
-
-      if ($adminPerm == 0) {
-        $adminPerm = "Utilisateur";
-      } else {
-        $adminPerm = "Administrateur";
-      }
+    function selectElement(id, valueToSelect) {
+      let element = document.getElementById(id);
+      element.value = valueToSelect;
     }
-    // Close the connection
-$conn->close();
-$_SESSION["userId"]= $userId;
-   ?>
+  </script>
+  <?php $sql = "SELECT nom, prenom, adresse, email, adminPerm, password, laboratoires_idlaboratoires FROM users WHERE idusers = $userId";
+  $result = $conn->query($sql);
+  while ($row = mysqli_fetch_assoc($result)) {
+    $prenom = $row['prenom'];
+    $nom = $row['nom'];
+    $adresse = $row['adresse'];
+    $email = $row['email'];
+    $adminPerm = $row['adminPerm'];
+    $password = $row['password'];
+    $idlaboratoires = $row['laboratoires_idlaboratoires'];
 
-    <p class="titre">Profil</p>
+    if ($adminPerm == 0) {
+      $adminPerm = "Utilisateur";
+    } else {
+      $adminPerm = "Administrateur";
+    }
+  }
+  // Close the connection
+  $conn->close();
+  $_SESSION["userId"] = $userId;
+  ?>
 
-    <form method="post" action="TraitementModifyUser.php?userId=' . $userId . '">
-      <div class="adduserwrapper">
-        <input
-          class="prenom"
-          type="text"
-          name="prenom"
-          id="prenom"
-          placeholder="Prénom"
-          required
-          size="30"
-          maxlength="30"
-          value = "<?php echo $prenom; ?>"
-        />
-        <input
-          class="nom"
-          type="text"
-          name="nom"
-          id="nom"
-          placeholder="Nom"
-          required
-          size="30"
-          maxlength="30"
-          value = "<?php echo $nom ?>"
-        />
-        <input
-          class="idlaboratoire"
-          type="text"
-          name="idlaboratoire"
-          id="idlaboratoire"
-          placeholder="ID du laboratoire"
-          required
-          size="30"
-          maxlength="30"
-          value = "<?php echo $idlaboratoires ?>"
-        />
-        <input
-          class="email"
-          type="email"
-          name="email"
-          id="email"
-          placeholder="E-mail"
-          required
-          size="30"
-          maxlength="75"
-          value = "<?php echo $email ?>"
-        />
-        <input
-          class="adresse"
-          type="text"
-          name="adresse"
-          id="adresse"
-          placeholder="Adresse"
-          required
-          size="30"
-          maxlength="75"
-          value = "<?php echo $adresse ?>"
-        />
-        <input
-          class="password"
-          type="password"
-          name="password"
-          id="password"
-          placeholder="mot de passe"
-          required
-          value = "<?php echo $password ?>"
-        />
+  <p class="titre">Profil</p>
 
-        <select
-          class="statut"
-          name="statut"
-          id="statut"
-          value="Choisir le statut"
-          required
-        >
+  <form method="post" action="TraitementModifyUser.php?userId=' . $userId . '">
+    <div class="adduserwrapper">
+      <input class="prenom" type="text" name="prenom" id="prenom" placeholder="Prénom" required size="30" maxlength="30"
+        value="<?php echo $prenom; ?>" />
+      <input class="nom" type="text" name="nom" id="nom" placeholder="Nom" required size="30" maxlength="30"
+        value="<?php echo $nom ?>" />
+      <input class="idlaboratoire" type="text" name="idlaboratoire" id="idlaboratoire" placeholder="ID du laboratoire"
+        required size="30" maxlength="30" value="<?php echo $idlaboratoires ?>" />
+      <input class="email" type="email" name="email" id="email" placeholder="E-mail" required size="30" maxlength="75"
+        value="<?php echo $email ?>" />
+      <input class="adresse" type="text" name="adresse" id="adresse" placeholder="Adresse" required size="30"
+        maxlength="75" value="<?php echo $adresse ?>" />
+      <input class="password" type="password" name="password" id="password" placeholder="mot de passe" required
+        value="<?php echo $password ?>" />
 
-          <option value="Administrateur">Administrateur</option>
-          <option value="Utilisateur">Utilisateur</option>
-        </select>
-        <script>selectElement('statut', '<?php echo $adminPerm ?>');</script>
-        <input class="confirmer" type="submit" value="Confirmer" />
-      </div>
-    </form>
+      <select class="statut" name="statut" id="statut" value="Choisir le statut" required>
 
-    </script>
-  </body>
+        <option value="Administrateur">Administrateur</option>
+        <option value="Utilisateur">Utilisateur</option>
+      </select>
+      <script>selectElement('statut', '<?php echo $adminPerm ?>');</script>
+      <input class="confirmer" type="submit" value="Confirmer" />
+    </div>
+  </form>
+
+  </script>
+</body>
+
 </html>

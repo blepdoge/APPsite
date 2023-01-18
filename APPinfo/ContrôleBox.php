@@ -235,5 +235,5 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
   </div>
 
   <!-- afficher le resultat de la requete AJAX -->
-  <script src="newsletterlink.js"></script>
+  <script src="assets/js/newsletterlink.js"></script>
 </footer>
