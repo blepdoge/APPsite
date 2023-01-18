@@ -20,8 +20,11 @@ if (mysqli_num_rows($result) > 0) {
   // Store the data in variables for each row
   while ($rowLabData = mysqli_fetch_assoc($result)) {
     $nomLabo = $rowLabData["nomLabo"];
+    $_SESSION['nomLabo'] = $nomLabo;
     $adresseLabo = $rowLabData["adresseLabo"];
+    $_SESSION['adresseLabo'] = $adresseLabo;
     $emailLabo = $rowLabData["emailLabo"];
+    $_SESSION['emailLabo'] = $emailLabo;
   }
 } else {
   $nomLabo = "Données manquantes";

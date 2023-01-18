@@ -138,6 +138,12 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 
   </div>
   
+  <div class="icon">
+    <a href="support_box.html">
+        <img src="assets/images/icon.png" alt="icon" style="  position: absolute;bottom: -100px;right: 20px;width: 60px;height: 60px;">
+    </a>
+  </div>
+  
   <div >
   <div class="container">
     <div style="width:fitcontent">

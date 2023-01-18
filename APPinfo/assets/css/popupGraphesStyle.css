@@ -65,4 +65,18 @@ body {
   margin-left: 40px;
 }
 
+.canvasContainer {
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width : 100%;
+  height : 100%;
+}
+
+#myChart {
+  height : 100% !important;
+  width : 100% !important;
+}
+
 /*------------------fin Main Contents--------------------*/

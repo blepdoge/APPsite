@@ -7,6 +7,8 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
   header("location: pageLogin.php");
   exit;
 }
+
+$currentBox = urldecode($_GET["currentBoxID"]);
 ?>
 
 <!DOCTYPE html>
@@ -93,7 +95,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 <body onload=display_ct()>
   <div class="titre">
     <h1>
-      <?php echo urldecode($_GET["currentBoxID"]) ?>
+      <?php echo $currentBox ?>
     </h1>
   </div>
 
@@ -125,7 +127,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
   </div>
 
   <div class="boxesWrapper">
-    <div class="graphe" onclick="showPopup('popupGraphesCO2.php')">
+    <div class="graphe" onclick="showPopup('<?php echo 'popupGraphesCO2.php?currentBox='.urlencode($currentBox)?>')">
       <h3>Concentration en CO2</h3>
       <img src="assets/images/graphe.png" alt="graphe" style="width:280px;">
       <div class="indic">
@@ -134,7 +136,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     </div> <!--ferme div graphe -->
 
 
-    <div class="graphe" onclick="showPopup('popupGraphesCO.php')">
+    <div class="graphe" onclick="showPopup('<?php echo 'popupGraphesCO.php?currentBox='.urlencode($currentBox)?>')">
       <h3>Concentration en CO</h3>
       <img src="assets/images/graphe.png" alt="graphe" style="width:280px;">
       <div class="indic">
@@ -143,7 +145,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     </div> <!--ferme div graphe -->
 
 
-    <div class="graphe" onclick="showPopup('popupGraphesVolume.php')">
+    <div class="graphe" onclick="showPopup('<?php echo 'popupGraphesVolume.php?currentBox='.urlencode($currentBox)?>')">
       <h3>Volume sonore</h3>
       <img src="assets/images/graphe.png" alt="graphe" style="width:280px;">
       <div class="indic">
@@ -152,7 +154,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     </div> <!--ferme div graphe -->
 
 
-    <div class="graphe" onclick="showPopup('popupGraphesBPM.php')">
+    <div class="graphe" onclick="showPopup('<?php echo 'popupGraphesBPM.php?currentBox='.urlencode($currentBox)?>')">
       <h3>Fréquence cardiaque</h3>
       <img src="assets/images/graphe.png" alt="graphe" style="width:280px;">
       <div class="indic">
@@ -161,7 +163,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     </div> <!--ferme div graphe -->
 
 
-    <div class="graphe" onclick="showPopup('popupGraphesTemperature.php')">
+    <div class="graphe" onclick="showPopup('<?php echo 'popupGraphesTemperature.php?currentBox='.urlencode($currentBox)?>')">
       <h3>Température</h3>
       <img src="assets/images/graphe.png" alt="graphe" style="width:280px;">
       <div class="indic">
