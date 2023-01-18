@@ -35,7 +35,12 @@ if ($conn->connect_error) {
   </head>
 
   <body>
-
+  <script>
+      function selectElement(id, valueToSelect) {    
+    let element = document.getElementById(id);
+    element.value = valueToSelect;
+}
+    </script>
   <?php $sql = "SELECT nom, prenom, adresse, email, adminPerm, password, laboratoires_idlaboratoires FROM users WHERE idusers = $userId";
     $result = $conn->query($sql);
     while($row = mysqli_fetch_assoc($result)){
@@ -47,6 +52,11 @@ if ($conn->connect_error) {
       $password = $row['password'];
       $idlaboratoires = $row['laboratoires_idlaboratoires'];
 
+      if ($adminPerm == 0) {
+        $adminPerm = "Utilisateur";
+      } else {
+        $adminPerm = "Administrateur";
+      }
     }
     // Close the connection
 $conn->close();
@@ -121,6 +131,7 @@ $_SESSION["userId"]= $userId;
           required
           value = "<?php echo $password ?>"
         />
+
         <select
           class="statut"
           name="statut"
@@ -128,12 +139,16 @@ $_SESSION["userId"]= $userId;
           value="Choisir le statut"
           required
         >
+
           <option>Choisir le statut</option>
           <option value="Administrateur">Administrateur</option>
           <option value="Utilisateur">Utilisateur</option>
         </select>
+        <script>selectElement('statut', '<?php echo $adminPerm ?>');</script>
         <input class="confirmer" type="submit" value="Confirmer" />
       </div>
     </form>
+
+    </script>
   </body>
 </html>
