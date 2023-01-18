@@ -140,7 +140,6 @@ $_SESSION["userId"]= $userId;
           required
         >
 
-          <option>Choisir le statut</option>
           <option value="Administrateur">Administrateur</option>
           <option value="Utilisateur">Utilisateur</option>
         </select>
