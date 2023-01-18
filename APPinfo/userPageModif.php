@@ -2,11 +2,28 @@
 // Initialize the session
 session_start();
 
+$userId = $_GET["userId"];
+
 // Check if the user is logged in, if not then redirect him to login page
 if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
   header("location: pageLogin.php");
   exit;
 }
+
+// Connect to the database
+$servername = "localhost";
+$username = "root";
+$password = "";
+$dbname = "mydb";
+
+// Create a connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check the connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -18,9 +35,27 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
   </head>
 
   <body>
+
+  <?php $sql = "SELECT nom, prenom, adresse, email, adminPerm, password, laboratoires_idlaboratoires FROM users WHERE idusers = $userId";
+    $result = $conn->query($sql);
+    while($row = mysqli_fetch_assoc($result)){
+      $prenom = $row['prenom'];
+      $nom = $row['nom'];
+      $adresse = $row['adresse'];
+      $email = $row['email'];
+      $adminPerm = $row['adminPerm'];
+      $password = $row['password'];
+      $idlaboratoires = $row['laboratoires_idlaboratoires'];
+
+    }
+    // Close the connection
+$conn->close();
+$_SESSION["userId"]= $userId;
+   ?>
+
     <p class="titre">Profil</p>
 
-    <form method="post" action="TraitementModifyUser.php">
+    <form method="post" action="TraitementModifyUser.php?userId=' . $userId . '">
       <div class="adduserwrapper">
         <input
           class="prenom"
@@ -31,6 +66,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
           required
           size="30"
           maxlength="30"
+          value = "<?php echo $prenom; ?>"
         />
         <input
           class="nom"
@@ -41,6 +77,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
           required
           size="30"
           maxlength="30"
+          value = "<?php echo $nom ?>"
         />
         <input
           class="idlaboratoire"
@@ -51,6 +88,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
           required
           size="30"
           maxlength="30"
+          value = "<?php echo $idlaboratoires ?>"
         />
         <input
           class="email"
@@ -61,6 +99,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
           required
           size="30"
           maxlength="75"
+          value = "<?php echo $email ?>"
         />
         <input
           class="adresse"
@@ -71,6 +110,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
           required
           size="30"
           maxlength="75"
+          value = "<?php echo $adresse ?>"
         />
         <input
           class="password"
@@ -79,6 +119,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
           id="password"
           placeholder="mot de passe"
           required
+          value = "<?php echo $password ?>"
         />
         <select
           class="statut"

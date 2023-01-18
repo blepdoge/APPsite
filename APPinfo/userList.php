@@ -149,6 +149,19 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     // Add an event listener to the overlay to hide the popup when clicked
     document.getElementById("overlay").addEventListener("click", hidePopup);
 
+
+    function useridsave(id) {
+      
+
+    }
+
+    function confirmDelete(userId) {
+    if (confirm("Êtes-vous sûr de vouloir supprimer cet utilisateur ?")) {
+        window.location.href = 'TraitementDeleteUser.php?userId=' + userId;
+  
+    }
+}
+
   </script>
 
 </body>
