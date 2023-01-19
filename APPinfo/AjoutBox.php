@@ -31,7 +31,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
         if(empty(trim($_POST["nomBox"]))){
             $nomBox_err = "Donnez un nom à votre Box";
         } else{
-            $nomBox=htmlspecialchars(trim($_POST["nomBox"]));
+            $nomBox=mysqli_real_escape_string($link,trim($_POST["nomBox"]));
         }
 
         if(empty($nomBox_err)){

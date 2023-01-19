@@ -1,18 +1,18 @@
 <!DOCTYPE html>
 <html>
   <head>
-    
     <title>Commander une LabBox</title>
     <link rel="stylesheet" href="assets/css/styleFormCommande.css" />
     <meta charset="utf-8" />
   </head>
 
   <header>
-    <a href="pageAccueil.html"><img
-      class="logotop"
-      src="assets/images/logosorsen_crop.png"
-      width="60"
-      height="60"
+    <a href="pageAccueil.html"
+      ><img
+        class="logotop"
+        src="assets/images/logosorsen_crop.png"
+        width="60"
+        height="60"
     /></a>
 
     <div class="textelogo">
@@ -31,49 +31,77 @@
   </header>
 
   <body style="margin: 0">
-    
-      <div class="contenuPage">
-        <form action="emailcommande.php" method="post">  
-          <div class="formulaireContact">
-            <h2>Vous souhaitez acquérir une LabBox ? C'est ici !</h2>
-            <p>
-              Remplissez les détails suivants et nous reviendrons vers vous sous
-              peu !
-            </p>
-            <div class="nomPrenom">
-              <input id="inputNom" name="inputNom" type="text" placeholder="Nom" required />
-              <input type="text" name="prenom" placeholder="Prénom" required />
-            </div>
-
+    <div class="contenuPage">
+      <form action="emailcommande.php" method="post">
+        <div class="formulaireContact">
+          <h2>Vous souhaitez acquérir une LabBox ? C'est ici !</h2>
+          <p>
+            Remplissez les détails suivants et nous reviendrons vers vous sous
+            peu !
+          </p>
+          <div class="nomPrenom">
             <input
+              id="inputNom"
+              name="inputNom"
               type="text"
-              name="poste"
-              placeholder="Poste dans le laboratoire"
-              required
-              />
-            <input type="email" name="email" placeholder="E-mail" required />
-            <input type="text" name="nomLaboratoire" placeholder="Nom du laboratoire" required />
-            <input
-              type="text"
-              name="adressePostale"
-              placeholder="Adresse postale du laboratoire"
+              placeholder="Nom"
               required
             />
-            <p>
-              Décrivez en quelques lignes votre motivation pour acquérir une
-              LabBox
-            </p>
-            <textarea id="msgMotiv" name="msgMotiv" rows="5" required></textarea>
-            <input type="submit" value="Envoyer le formulaire" />
+            <input type="text" name="prenom" placeholder="Prénom" required />
           </div>
-        </form>
-      </div>
-      
+
+          <input
+            type="text"
+            name="poste"
+            placeholder="Poste dans le laboratoire"
+            required
+          />
+          <input type="email" name="email" placeholder="E-mail" required />
+          <input
+            type="text"
+            name="nomLaboratoire"
+            placeholder="Nom du laboratoire"
+            required
+          />
+          <input
+            type="text"
+            name="adressePostale"
+            placeholder="Adresse postale du laboratoire"
+            required
+          />
+          <p>
+            Décrivez en quelques lignes votre motivation pour acquérir une
+            LabBox
+          </p>
+          <textarea id="msgMotiv" name="msgMotiv" rows="5" required></textarea>
+          <input
+            type="submit"
+            value="Envoyer le formulaire"
+            id="commandeSendMail"
+          />
+        </div>
+      </form>
+    </div>
+
+    <script>
+      document
+        .getElementById("commandeSendMail")
+        .addEventListener("click", function (event) {
+          if (!confirm("Voulez-vous vraiment envoyer le formulaire ?")) {
+            event.preventDefault();
+          }
+        });
+    </script>
   </body>
 
   <!--Bas de page-->
   <footer>
-    <img class="logobottom" src="assets/images/SorsenFull.png" width="100" height="90" />
+    <img
+      class="logobottom"
+      src="assets/images/SorsenFull.png"
+      width="100"
+      height="90"
+    />
 
     <div class="infoFooterContainer">
       <ul class="infoFooter">
@@ -98,11 +126,17 @@
         <!--ici link le code phph pour s'abonner a la newsletter-->
         <div id="result"></div>
         <p>Abonnez-vous à notre newsletter ! <br /></p>
-        <input type="email" id="email" placeholder="Adresse mail" name="email" required />
+        <input
+          type="email"
+          id="email"
+          placeholder="Adresse mail"
+          name="email"
+          required
+        />
         <input type="submit" name="submitemail" value="S'abonner" />
       </form>
     </div>
-    
+
     <!-- Display the result of the AJAX request -->
     <script src="assets/js/newsletterlink.js"></script>
   </footer>
