@@ -29,7 +29,7 @@ require_once "login.php";
 
     <nav>
       <ul class="navlien">
-        <li><a href="FAQvisitor.html">FAQ</a></li>
+        <li><a href="FAQvisitor.php">FAQ</a></li>
         <!--mettre le lien vers la FAQ-->
         <li style="color: gray">|</li>
         <li><a href="pageLogin.php">Connexion</a></li>

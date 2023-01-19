@@ -13,7 +13,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Foire Aux Questions</title>
+    <title>Foire aux Questions</title>
     <link rel="stylesheet" href="assets/css/styleFAQ.css" />
     <meta charset="utf-8" />
   </head>

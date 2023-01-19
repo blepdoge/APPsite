@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Foire Aux Questions</title>
+    <title>Foire aux Questions</title>
     <link rel="stylesheet" href="assets/css/styleFAQ.css" />
     <meta charset="utf-8" />
   </head>
@@ -19,9 +19,11 @@
       <p style="margin: 18px">SORSEN</p>
     </div>
 
+    <div class="userSearchBar"></div>
+
     <nav>
       <ul class="navlien">
-        <li><a href="FAQvisitor.html">FAQ</a></li>
+        <li><a href="FAQvisitor.php">FAQ</a></li>
         <!--mettre le lien vers la FAQ-->
         <li style="color: gray">|</li>
         <li><a href="pageLogin.php">Connexion</a></li>
@@ -105,9 +107,7 @@
     <script src="FaqDisplayScript.js"> //anime les divs</script>
   </body>
 
-  <footer>
-    <php>
+  
       <?php include_once "views/footer.php" ?>
-    </php>
-  </footer>
+  
 </html>
