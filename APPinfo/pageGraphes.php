@@ -56,7 +56,7 @@ $currentBox = urldecode($_GET["currentBoxID"]);
 
   <nav>
     <ul class="navlien">
-      <li><a href="FAQ.html">FAQ</a></li>
+      <li><a href="FAQ.php">FAQ</a></li>
       <!--mettre le lien vers la FAQ-->
       <li style="color: gray">|</li>
       <li id="monCompte" onclick="showOptions()">

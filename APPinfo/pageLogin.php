@@ -111,7 +111,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 
     <nav>
       <ul class="navlien">
-        <li><a href="FAQ.html">FAQ</a></li>
+        <li><a href="FAQvisitor.html">FAQ</a></li>
         <!--mettre le lien vers la FAQ-->
         <li style="color: gray">|</li>
         <li><a href="pageLogin.php">Connexion</a></li>

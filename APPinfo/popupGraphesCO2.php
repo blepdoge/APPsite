@@ -70,4 +70,5 @@ foreach ($data as $row) {
 
 </html>
 
-<!--https://www.cssscript.com/categories/chart-graph/ lien pour faire les graphes quand on sera plus avancés-->
+<!--https://www.cssscript.com/categories/chart-graph/ lien pour faire les graphes quand on sera plus avancés
+https://www.youtube.com/watch?v=qQF7bNkamiY-->

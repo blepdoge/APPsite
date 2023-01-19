@@ -9,14 +9,11 @@
 
 <body>
 
-
 <?php
 session_start();
 // Connexion a notre bdd
 require_once "config.php";
 //form pour changer le nom
-
-
 
 
 $nomBox_err = "";
