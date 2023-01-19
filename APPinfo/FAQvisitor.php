@@ -14,8 +14,6 @@
     <p style="margin: 18px">SORSEN</p>
   </div>
 
-  <div class="userSearchBar"></div>
-
   <nav>
     <ul class="navlien">
       <li><a href="FAQvisitor.php">FAQ</a></li>
