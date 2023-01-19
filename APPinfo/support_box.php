@@ -29,9 +29,7 @@ mysqli_close($link);
 </header>
 
 <body style="margin: 0">
-  <form action="#">
-
-
+  <form method="POST" action="adminsupportemail.php">
 
     <div class="div1">
       <select class="nature" name="nature" id="nature" value="nature" onchange=showHideSelect()>
