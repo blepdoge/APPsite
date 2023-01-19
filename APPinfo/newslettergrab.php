@@ -20,7 +20,7 @@ if (isset($_POST['email'])) {
         } else {
             // Insert the email into the newsletter table
             $query = "INSERT INTO newsletters (email) VALUES ('$email')";
-            if (mysqli_query($link, $sql) === TRUE) {
+            if (mysqli_query($link, $query) === TRUE) {
                 echo "Merci de vous êtres abonné à notre newsletter !";
             } else {
                 echo "Erreur au cours de l'ajout: " . "<br>" . mysqli_error($link);
