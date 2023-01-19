@@ -69,7 +69,7 @@ $currentBox = urldecode($_GET["currentBoxID"]);
   <div class="options">
     <ul>
       <li><a href="pageSettings.php">Paramètres</a></li>
-      <li><a href="ContrôleBox.php">Administration</a></li>
+      <li><a href="ContrôleBox.php">Accueil</a></li>
       <li><a href="logout.php">Déconnexion</a>
         <!--ici faudra link le logout.php-->
       </li>

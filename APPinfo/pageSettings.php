@@ -95,7 +95,7 @@ mysqli_close($link);
   <div class="options">
     <ul>
       <li><a href="pageSettings.php">Paramètres</a></li>
-      <li><a href="ContrôleBox.php">Administration</a></li>
+      <li><a href="ContrôleBox.php">Accueil</a></li>
       <li>
         <a href="logout.php">Déconnexion</a>
         <!--ici link le logout.php-->
