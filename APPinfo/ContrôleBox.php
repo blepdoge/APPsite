@@ -80,18 +80,18 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 </header>
 
 <body>
-<div id="popup" class="popup" style="display:none;">
-  <iframe id="graphframe" frameborder="0"></iframe>
-  <div class=annul style="right:150px;">
-    <button onclick="hidePopup(), history.go(0)" class="btnpopup"> 
-      Terminé
-    </button>
+  <div id="popup" class="popup" style="display:none;">
+    <iframe id="graphframe" frameborder="0"></iframe>
+    <div class=annul style="right:150px;">
+      <button onclick="hidePopup(), history.go(0)" class="btnpopup">
+        Terminé
+      </button>
+    </div>
+    <div class=annul>
+      <button onclick="hidePopup(), href='ContrôleBox.php'" class="btnpopup"> Annuler
+      </button>
+    </div>
   </div>
-  <div class=annul>
-    <button onclick="hidePopup(), href='ContrôleBox.php'" class="btnpopup"> Annuler
-    </button>
-  </div>
-</div>
 
   <!-- Add the overlay div -->
   <div id="overlay" class="overlay" style="display:none;"></div>
@@ -122,7 +122,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     while ($row = mysqli_fetch_assoc($result)) {
       echo '<div class="box">
       <img src="assets/images/rondvert.png" alt="icône" style="width:20px;height:20px;float:left;">
-      <img class="disablednotadmin Modifnom" onclick=showPopup("popupetat.php?currentBoxID='.urlencode($row['nomBox']).'") src="assets/images/stylo.png" alt="icône" style="width:20px;height:20px;float:right; onclick="showPopup("Modifnombox.php")">
+      <img class="disablednotadmin Modifnom" onclick=showPopup("popupetat.php?currentBoxID=' . urlencode($row['nomBox']) . '") src="assets/images/stylo.png" alt="icône" style="width:20px;height:20px;float:right; onclick="showPopup("Modifnombox.php")">
       <br>
       <a href="pageGraphes.php?currentBoxID=' . urlencode($row['nomBox']) . '">
       <img src="assets/images/imagebox.png" alt="image" style="width:170px;">
@@ -137,21 +137,22 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     ?>
 
   </div>
-  
+
   <div class="icon">
     <a href="support_box.php">
-        <img src="assets/images/icon.png" alt="icon" style="  position: absolute;bottom: -100px;right: 20px;width: 60px;height: 60px;">
+      <img src="assets/images/icon.png" alt="icon"
+        style="  position: absolute;bottom: -100px;right: 20px;width: 60px;height: 60px;">
     </a>
   </div>
-  
-  <div >
-  <div class="container">
-    <div style="width:fitcontent">
-    <button class="disablednotadmin plus" onclick="showPopup('AjoutBox.php')">
-      <h1 style="margin:0px">+</h1>
-    </button>
+
+  <div>
+    <div class="container">
+      <div style="width:fitcontent">
+        <button class="disablednotadmin plus" onclick="showPopup('AjoutBox.php')">
+          <h1 style="margin:0px">+</h1>
+        </button>
+      </div>
     </div>
-  </div>
   </div>
 
   <br>
@@ -203,37 +204,4 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
   </script>
 </body>
 
-<footer>
-  <img class="logobottom" src="assets/images/SorsenFull.png" width="60" height="50" />
-
-  <div class="infoFooterContainer">
-    <ul class="infoFooter">
-      <li>SORSEN ENTREPRISE</li>
-      <li>10 rue de Vanves</li>
-      <li>91230 Issy-les-Moulineaux</li>
-    </ul>
-  </div>
-
-  <div class="line"></div>
-
-  <div class="infoFooterContainer">
-    <ul class="navlien">
-      <li><a href="CGU.html">CGU</a></li>
-      <li><a href="#">Partenaires</a></li>
-      <li><a href="mailto:contactsorsen@sorsen.fr">Nous contacter</a></li>
-    </ul>
-  </div>
-
-  <div class="newsletterContainer">
-    <form id="newsletterForm">
-      <!--ici link le code ajax intervient pour s'abonner a la newsletter-->
-      <div id="result"></div>
-      <p>Abonnez-vous à notre newsletter ! <br /></p>
-      <input type="email" id="email" placeholder="Adresse mail" name="email" required />
-      <input type="submit" name="submitemail" value="S'abonner" />
-    </form>
-  </div>
-
-  <!-- afficher le resultat de la requete AJAX -->
-  <script src="assets/js/newsletterlink.js"></script>
-</footer>
+<?php include_once "views/footer.php" ?>

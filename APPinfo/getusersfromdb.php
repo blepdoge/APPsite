@@ -45,7 +45,7 @@ if ($resultSearch->num_rows == 0) {
         <td width="400"><p>' . $user["email"] . '</p></td>
         <td width="200"><p>' . $adminPermission . '</p></td>
         <td width="60"><button onclick=showPopup("userPageModif.php?userId=' . $user["idusers"] . '")><img class="disablednotadmin" src="assets/images/parametre.png" alt= "Logo param" width="30" height="30" /></button></td>
-        <td width="30"><button onclick=confirmDelete("'.$user["idusers"].'")><img class="disablednotadmin" src="assets/images/supprimer.png" alt= "Logo delete" width="30" height="30" /></button></td>
+        <td width="30"><button onclick=confirmDelete("' . $user["idusers"] . '")><img class="disablednotadmin" src="assets/images/supprimer.png" alt= "Logo delete" width="30" height="30" /></button></td>
       </tr>';
   }
   echo '</table>';

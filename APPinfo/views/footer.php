@@ -1,4 +1,4 @@
-<footer>
+<footer id="footer">
   <img class="logobottom" src="assets/images/SorsenFull.png" width="60" height="50" />
 
   <div class="infoFooterContainer">

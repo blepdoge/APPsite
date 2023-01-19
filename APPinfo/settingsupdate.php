@@ -46,7 +46,7 @@ if ($result->num_rows == 0) {
   $_SESSION['email'] = $email;
   $_SESSION['adresse'] = $adresse;
   echo "Données utilisateur changées. ";
-  
+
 }
 
 //changement mdp

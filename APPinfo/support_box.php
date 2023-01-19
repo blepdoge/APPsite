@@ -13,7 +13,7 @@ $boxquery = "SELECT idLabBox, nomBox FROM labboxtable where laboratoires_idlabor
 $boxresult = mysqli_query($link, $boxquery);
 
 mysqli_close($link);
-  ?>
+?>
 
 <!DOCTYPE html>
 <html>
@@ -82,7 +82,7 @@ mysqli_close($link);
       } else {
         quelbox.style.display = "none";
         quelproblem.style.display = "none";
-    }
+      }
     }
   </script>
 </body>

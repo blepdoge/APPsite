@@ -6,7 +6,7 @@ $query = "SELECT sensorvalues.* FROM sensorvalues INNER JOIN labboxtable ON sens
 $data = mysqli_query($link, $query);
 
 foreach ($data as $row) {
-  
+
   $co2[] = $row['CO2value'];
 
   $timestamp[] = $row['timestamp'];
@@ -41,22 +41,22 @@ foreach ($data as $row) {
     </div>
   </div>
 
-  
+
 
   <script>
-  const ctx = document.getElementById('myChart');
+    const ctx = document.getElementById('myChart');
 
-  new Chart(ctx, {
-    type: 'line',
-    data: {
-      labels: <?php echo json_encode($timestamp); ?>,
+    new Chart(ctx, {
+      type: 'line',
+      data: {
+        labels: <?php echo json_encode($timestamp); ?>,
       datasets: [{
         label: 'Concentration en CO2',
         data: <?php echo json_encode($co2); ?>,
         borderWidth: 1
       }]
     },
-    options: {
+      options: {
       scales: {
         y: {
           beginAtZero: true
@@ -64,7 +64,7 @@ foreach ($data as $row) {
       }
     }
   });
-</script>
+  </script>
 
 </body>
 

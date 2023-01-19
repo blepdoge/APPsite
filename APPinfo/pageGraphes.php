@@ -127,7 +127,7 @@ $currentBox = urldecode($_GET["currentBoxID"]);
   </div>
 
   <div class="boxesWrapper">
-    <div class="graphe" onclick="showPopup('<?php echo 'popupGraphesCO2.php?currentBox='.urlencode($currentBox)?>')">
+    <div class="graphe" onclick="showPopup('<?php echo 'popupGraphesCO2.php?currentBox=' . urlencode($currentBox) ?>')">
       <h3>Concentration en CO2</h3>
       <img src="assets/images/graphe.png" alt="graphe" style="width:280px;">
       <div class="indic">
@@ -136,7 +136,7 @@ $currentBox = urldecode($_GET["currentBoxID"]);
     </div> <!--ferme div graphe -->
 
 
-    <div class="graphe" onclick="showPopup('<?php echo 'popupGraphesCO.php?currentBox='.urlencode($currentBox)?>')">
+    <div class="graphe" onclick="showPopup('<?php echo 'popupGraphesCO.php?currentBox=' . urlencode($currentBox) ?>')">
       <h3>Concentration en CO</h3>
       <img src="assets/images/graphe.png" alt="graphe" style="width:280px;">
       <div class="indic">
@@ -145,7 +145,7 @@ $currentBox = urldecode($_GET["currentBoxID"]);
     </div> <!--ferme div graphe -->
 
 
-    <div class="graphe" onclick="showPopup('<?php echo 'popupGraphesVolume.php?currentBox='.urlencode($currentBox)?>')">
+    <div class="graphe" onclick="showPopup('<?php echo 'popupGraphesVolume.php?currentBox=' . urlencode($currentBox) ?>')">
       <h3>Volume sonore</h3>
       <img src="assets/images/graphe.png" alt="graphe" style="width:280px;">
       <div class="indic">
@@ -154,7 +154,7 @@ $currentBox = urldecode($_GET["currentBoxID"]);
     </div> <!--ferme div graphe -->
 
 
-    <div class="graphe" onclick="showPopup('<?php echo 'popupGraphesBPM.php?currentBox='.urlencode($currentBox)?>')">
+    <div class="graphe" onclick="showPopup('<?php echo 'popupGraphesBPM.php?currentBox=' . urlencode($currentBox) ?>')">
       <h3>Fréquence cardiaque</h3>
       <img src="assets/images/graphe.png" alt="graphe" style="width:280px;">
       <div class="indic">
@@ -163,7 +163,8 @@ $currentBox = urldecode($_GET["currentBoxID"]);
     </div> <!--ferme div graphe -->
 
 
-    <div class="graphe" onclick="showPopup('<?php echo 'popupGraphesTemperature.php?currentBox='.urlencode($currentBox)?>')">
+    <div class="graphe"
+      onclick="showPopup('<?php echo 'popupGraphesTemperature.php?currentBox=' . urlencode($currentBox) ?>')">
       <h3>Température</h3>
       <img src="assets/images/graphe.png" alt="graphe" style="width:280px;">
       <div class="indic">
@@ -208,39 +209,6 @@ $currentBox = urldecode($_GET["currentBoxID"]);
 
 </body>
 
-<footer>
-  <img class="logobottom" src="assets/images/SorsenFull.png" width="60" height="50" />
-
-  <div class="infoFooterContainer">
-    <ul class="infoFooter">
-      <li>SORSEN ENTREPRISE</li>
-      <li>10 rue de Vanves</li>
-      <li>91230 Issy-les-Moulineaux</li>
-    </ul>
-  </div>
-
-  <div class="line"></div>
-
-  <div class="infoFooterContainer">
-    <ul class="navlien">
-      <li><a href="CGU.html">CGU</a></li>
-      <li><a href="#">Partenaires</a></li>
-      <li><a href="mailto:contactsorsen@sorsen.fr">Nous contacter</a></li>
-    </ul>
-  </div>
-
-  <div class="newsletterContainer">
-    <form id="newsletterForm">
-      <!--ici link le code phph pour s'abonner a la newsletter-->
-      <div id="result"></div>
-      <p>Abonnez-vous à notre newsletter ! <br /></p>
-      <input type="email" id="email" placeholder="Adresse mail" name="email" required />
-      <input type="submit" name="submitemail" value="S'abonner" />
-    </form>
-  </div>
-
-  <!-- Display the result of the AJAX request -->
-  <script src="assets/js/newsletterlink.js"></script>
-</footer>
+<?php include_once "views/footer.php" ?>
 
 </html>

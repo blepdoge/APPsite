@@ -1,9 +1,10 @@
-<?php 
+<?php
 session_start();
 //include libs
 use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
+
 require 'vendor\autoload.php';
 
 // Instantiate the PHPMailer class
@@ -18,28 +19,28 @@ $commentaires = $_POST['commentaires'];
 
 try {
     // setup des données serveurs
-    $mail->SMTPDebug = 0;                                       // 2 to Enable verbose debug output
-    $mail->isSMTP();                                            // Set mailer to use SMTP
-    $mail->Host       = 'smtp.gmail.com';                       // Specify main and backup SMTP servers
-    $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
-    $mail->Username   = 'lm.szymko@gmail.com';                  // SMTP username
-    $mail->Password   = 'tbtkhnmjjinpglxg';                     // SMTP password
-    $mail->SMTPSecure = 'tls';                                  // Enable TLS encryption, `ssl` also accepted
-    $mail->Port       = 587;                                    // TCP port to connect to
+    $mail->SMTPDebug = 0; // 2 to Enable verbose debug output
+    $mail->isSMTP(); // Set mailer to use SMTP
+    $mail->Host = 'smtp.gmail.com'; // Specify main and backup SMTP servers
+    $mail->SMTPAuth = true; // Enable SMTP authentication
+    $mail->Username = 'lm.szymko@gmail.com'; // SMTP username
+    $mail->Password = 'tbtkhnmjjinpglxg'; // SMTP password
+    $mail->SMTPSecure = 'tls'; // Enable TLS encryption, `ssl` also accepted
+    $mail->Port = 587; // TCP port to connect to
 
     // destinataire et expediteur
     $mail->setFrom('lm.szymko@gmail.com', 'LabBox Team');
-    $mail->addAddress('blep.doge@gmail.com', 'LabBox Team');     // Add a recipient
+    $mail->addAddress('blep.doge@gmail.com', 'LabBox Team'); // Add a recipient
 
     // infos de l'email
     $mail->Subject = 'Demande de support rapide';
-    $mail->Body    = "
+    $mail->Body = "
     Un utilisateur a demandé de l'aide sur la plateforme LabBox.
     Voici les informations le concernant :
-    Nom : ".$_SESSION['nomUser']."
-    Prénom : ".$_SESSION['prenomUser']."
-    E-mail : ".$_SESSION['emailUser']."
-    ID du laboratoire rattaché : ".$_SESSION['idLabo']."
+    Nom : " . $_SESSION['nomUser'] . "
+    Prénom : " . $_SESSION['prenomUser'] . "
+    E-mail : " . $_SESSION['emailUser'] . "
+    ID du laboratoire rattaché : " . $_SESSION['idLabo'] . "
 
     La nature du problème est : $nature
 
@@ -55,9 +56,8 @@ try {
     $mail->send();
     echo "<script>alert('Votre demande a bien été envoyée.');</script>";
     header("location:ContrôleBox.php");
-    
+
 } catch (Exception $e) {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }
-
 ?>
