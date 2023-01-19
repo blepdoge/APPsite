@@ -3,28 +3,18 @@
 session_start();
 
 // Connect to the database
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "mydb";
+require_once "config.php";
 
-// Create a connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check the connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
 $userId = $_SESSION["userId"];
 // Check if the form has been submitted
 if (isset($_POST['prenom'])) {
     // POST the informations from the form
-    $prenom = mysqli_real_escape_string($conn, $_POST['prenom']);
-    $nom = mysqli_real_escape_string($conn, $_POST['nom']);
-    $idlaboratoire = mysqli_real_escape_string($conn, $_POST['idlaboratoire']);
-    $email = mysqli_real_escape_string($conn, $_POST['email']);
-    $adresse = mysqli_real_escape_string($conn, $_POST['adresse']);
-    $password1 = mysqli_real_escape_string($conn, $_POST['password']);
+    $prenom = mysqli_real_escape_string($link, $_POST['prenom']);
+    $nom = mysqli_real_escape_string($link, $_POST['nom']);
+    $idlaboratoire = mysqli_real_escape_string($link, $_POST['idlaboratoire']);
+    $email = mysqli_real_escape_string($link, $_POST['email']);
+    $adresse = mysqli_real_escape_string($link, $_POST['adresse']);
+    $password1 = mysqli_real_escape_string($link, $_POST['password']);
 
 
     if ($_POST['statut'] == 'Administrateur') {
@@ -34,11 +24,11 @@ if (isset($_POST['prenom'])) {
     }
 
     $sql = "UPDATE users SET nom = '$nom', prenom = '$prenom', adresse= '$adresse', email='$email', adminPerm='$statut', password='$password1', laboratoires_idlaboratoires= '$idlaboratoire' WHERE idusers = $userId";
-    $result = $conn->query($sql);
-    if ($conn->query($sql) === TRUE) {
+    $result = $link->query($sql);
+    if ($link->query($sql) === TRUE) {
             echo '<div class="centrer"><h1> Informations mises à jour </h1></div>';
         } else {
-            echo "Error: " . $sql . "<br>" . $conn->error;
+            echo "Error: " . $sql . "<br>" . mysqli_error($link);
         }
 
 
@@ -46,7 +36,7 @@ if (isset($_POST['prenom'])) {
 }
 
 // Close the connection
-$conn->close();
+$link->close();
 ?>
 
 <!DOCTYPE html>
