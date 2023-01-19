@@ -167,3 +167,12 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 </body>
 <!--Bas de page-->
 <?php include_once "views/footer.php" ?>
+<script>
+var table = document.getElementById("tableresultats");
+    var nbLignesTable = table.tBodies[0].rows.length;
+
+    if (nbLignesTable > 7) {
+      var footer = document.getElementById("footer");
+      footer.style.position = "relative";
+    }
+</script>
