@@ -18,7 +18,7 @@ $commentaires = $_POST['commentaires'];
 
 try {
     // setup des données serveurs
-    $mail->SMTPDebug = 2;                                       // Enable verbose debug output
+    $mail->SMTPDebug = 0;                                       // 2 to Enable verbose debug output
     $mail->isSMTP();                                            // Set mailer to use SMTP
     $mail->Host       = 'smtp.gmail.com';                       // Specify main and backup SMTP servers
     $mail->SMTPAuth   = true;                                   // Enable SMTP authentication
@@ -53,8 +53,9 @@ try {
 
     // Envoi du mail
     $mail->send();
-    echo 'Message has been sent';
-    header('Location: ContrôleBox.php');
+    echo "<script>alert('Votre demande a bien été envoyée.');</script>";
+    header("location:ContrôleBox.php");
+    
 } catch (Exception $e) {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
 }

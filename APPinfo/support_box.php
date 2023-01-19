@@ -43,7 +43,7 @@ mysqli_close($link);
         <?php
         if (isset($_SESSION['idLabo'])) {
           foreach ($boxresult as $box) {
-            echo "<option value='" . $box["idLabBox"] . "'>" . $box["nomBox"] . "</option>";
+            echo "<option value='" . $box["idLabBox"] . " nommée " . $box["nomBox"] . "'>" . $box["nomBox"] . "</option>";
           }
         }
         ?>

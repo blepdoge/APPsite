@@ -17,12 +17,13 @@ formnsl.addEventListener("submit", (event) => {
     // Check the status of the request
     if (xhr.status === 200) {
       // Display the result of the PHP script
-      document.getElementById("result").innerHTML = xhr.responseText;
+      alert(xhr.responseText);
     } else {
       // Display an error message
-      document.getElementById("result").innerHTML = "Une erreur est survenue.";
+      alert("une erreur est survenue ! " + xhr.status)
     }
     document.getElementById("email").value = "";
   };
   xhr.send(`email=${email}`);
 });
+
