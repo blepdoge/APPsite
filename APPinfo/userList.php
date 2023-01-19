@@ -101,7 +101,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
   <div class="largelistwrapper">
 
     <?php
-    require "getusersfromdb.php"
+    require_once "getusersfromdb.php"
       ?>
 
   </div>

@@ -42,9 +42,9 @@ require_once "config.php";
     $idlaboratoires = $row['laboratoires_idlaboratoires'];
 
     if ($adminPerm == 0) {
-      $adminPerm = "Utilisateur";
+      $adminPermVerbose = "Utilisateur";
     } else {
-      $adminPerm = "Administrateur";
+      $adminPermVerbose = "Administrateur";
     }
   }
   // Close the connection
@@ -74,7 +74,7 @@ require_once "config.php";
         <option value="Administrateur">Administrateur</option>
         <option value="Utilisateur">Utilisateur</option>
       </select>
-      <script>selectElement('statut', '<?php echo $adminPerm ?>');</script>
+      <script>selectElement('statut', '<?php echo $adminPermVerbose ?>');</script>
       <input class="confirmer" type="submit" value="Confirmer" />
     </div>
   </form>
