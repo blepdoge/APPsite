@@ -209,7 +209,7 @@ $currentBox = urldecode($_GET["currentBoxID"]);
 </body>
 
 <footer>
-  <img class="logobottom" src="assets/images/SorsenFull.png" width="100" height="90" />
+  <img class="logobottom" src="assets/images/SorsenFull.png" width="60" height="50" />
 
   <div class="infoFooterContainer">
     <ul class="infoFooter">

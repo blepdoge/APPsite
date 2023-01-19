@@ -193,8 +193,8 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     <img
       class="logobottom"
       src="assets/images/SorsenFull.png"
-      width="100"
-      height="90"
+      width="60"
+      height="50"
     />
 
     <div class="infoFooterContainer">

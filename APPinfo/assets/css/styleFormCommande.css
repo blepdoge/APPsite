@@ -119,37 +119,40 @@ textarea {
 footer {
   display: flex;
   align-items: center;
-          /* position: fixed; LIGNE A RETIREr POUR LES GROSSES PAGES*/
+  /* position: fixed; LIGNE A RETIREr POUR LES GROSSES PAGES*/
   background: linear-gradient(
     90.58deg,
     rgba(53, 53, 53) 30.81%,
     rgba(7, 100, 163) 74.18%
   );
   width: auto;
-  float:bottom;
+  float: bottom;
+  height: 80px;
 }
 
 .logobottom {
-  
   margin: 20px 7px;
 }
 
 .infoFooterContainer {
   display: flex;
   align-items: center;
+
 }
 
 .infoFooter {
   list-style: none;
   padding-left: 0px;
   margin-left: 7px;
+
 }
 
 .infoFooter li {
-  font-size: 16px;
+  font-size: 10px;
 }
 
-.line {   /*Sert a dessiner la ligne noire pour séparer*/
+.line {
+  /*Sert a dessiner la ligne noire pour séparer*/
   width: 1px;
   height: 80px;
   border-left: 4px solid black;

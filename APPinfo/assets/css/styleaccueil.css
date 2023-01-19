@@ -262,6 +262,7 @@ footer {
   );
   width: auto;
   float: bottom;
+  height: 80px;
 }
 
 .logobottom {
@@ -271,16 +272,18 @@ footer {
 .infoFooterContainer {
   display: flex;
   align-items: center;
+
 }
 
 .infoFooter {
   list-style: none;
   padding-left: 0px;
   margin-left: 7px;
+
 }
 
 .infoFooter li {
-  font-size: 16px;
+  font-size: 10px;
 }
 
 .line {
