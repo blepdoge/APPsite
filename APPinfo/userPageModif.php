@@ -10,19 +10,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
   exit;
 }
 
-// Connect to the database
-$servername = "localhost";
-$username = "root";
-$password = "";
-$dbname = "mydb";
-
-// Create a connection
-$conn = new mysqli($servername, $username, $password, $dbname);
-
-// Check the connection
-if ($conn->connect_error) {
-  die("Connection failed: " . $conn->connect_error);
-}
+require_once "config.php";
 
 ?>
 
@@ -43,7 +31,7 @@ if ($conn->connect_error) {
     }
   </script>
   <?php $sql = "SELECT nom, prenom, adresse, email, adminPerm, password, laboratoires_idlaboratoires FROM users WHERE idusers = $userId";
-  $result = $conn->query($sql);
+  $result = $link->query($sql);
   while ($row = mysqli_fetch_assoc($result)) {
     $prenom = $row['prenom'];
     $nom = $row['nom'];
@@ -60,7 +48,7 @@ if ($conn->connect_error) {
     }
   }
   // Close the connection
-  $conn->close();
+  $link->close();
   $_SESSION["userId"] = $userId;
   ?>
 
