@@ -78,8 +78,8 @@ body {
   margin-right: auto;
   width: 80%;
   padding-bottom: 20px;
-  margin-top: 30px;
-  margin-bottom: 30px;
+  margin-top: 44px;
+  margin-bottom: 44px;
   background-color: #d5dace;
   border: 3px solid rgb(132, 132, 132);
   border-radius: 5px;
@@ -226,12 +226,13 @@ footer {
 .infoFooter {
   list-style: none;
   padding-left: 0px;
+  margin: 0px;
   margin-left: 7px;
 
 }
 
 .infoFooter li {
-  font-size: 10px;
+  font-size: 8px;
 }
 
 .line {
