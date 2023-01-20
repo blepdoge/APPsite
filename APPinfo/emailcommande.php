@@ -51,7 +51,7 @@ try {
 
     // Envoi du mail
     $mail->send();
-    header('Location: pageCommande.html');
+    header('Location: pageCommande.php');
 
 } catch (Exception $e) {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";

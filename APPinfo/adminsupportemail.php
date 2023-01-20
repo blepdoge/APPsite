@@ -55,7 +55,7 @@ try {
     // Envoi du mail
     $mail->send();
     echo "<script>alert('Votre demande a bien été envoyée.');</script>";
-    header("location:ContrôleBox.php");
+    header("location:accueilBox.php");
 
 } catch (Exception $e) {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";

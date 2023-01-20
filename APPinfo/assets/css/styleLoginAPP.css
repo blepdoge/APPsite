@@ -163,37 +163,43 @@ header {
   color: rgb(19, 24, 92);
 }
 
+
+/* ------------------------FOOTER------------------------- */
+
+
 footer {
   display: flex;
   align-items: center;
-  position: fixed;
+  position: fixed; 
   background: linear-gradient(
     90.58deg,
     rgba(53, 53, 53) 30.81%,
     rgba(7, 100, 163) 74.18%
   );
   width: 100%;
-  float: bottom;
-  bottom:0;
+  bottom: 0;
+  height: 80px;
 }
 
 .logobottom {
-  margin: 20px 7px;
+  margin: 14px 7px;
 }
 
 .infoFooterContainer {
   display: flex;
   align-items: center;
+
 }
 
 .infoFooter {
   list-style: none;
   padding-left: 0px;
   margin-left: 7px;
+
 }
 
 .infoFooter li {
-  font-size: 16px;
+  font-size: 10px;
 }
 
 .line {

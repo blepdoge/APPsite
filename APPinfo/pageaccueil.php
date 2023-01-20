@@ -26,7 +26,7 @@
       <h2>
         Connaissez-vous bien les dangers en laboratoire ?
       </h2>
-      <a href=quiz.html> <button class="boutonQuiz">Faire le test</button></a>
+      <a href=quiz.php> <button class="boutonQuiz">Faire le test</button></a>
     </div>
 
     <!-- zone de contenu principal -->
@@ -107,7 +107,7 @@
           d’évaluer votre candidature et de vous proposer une solution
           adaptée.
         </p>
-        <a href="pageCommande.html"><button class="formaccessbtn">Accéder au formulaire</button></a>
+        <a href="pageCommande.php"><button class="formaccessbtn">Accéder au formulaire</button></a>
       </div>
       <img class="genericlaboimg" src="assets/images/genericlabo.png" alt="genericlabo" />
     </div>

@@ -148,7 +148,7 @@ footer {
 }
 
 .logobottom {
-  margin: 20px 7px;
+  margin: 14px 7px;
 }
 
 .infoFooterContainer {
@@ -305,10 +305,10 @@ footer {
 .plus{
   border:none;
   border-radius: 50%;
-  background-color: rgb(102, 102, 102);
+  background-color: #dbdbdb;
   width:47px;
   height:47px;
-  color:rgb(0, 94, 255);
+  color: #145683;
 }
 
 .plus:hover{

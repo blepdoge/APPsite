@@ -8,7 +8,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     header("location: pageAccueil.html");
     exit;
 } else {
-    header("location: contrôleBox.php");
+    header("location: accueilBox.php");
     exit;
 }
 ?>

@@ -254,7 +254,7 @@ body {
 footer {
   display: flex;
   align-items: center;
-  /* position: fixed; LIGNE A RETIREr POUR LES GROSSES PAGES*/
+  /* position: fixed; LIGNE A RETIRER POUR LES GROSSES PAGES*/
   background: linear-gradient(
     90.58deg,
     rgba(53, 53, 53) 30.81%,
@@ -266,7 +266,7 @@ footer {
 }
 
 .logobottom {
-  margin: 20px 7px;
+  margin: 14px 7px;
 }
 
 .infoFooterContainer {

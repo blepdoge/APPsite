@@ -28,7 +28,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
       </button>
     </div>
     <div class=annul>
-      <button onclick="hidePopup(), href='ContrôleBox.php'" class="btnpopup"> Annuler
+      <button onclick="hidePopup(), href='accueilBox.php'" class="btnpopup"> Annuler
       </button>
     </div>
   </div>

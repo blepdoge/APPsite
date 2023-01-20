@@ -1,6 +1,6 @@
 <header>
   <div class="sideheader">
-    <a href="pageAccueil.html"><img class="logotop" src="assets/images/logosorsen_crop.png" width="60"
+    <a href="accueilBox.php"><img class="logotop" src="assets/images/logosorsen_crop.png" width="60"
         height="60" /></a>
 
     <div class="textelogo">
@@ -47,7 +47,7 @@
   <div class="options">
     <ul>
       <li><a href="pageSettings.php">Paramètres</a></li>
-      <li><a href="ContrôleBox.php">Accueil</a></li>
+      <li><a href="accueilBox.php">Accueil</a></li>
       <li><a href="logout.php">Déconnexion</a>
         <!--ici faudra link le logout.php-->
       </li>
