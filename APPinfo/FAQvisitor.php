@@ -84,6 +84,22 @@
       </div>
     </div>
 
+    <div class="questions">
+      <div class="titre-question" id="titre-question5">
+        <p>
+          5) Comment se procurer une labbox ?
+        </p>
+      </div>
+      <div class="dropdown-content" id="dropdown-content5">
+        <div class="reponse">
+          <p>
+            Nous ne délivrons de labbox qu'aux laboratoires vérifiés ayant pris contact avec nous au préalable. Ainsi, si vous êtes responsables d'un laboratoire nous vous invitons à remplir le formulaire dans notre page d'accueil afin de prendre contact avec nous.
+          </p>
+        </div>
+
+      </div>
+    </div>
+
   </div>
 
   <script src="FaqDisplayScript.js"> //anime les divs</script>
