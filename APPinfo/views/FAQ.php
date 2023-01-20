@@ -128,6 +128,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
   </div>
 
   <script src="../assets/js/FaqDisplayScript.js"> //anime les divs</script>
+  
 </body>
 
 <?php include_once "footer.php" ?>

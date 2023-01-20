@@ -102,7 +102,7 @@
 
   </div>
 
-  <script src="FaqDisplayScript.js"> //anime les divs</script>
+  <script src="../assets/js/FaqDisplayScript.js"> //anime les divs</script>
 </body>
 
 <?php include_once "footer.php" ?>

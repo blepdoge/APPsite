@@ -5,7 +5,7 @@ session_start();
 
 // verifier si l'utilisateur est connecté sinon le rediriger
 if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
-    header("location: ./views/pageAccueil.php");
+    header("location: ./views/pageaccueil.php");
     exit;
 } else {
     header("location: ./views/accueilBox.php");

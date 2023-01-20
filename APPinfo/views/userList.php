@@ -22,7 +22,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 
 <header>
   <div class="sideheader">
-    <a href="pageAccueil.php"><img class="logotop" src="../assets/images/logosorsen_crop.png" width="60"
+    <a href="pageaccueil.php"><img class="logotop" src="../assets/images/logosorsen_crop.png" width="60"
         height="60" /></a>
 
     <div class="textelogo">
