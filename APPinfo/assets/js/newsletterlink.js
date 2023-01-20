@@ -11,7 +11,7 @@ formnsl.addEventListener("submit", (event) => {
 
   // Send an AJAX request to the PHP script
   const xhr = new XMLHttpRequest();
-  xhr.open("POST", "/../model/newslettergrab.php", true);
+  xhr.open("POST", "../model/newslettergrab.php", true);
   xhr.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
   xhr.onload = () => {
     // Check the status of the request
