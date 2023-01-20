@@ -80,7 +80,7 @@ require_once "../model/dataCalling.php"
         <canvas id="myChartCO2"></canvas>
       </div>
       <div class="indic">
-        <p>500 ppm</p>
+        <p><?php echo end($co2)?> ppm</p>
       </div> <!--fin div indic -->
     </div> <!--ferme div graphe -->
 
@@ -91,7 +91,7 @@ require_once "../model/dataCalling.php"
         <canvas id="myChartCO"></canvas>
       </div>
       <div class="indic">
-        <p>45 ppm</p>
+        <p><?php echo end($co)?> ppm</p>
       </div> <!--fin div indic -->
     </div> <!--ferme div graphe -->
 
@@ -103,7 +103,7 @@ require_once "../model/dataCalling.php"
         <canvas id="myChartDB"></canvas>
       </div>
       <div class="indic">
-        <p>20 dB</p>
+        <p><?php echo end($dbson)?> dB</p>
       </div> <!--fin div indic -->
     </div> <!--ferme div graphe -->
 
@@ -114,7 +114,7 @@ require_once "../model/dataCalling.php"
         <canvas id="myChartBPM"></canvas>
       </div>
       <div class="indic">
-        <p>150 bpm</p>
+        <p><?php echo end($bpm)?> bpm</p>
       </div> <!--fin div indic -->
     </div> <!--ferme div graphe -->
 
@@ -126,7 +126,7 @@ require_once "../model/dataCalling.php"
         <canvas id="myChartTEMP"></canvas>
       </div>
       <div class="indic">
-        <p>20°</p>
+        <p><?php echo end($temp)?>°</p>
       </div> <!--fin div indic -->
     </div> <!--ferme div graphe -->
 
