@@ -1,12 +1,11 @@
 <?php
-// Infos de la BDD locale 
-define('DB_SERVER', 'localhost');
-define('DB_USERNAME', 'root');
-define('DB_PASSWORD', '');
-define('DB_NAME', 'mydb');
+$db_host = getenv("DB_HOST");
+$db = getenv("SORSEN_DB");
+$db_pass = getenv("SORSEN_PASS");
+$db_user = getenv("SORSEN_USER");
 
 // connexion vers la bdd locale
-$link = mysqli_connect(DB_SERVER, DB_USERNAME, DB_PASSWORD, DB_NAME);
+$link = mysqli_connect($db_host, $db_user, $db_pass, $db);
 
 
 // verification de la connexion
