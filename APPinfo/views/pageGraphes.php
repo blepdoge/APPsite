@@ -16,11 +16,11 @@ $currentBox = urldecode($_GET["currentBoxID"]);
 
 <head>
   <title>Données LabBox</title>
-  <link rel="stylesheet" href="assets/css/PageDesGraphesStyle.css">
+  <link rel="stylesheet" href="../assets/css/PageDesGraphesStyle.css">
   <meta charset="utf-8" />
 </head>
 
-<?php include_once "views/LoggedINHeader.php" ?>
+<?php include_once "loggedINHeader.php" ?>
 
 <script>
   function display_c() {
@@ -74,7 +74,7 @@ $currentBox = urldecode($_GET["currentBoxID"]);
   <div class="boxesWrapper">
     <div class="graphe" onclick="showPopup('<?php echo 'popupGraphesCO2.php?currentBox=' . urlencode($currentBox) ?>')">
       <h3>Concentration en CO2</h3>
-      <img src="assets/images/graphe.png" alt="graphe" style="width:280px;">
+      <img src="../assets/images/graphe.png" alt="graphe" style="width:280px;">
       <div class="indic">
         <p>500 ppm</p>
       </div> <!--fin div indic -->
@@ -83,7 +83,7 @@ $currentBox = urldecode($_GET["currentBoxID"]);
 
     <div class="graphe" onclick="showPopup('<?php echo 'popupGraphesCO.php?currentBox=' . urlencode($currentBox) ?>')">
       <h3>Concentration en CO</h3>
-      <img src="assets/images/graphe.png" alt="graphe" style="width:280px;">
+      <img src="../assets/images/graphe.png" alt="graphe" style="width:280px;">
       <div class="indic">
         <p>45 ppm</p>
       </div> <!--fin div indic -->
@@ -92,7 +92,7 @@ $currentBox = urldecode($_GET["currentBoxID"]);
 
     <div class="graphe" onclick="showPopup('<?php echo 'popupGraphesVolume.php?currentBox=' . urlencode($currentBox) ?>')">
       <h3>Volume sonore</h3>
-      <img src="assets/images/graphe.png" alt="graphe" style="width:280px;">
+      <img src="../assets/images/graphe.png" alt="graphe" style="width:280px;">
       <div class="indic">
         <p>20 dB</p>
       </div> <!--fin div indic -->
@@ -101,7 +101,7 @@ $currentBox = urldecode($_GET["currentBoxID"]);
 
     <div class="graphe" onclick="showPopup('<?php echo 'popupGraphesBPM.php?currentBox=' . urlencode($currentBox) ?>')">
       <h3>Fréquence cardiaque</h3>
-      <img src="assets/images/graphe.png" alt="graphe" style="width:280px;">
+      <img src="../assets/images/graphe.png" alt="graphe" style="width:280px;">
       <div class="indic">
         <p>150 bpm</p>
       </div> <!--fin div indic -->
@@ -111,7 +111,7 @@ $currentBox = urldecode($_GET["currentBoxID"]);
     <div class="graphe"
       onclick="showPopup('<?php echo 'popupGraphesTemperature.php?currentBox=' . urlencode($currentBox) ?>')">
       <h3>Température</h3>
-      <img src="assets/images/graphe.png" alt="graphe" style="width:280px;">
+      <img src="../assets/images/graphe.png" alt="graphe" style="width:280px;">
       <div class="indic">
         <p>20°</p>
       </div> <!--fin div indic -->
@@ -119,13 +119,13 @@ $currentBox = urldecode($_GET["currentBoxID"]);
 
   </div>
 
-  <script src="assets/js/popupMgmt.js">
+  <script src="../assets/js/popupMgmt.js">
     
   </script>
 
 
 </body>
 
-<?php include_once "views/footer.php" ?>
+<?php include_once "footer.php" ?>
 
 </html>

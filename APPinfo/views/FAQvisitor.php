@@ -3,11 +3,11 @@
 
 <head>
   <title>Foire aux Questions</title>
-  <link rel="stylesheet" href="assets/css/styleFAQVisitor.css" />
+  <link rel="stylesheet" href="../assets/css/styleFAQVisitor.css" />
   <meta charset="utf-8" />
 </head>
 
-<?php include_once "views/LoggedOUTHeader.php" ?>
+<?php include_once "loggedOUTHeader.php" ?>
 
 <body>
   <div class="titre">
@@ -105,6 +105,6 @@
   <script src="FaqDisplayScript.js"> //anime les divs</script>
 </body>
 
-<?php include_once "views/footer.php" ?>
+<?php include_once "footer.php" ?>
 
 </html>

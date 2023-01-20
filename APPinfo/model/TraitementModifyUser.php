@@ -42,7 +42,7 @@ $link->close();
 
 <head>
   <title>Profil</title>
-  <link rel="stylesheet" href="assets/css/User.css" />
+  <link rel="stylesheet" href="../assets/css/User.css" />
   <meta charset="utf-8" />
 </head>
 

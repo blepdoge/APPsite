@@ -15,14 +15,14 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 
 <head>
   <title>Liste des membres</title>
-  <link rel="stylesheet" href="assets/css/SearchUser.css" />
+  <link rel="stylesheet" href="../assets/css/SearchUser.css" />
   <meta charset="utf-8" />
 
 </head>
 
 <header>
   <div class="sideheader">
-    <a href="pageAccueil.html"><img class="logotop" src="assets/images/logosorsen_crop.png" width="60"
+    <a href="pageAccueil.php"><img class="logotop" src="../assets/images/logosorsen_crop.png" width="60"
         height="60" /></a>
 
     <div class="textelogo">
@@ -30,7 +30,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     </div>
   </div>
 
-  <script src="assets/js/showOptions.js">
+  <script src="../assets/js/showOptions.js">
 
   </script>
 
@@ -51,8 +51,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
       <li><a href="pageSettings.php">Paramètres</a></li>
       <li><a href="accueilBox.php">Accueil</a></li>
       <li>
-        <a href="logout.php">Déconnexion</a>
-        <!--ici faudra link le logout.php-->
+        <a href="../controller/logout.php">Déconnexion</a>
       </li>
     </ul>
   </div>
@@ -83,7 +82,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
         <input id="input" type="text" name="userSearchBar" placeholder="Chercher un utilisateur">
         <button type="submit" id="searchUser" name="searchUser">Chercher</button>
         <div class="graphe disablednotadmin" onclick="showPopup('userAdd.php')">
-          <img class="disablednotadmin" src="assets/images/ajouter.png" alt="addUser" width="30" height="30" />
+          <img class="disablednotadmin" src="../assets/images/ajouter.png" alt="addUser" width="30" height="30" />
         </div>
       </form>
     </div>
@@ -92,7 +91,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
   <div class="largelistwrapper">
 
     <?php
-    require_once "getusersfromdb.php"
+    require_once "../model/getusersfromdb.php"
       ?>
 
   </div>
@@ -112,12 +111,12 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
       });
     }
   </script>
-  <script src="assets/js/popupMgmt.js"></script>
+  <script src="../assets/js/popupMgmt.js"></script>
   <script>
     function confirmDelete(userId) {
       
         if (confirm("Êtes-vous sûr de vouloir supprimer cet utilisateur ?")) {
-          window.location.href = 'TraitementDeleteUser.php?userId=' + userId;
+          window.location.href = '../model/TraitementDeleteUser.php?userId=' + userId;
 
         }
     }
@@ -127,7 +126,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 <!--Bas de page-->
 
 
-  <?php include_once "views/footer.php" ?>
+  <?php include_once "footer.php" ?>
 <script>
   var table = document.getElementById("tableresultats");
   var nbLignesTable = table.tBodies[0].rows.length;

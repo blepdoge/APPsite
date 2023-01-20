@@ -9,6 +9,6 @@ session_unset();
 session_destroy();
 
 // Redirect to login page
-header("location: pageLogin.php");
+header("location: ../views/pageLogin.php");
 exit;
 ?>

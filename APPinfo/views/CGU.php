@@ -4,10 +4,10 @@
 <head>
   <meta charset="utf-8" />
   <title>Conditions Générales</title>
-  <link rel="stylesheet" href="assets/css/styleaccueil.css" />
+  <link rel="stylesheet" href="../assets/css/styleaccueil.css" />
 </head>
 
-<?php include_once "views/LoggedOUTHeader.php" ?>
+<?php include_once "loggedOUTHeader.php" ?>
 
 <!------------------------------------------------BODY---------------------------------------------------->
 
@@ -259,6 +259,6 @@
 </body>
 
 <!--Bas de page-->
-<?php include_once "views/footer.php" ?>
+<?php include_once "footer.php" ?>
 
 </html>

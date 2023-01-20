@@ -1,5 +1,5 @@
 <header>
-  <a href="pageAccueil.php"><img class="logotop" src="assets/images/logosorsen_crop.png" width="60" height="60" /></a>
+  <a href="pageAccueil.php"><img class="logotop" src="../assets/images/logosorsen_crop.png" width="60" height="60" /></a>
 
   <div class="textelogo">
     <p style="margin: 18px">SORSEN</p>

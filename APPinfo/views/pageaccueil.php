@@ -4,10 +4,10 @@
 <head>
   <meta charset="utf-8" />
   <title>Bienvenue chez Sorsen!</title>
-  <link rel="stylesheet" href="assets/css/styleaccueil.css" />
+  <link rel="stylesheet" href="../assets/css/styleaccueil.css" />
 </head>
 
-<?php include_once "views/LoggedOUTHeader.php" ?>
+<?php include_once "loggedOUTHeader.php" ?>
 
 <!------------------------------------------------BODY---------------------------------------------------->
 
@@ -32,8 +32,8 @@
     <!-- zone de contenu principal -->
     <div class="mainContent1">
       <div class="colonneGaucheMilieuAccueil">
-        <img class="imageProtoLabbox" src="assets/images/ImageProtoLabbox.png" alt="Image de Labbox" />
-        <img class="labboxlogosmall" src="assets/images/labboxlogosmall.png" alt="logo labbox" />
+        <img class="imageProtoLabbox" src="../assets/images/ImageProtoLabbox.png" alt="Image de Labbox" />
+        <img class="labboxlogosmall" src="../assets/images/labboxlogosmall.png" alt="logo labbox" />
         <p>
           LabBox, notre produit phare. Plusieurs capteurs associés à une
           plateforme interactive de haute qualité permettent d’assurer la
@@ -44,7 +44,7 @@
       <div class="colonneDroiteMilieuAccueil">
         <div class="barreGauche">
           <div class="containersBlabla">
-            <img src="assets/images/logoCentralisation.png" alt="logoCentralisation" />
+            <img src="../assets/images/logoCentralisation.png" alt="logoCentralisation" />
             <h3>
               Centralisation
             </h3>
@@ -57,7 +57,7 @@
           <div class="containersBlabla">
             <!--containeur bien-être-->
 
-            <img src="assets/images/logoBienetre.png" alt="logoBienetre" />
+            <img src="../assets/images/logoBienetre.png" alt="logoBienetre" />
             <h3>
               Bien-être
             </h3>
@@ -73,7 +73,7 @@
           <div class="containersBlabla">
             <!--containeur sécurité-->
 
-            <img src="assets/images/logoSecurite.png" alt="logoSecurite" />
+            <img src="../assets/images/logoSecurite.png" alt="logoSecurite" />
             <h3>
               Sécurité
             </h3>
@@ -84,7 +84,7 @@
           <div class="containersBlabla">
             <!--containeur analyse et suivi-->
 
-            <img src="assets/images/logoAnalyse.png" alt="logoAnalyse" />
+            <img src="../assets/images/logoAnalyse.png" alt="logoAnalyse" />
             <h3>
               Analyse et Suivi
             </h3>
@@ -109,12 +109,12 @@
         </p>
         <a href="pageCommande.php"><button class="formaccessbtn">Accéder au formulaire</button></a>
       </div>
-      <img class="genericlaboimg" src="assets/images/genericlabo.png" alt="genericlabo" />
+      <img class="genericlaboimg" src="../assets/images/genericlabo.png" alt="genericlabo" />
     </div>
   </div>
 </body>
 
 <!--Bas de page-->
-<?php include_once "views/footer.php" ?>
+<?php include_once "footer.php" ?>
 
 </html>

@@ -14,14 +14,14 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 
 <head>
   <title>Popup ajout de box</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
   <meta charset="utf-8" />
 </head>
 
 <body>
   <?php
   // Connexion a notre bdd
-  require_once "config.php";
+  require_once "../model/config.php";
 
   $nomBox = "";
   $nomBox_err = "";

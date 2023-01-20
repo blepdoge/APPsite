@@ -4,7 +4,7 @@ use PHPMailer\PHPMailer\Exception;
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 
-require 'vendor\autoload.php';
+require '../vendor/autoload.php';
 
 // Instantiate the PHPMailer class
 $mail = new PHPMailer();
@@ -51,7 +51,7 @@ try {
 
     // Envoi du mail
     $mail->send();
-    header('Location: pageCommande.php');
+    header('Location: ../views/pageCommande.php');
 
 } catch (Exception $e) {
     echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";

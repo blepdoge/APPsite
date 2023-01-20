@@ -14,14 +14,14 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 
 <head>
   <title>Ajouter un nouvel utilisateur</title>
-  <link rel="stylesheet" href="assets/css/User.css" />
+  <link rel="stylesheet" href="../assets/css/User.css" />
   <meta charset="utf-8" />
 </head>
 
 <body>
   <p class="titre">Ajouter un nouvel utilisateur</p>
 
-  <form method="post" action="TraitementAddUser.php">
+  <form method="post" action="../model/TraitementAddUser.php">
     <div class="adduserwrapper">
       <input class="prenom" type="text" name="prenom" id="prenom" placeholder="Prénom" required size="30"
         maxlength="30" />

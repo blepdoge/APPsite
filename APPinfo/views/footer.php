@@ -1,5 +1,5 @@
 <footer id="footer">
-  <img class="logobottom" src="assets/images/SorsenFull.png" width="60" height="50" />
+  <img class="logobottom" src="../assets/images/SorsenFull.png" width="60" height="50" />
 
   <div class="infoFooterContainer">
     <ul class="infoFooter">
@@ -30,6 +30,6 @@
   </div>
 
   <!-- Display the result of the AJAX request -->
-  <script src="assets/js/newsletterlink.js"></script>
+  <script src="../assets/js/newsletterlink.js"></script>
 
 </footer>

@@ -23,7 +23,7 @@ if (!$resultSearch) {
 }
 
 if ($resultSearch->num_rows == 0) {
-  echo '<img src="assets/images/empty.png" width="128" height="128" style="margin-top:50px">
+  echo '<img src="../assets/images/empty.png" width="128" height="128" style="margin-top:50px">
       <h2 style="margin-top:80px">Pas de résultat correspondant, essayez autre chose...<h2>';
 } else {
   // on loop a travers tous les rangées renvoyées par sql et on fait des divs a chaque fois, avec le nom de la box
@@ -38,14 +38,14 @@ if ($resultSearch->num_rows == 0) {
     }
     echo '
       <tr class="conteneurline">
-        <td width="60"><img src="assets/images/personne.png" alt="Logo personne" width="30" height="30" /></td>
+        <td width="60"><img src="../assets/images/personne.png" alt="Logo personne" width="30" height="30" /></td>
         <td width="200"><p>' . $user["prenom"] . '</p></td>
         <td width="200"><p>' . $user["nom"] . '</p></td>
         <td width="60" class="seperate"><p>I</p></td>
         <td width="400"><p>' . $user["email"] . '</p></td>
         <td width="200"><p>' . $adminPermission . '</p></td>
-        <td width="60"><button class="disablednotadmin" onclick=showPopup("userPageModif.php?userId=' . $user["idusers"] . '")><img src="assets/images/parametre.png" alt= "Logo param" width="30" height="30" /></button></td>
-        <td width="30"><button class="disablednotadmin" onclick=confirmDelete("' . $user["idusers"] . '")><img src="assets/images/supprimer.png" alt= "Logo delete" width="30" height="30" /></button></td>
+        <td width="60"><button class="disablednotadmin" onclick=showPopup("../views/userPageModif.php?userId=' . $user["idusers"] . '")><img src="../assets/images/parametre.png" alt= "Logo param" width="30" height="30" /></button></td>
+        <td width="30"><button class="disablednotadmin" onclick=confirmDelete("' . $user["idusers"] . '")><img src="../assets/images/supprimer.png" alt= "Logo delete" width="30" height="30" /></button></td>
       </tr>';
   }
   echo '</table>';

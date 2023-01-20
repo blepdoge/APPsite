@@ -60,7 +60,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                             $_SESSION["idLabo"] = $idLabo;
 
                             // Redirection
-                            header("location: accueilBox.php");
+                            header("location: ../views/accueilBox.php");
                         } else {
                             // mdp non valide donc erreur
                             $login_err = "Mot de passe invalide.";

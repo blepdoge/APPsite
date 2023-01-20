@@ -10,7 +10,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
   exit;
 }
 
-require_once "config.php";
+require_once "../model/config.php";
 
 ?>
 
@@ -19,7 +19,7 @@ require_once "config.php";
 
 <head>
   <title>Profil</title>
-  <link rel="stylesheet" href="assets/css/User.css" />
+  <link rel="stylesheet" href="../assets/css/User.css" />
   <meta charset="utf-8" />
 </head>
 
@@ -54,7 +54,7 @@ require_once "config.php";
 
   <p class="titre">Profil</p>
 
-  <form method="post" action="TraitementModifyUser.php?userId=' . $userId . '">
+  <form method="post" action="../model/TraitementModifyUser.php?userId=' . $userId . '">
     <div class="adduserwrapper">
       <input class="prenom" type="text" name="prenom" id="prenom" placeholder="Prénom" required size="30" maxlength="30"
         value="<?php echo $prenom; ?>" />

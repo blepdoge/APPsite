@@ -8,7 +8,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
   exit;
 }
 
-require_once 'config.php';
+require_once '../model/config.php';
 $boxquery = "SELECT idLabBox, nomBox FROM labboxtable where laboratoires_idlaboratoires =" . $_SESSION["idLabo"];
 $boxresult = mysqli_query($link, $boxquery);
 
@@ -20,7 +20,7 @@ mysqli_close($link);
 
 <head>
   <title>Support rapide</title>
-  <link rel="stylesheet" href="assets/css/supportstyle.css" />
+  <link rel="stylesheet" href="../assets/css/supportstyle.css" />
 </head>
 <header>
   <div class="textelogo">
@@ -29,7 +29,7 @@ mysqli_close($link);
 </header>
 
 <body style="margin: 0">
-  <form method="POST" action="adminsupportemail.php">
+  <form method="POST" action="../controller/adminsupportemail.php">
 
     <div class="div1">
       <select class="nature" name="nature" id="nature" value="nature" onchange=showHideSelect()>

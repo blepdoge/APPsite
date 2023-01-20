@@ -4,10 +4,10 @@
 <head>
   <meta charset="utf-8" />
   <title>Quiz des dangers</title>
-  <link rel="stylesheet" href="assets/css/quizStyle.css" />
+  <link rel="stylesheet" href="../assets/css/quizStyle.css" />
 </head>
 
-<?php include_once "views/LoggedOUTHeader.php" ?>
+<?php include_once "loggedOUTHeader.php" ?>
 <!--------------------------------------------------------HAUT DE PAGE------------------------------------------------------------>
 
 
@@ -36,7 +36,7 @@
 
     <div id="results">
 
-      <script class src="assets/js/quizScript.js"></script>
+      <script class src="../assets/js/quizScript.js"></script>
     </div>
   </div>
 
@@ -44,6 +44,6 @@
 
 
 <!---------------------------------------------------------BAS DE PAGE------------------------------------------------------------->
-<?php include_once "views/footer.php" ?>
+<?php include_once "footer.php" ?>
 
 </html>

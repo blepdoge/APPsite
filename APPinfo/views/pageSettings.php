@@ -9,7 +9,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 }
 
 // Connect to the database
-require_once "config.php";
+require_once "../model/config.php";
 
 // Select the data from the laboratoires table
 $sql = "SELECT nomLabo, adresseLabo, emailLabo FROM laboratoires";
@@ -42,12 +42,12 @@ mysqli_close($link);
 
 <head>
   <title>Paramètres</title>
-  <link rel="stylesheet" href="assets/css/styleSettingsAPP.css" />
+  <link rel="stylesheet" href="../assets/css/styleSettingsAPP.css" />
   <meta charset="utf-8" />
 
 </head>
 
-<?php include_once "views/LoggedINHeader.php" ?>
+<?php include_once "loggedINHeader.php" ?>
 
 <body style="margin: 0">
 
@@ -128,7 +128,7 @@ mysqli_close($link);
         </div>
       </div>
     </form>
-    <script src="assets/js/settingsupdate.js"></script>
+    <script src="../assets/js/settingsupdate.js"></script>
   </div>
 
   <script>
@@ -148,6 +148,6 @@ mysqli_close($link);
 </body>
 
 <!--Bas de page-->
-<?php include_once "views/footer.php" ?>
+<?php include_once "footer.php" ?>
 
 </html>

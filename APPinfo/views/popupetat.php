@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <link rel="stylesheet" href="assets/css/popetatstyle.css">
+  <link rel="stylesheet" href="../assets/css/popetatstyle.css">
   <meta charset="utf-8" />
 </head>
 
@@ -11,7 +11,7 @@
   <?php
   session_start();
   // Connexion a notre bdd
-  require_once "config.php";
+  require_once "../model/config.php";
   //form pour changer le nom
   
 

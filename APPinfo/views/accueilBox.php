@@ -13,11 +13,11 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 
 <head>
   <title>Panneau de contrôle</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/style.css">
   <meta charset="utf-8" />
 </head>
 
-<?php include_once "views/LoggedINHeader.php" ?>
+<?php include_once "loggedINHeader.php" ?>
 
 <body>
   <div id="popup" class="popup" style="display:none;">
@@ -52,7 +52,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     <?php
 
     // Connexion a notre bdd
-    require_once "config.php";
+    require_once "../model/config.php";
 
     // faire la requete sql en fonction du labo de la session actuelle
     $query = "SELECT nomBox FROM labboxtable WHERE laboratoires_idlaboratoires =" . $_SESSION["idLabo"];
@@ -61,11 +61,11 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     // on loop a travers tous les rangées renvoyées par sql et on fait des divs a chaque fois, avec le nom de la box
     while ($row = mysqli_fetch_assoc($result)) {
       echo '<div class="box">
-      <img src="assets/images/rondvert.png" alt="icône" style="width:20px;height:20px;float:left;">
-      <img class="disablednotadmin Modifnom" onclick=showPopup("popupetat.php?currentBoxID=' . urlencode($row['nomBox']) . '") src="assets/images/stylo.png" alt="icône" style="width:20px;height:20px;float:right; onclick="showPopup("Modifnombox.php")">
+      <img src="../assets/images/rondvert.png" alt="icône" style="width:20px;height:20px;float:left;">
+      <img class="disablednotadmin Modifnom" onclick=showPopup("popupetat.php?currentBoxID=' . urlencode($row['nomBox']) . '") src="../assets/images/stylo.png" alt="icône" style="width:20px;height:20px;float:right; onclick="showPopup("Modifnombox.php")">
       <br>
       <a href="pageGraphes.php?currentBoxID=' . urlencode($row['nomBox']) . '">
-      <img src="assets/images/imagebox.png" alt="image" style="width:170px;">
+      <img src="../assets/images/imagebox.png" alt="image" style="width:170px;">
       <p class="titrebox">' . $row['nomBox'] . '</p>
       </a>
       </div>';
@@ -80,7 +80,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 
   <div class="icon">
     <a href="support_box.php">
-      <img src="assets/images/icon.png" alt="icon"
+      <img src="../assets/images/icon.png" alt="icon"
         style="  position: absolute;bottom: -100px;right: 20px;width: 60px;height: 60px;">
     </a>
   </div>
@@ -88,7 +88,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
   <div>
     <div class="container">
       <div style="width:fitcontent">
-        <button class="disablednotadmin plus" onclick="showPopup('AjoutBox.php')">
+        <button class="disablednotadmin plus" onclick="showPopup('ajoutBox.php')">
           <h1 style="margin:0px">+</h1>
         </button>
       </div>
@@ -111,9 +111,9 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     }
   </script>
 
-  <script src="assets/js/popupMgmt.js">
+  <script src="../assets/js/popupMgmt.js">
     
   </script>
 </body>
 
-<?php include_once "views/footer.php" ?>
+<?php include_once "footer.php" ?>

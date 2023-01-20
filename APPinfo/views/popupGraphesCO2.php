@@ -1,7 +1,7 @@
 <?php
 $currentBoxID = urldecode($_GET["currentBox"]);
 
-require_once "config.php";
+require_once "../model/config.php";
 $query = "SELECT sensorvalues.* FROM sensorvalues INNER JOIN labboxtable ON sensorvalues.LabBoxTable_idLabBox = labboxtable.idLabBox WHERE labboxtable.nomBox='$currentBoxID'";
 $data = mysqli_query($link, $query);
 
@@ -21,7 +21,7 @@ foreach ($data as $row) {
   <title>Concentration CO2</title>
   <meta charset="utf-8" />
   <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-  <link rel="stylesheet" href="assets/css/popupGraphesStyle.css" />
+  <link rel="stylesheet" href="../assets/css/popupGraphesStyle.css" />
 </head>
 
 <body style="margin: 0">
@@ -33,7 +33,7 @@ foreach ($data as $row) {
       </div>
       <div class="GraphetValeurText">
         <p class="valeurGraphe">500 ppm<br><br>Valeur min :<br>480 ppm<br><br>Valeur max :<br>510ppm</p>
-        <img class="ligne" src="assets/images/Line.png" alt="Graph" />
+        <img class="ligne" src="../assets/images/Line.png" alt="Graph" />
         <div class="canvasContainer">
           <canvas id="myChart"></canvas>
         </div>

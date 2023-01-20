@@ -15,11 +15,11 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 
 <head>
   <title>Foire aux Questions</title>
-  <link rel="stylesheet" href="assets/css/styleFAQ.css" />
+  <link rel="stylesheet" href="../assets/css/styleFAQ.css" />
   <meta charset="utf-8" />
 </head>
 
-<?php include_once "views/LoggedINHeader.php" ?>
+<?php include_once "loggedINHeader.php" ?>
 
 <body>
   <div class="titre">
@@ -127,9 +127,9 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     </div>
   </div>
 
-  <script src="assets/js/FaqDisplayScript.js"> //anime les divs</script>
+  <script src="../assets/js/FaqDisplayScript.js"> //anime les divs</script>
 </body>
 
-<?php include_once "views/footer.php" ?>
+<?php include_once "footer.php" ?>
 
 </html>

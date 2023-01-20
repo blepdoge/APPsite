@@ -8,7 +8,7 @@ if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
   exit;
 }
 
-require_once "login.php";
+require_once "../model/login.php";
 ?>
 
 
@@ -17,10 +17,10 @@ require_once "login.php";
 <head>
   <title>Connexion</title>
   <meta charset="utf-8">
-  <link rel="stylesheet" href="assets/css/styleLoginAPP.css">
+  <link rel="stylesheet" href="../assets/css/styleLoginAPP.css">
 </head>
 
-<?php include_once "views/LoggedOUTHeader.php" ?>
+<?php include_once "loggedOUTHeader.php" ?>
 
 <body>
   <div class="center">
@@ -61,6 +61,6 @@ require_once "login.php";
 </body>
 
 <!--Bas de page-->
-<?php include_once "views/footer.php" ?>
+<?php include_once "footer.php" ?>
 
 </html>

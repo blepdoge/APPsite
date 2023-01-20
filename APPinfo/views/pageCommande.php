@@ -3,15 +3,15 @@
 
 <head>
   <title>Commander une LabBox</title>
-  <link rel="stylesheet" href="assets/css/styleFormCommande.css" />
+  <link rel="stylesheet" href="../assets/css/styleFormCommande.css" />
   <meta charset="utf-8" />
 </head>
 
-<?php include_once "views/LoggedOUTHeader.php" ?>
+<?php include_once "loggedOUTHeader.php" ?>
 
 <body style="margin: 0">
   <div class="contenuPage">
-    <form action="emailcommande.php" method="post">
+    <form action="../controller/emailcommande.php" method="post">
       <div class="formulaireContact">
         <h2>Vous souhaitez acquérir une LabBox ? C'est ici !</h2>
         <p>
@@ -49,6 +49,6 @@
 </body>
 
 <!--Bas de page-->
-<?php include_once "views/footer.php" ?>
+<?php include_once "footer.php" ?>
 
 </html>
