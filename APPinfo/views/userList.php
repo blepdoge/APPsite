@@ -80,7 +80,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     <div id="search-bar-box">
       <form action="" id="searchform">
         <input id="input" type="text" name="userSearchBar" placeholder="Chercher un utilisateur">
-        <button type="submit" id="searchUser" name="searchUser">Chercher</button>
+        <button type="submit" class="button-89" id="searchUser" name="searchUser">Chercher</button>
         <div class="graphe disablednotadmin" onclick="showPopup('userAdd.php')">
           <img class="disablednotadmin" src="../assets/images/ajouter.png" alt="addUser" width="30" height="30" />
         </div>

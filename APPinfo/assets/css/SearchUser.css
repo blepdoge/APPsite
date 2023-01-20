@@ -79,7 +79,60 @@ header {
   border-radius: 5px 10px 5px 10px;
   background-color: #79b1d7;
   font-size: large;
+  margin-left:25px;
+  margin-right:25px;
 }
+
+
+/* CSS */
+.button-89 {
+  align-items: center;
+  box-sizing: border-box;
+  color: white;
+  cursor: pointer;
+  display: flex;
+  font-family: Inter,sans-serif;
+  height: 39px;
+  justify-content: center;
+  line-height: 24px;
+  max-width: 100%;
+  
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  
+  
+  touch-action: manipulation;
+}
+
+.button-89:after {
+  background-color: rgb(32, 57, 158);
+  border-radius: 8px;
+  content: "";
+  display: block;
+  height: 39px;
+  left: 0;
+  width: 100%;
+  position: absolute;
+  top: 0px;
+  transform: translate(8px, 8px);
+  transition: transform .2s ease-out;
+  z-index: -1;
+}
+
+.button-89:hover:after {
+  transform: translate(0, 0);
+}
+
+.button-89:active {
+  background-color: #ffdeda;
+  outline: 0;
+}
+
+.button-89:hover {
+  outline: 0;
+}
+
 
 #searchUser:hover {
   background-color: #6291af;
@@ -241,7 +294,7 @@ header {
   padding: 10px 20px;
   text-align: center;
   font-size: 16px;
-  margin: 4px 2px;
+  margin: 4px 15px;
   opacity: 0.6;
   transition: 0.3s;
   display: inline-block;
