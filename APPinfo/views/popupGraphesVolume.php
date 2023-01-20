@@ -1,15 +1,7 @@
 <?php
 $currentBoxID = urldecode($_GET["currentBox"]);
+require_once "../model/dataCalling.php";
 
-require_once "../model/config.php";
-$query = "SELECT sensorvalues.* FROM sensorvalues INNER JOIN labboxtable ON sensorvalues.LabBoxTable_idLabBox = labboxtable.idLabBox WHERE labboxtable.nomBox='$currentBoxID'";
-$data = mysqli_query($link, $query);
-
-foreach ($data as $row) {
-  $dbson[] = $row['dBvalue'];
-
-  $timestamp[] = $row['timestamp'];
-}
 ?>
 
 <!DOCTYPE html>
@@ -18,8 +10,8 @@ foreach ($data as $row) {
 <head>
   <title>Volume Sonore</title>
   <meta charset="utf-8" />
-  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <link rel="stylesheet" href="../assets/css/popupGraphesStyle.css" />
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 
 <body style="margin: 0">

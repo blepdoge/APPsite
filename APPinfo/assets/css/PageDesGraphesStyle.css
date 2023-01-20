@@ -216,6 +216,34 @@ header {
   box-shadow: 2px 2px 2px #a1a1a1, -6px -6px 6px #ffffff;
 }
 
+.canvasContainer {
+  width :290px !important;
+  height : 150px !important;
+}
+
+#myChartCO2 {
+  height : 100% !important;
+  width : 100% !important;
+}
+
+#myChartCO {
+  height : 100% !important;
+  width : 100% !important;
+}
+
+#myChartBPM {
+  height : 100% !important;
+  width : 100% !important;
+}
+#myChartDB {
+  height : 100% !important;
+  width : 100% !important;
+}
+#myChartTEMP {
+  height : 100% !important;
+  width : 100% !important;
+}
+
 /*---------------------popups----------------------*/
 
 .overlay {

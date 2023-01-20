@@ -7,8 +7,8 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
   header("location: pageLogin.php");
   exit;
 }
-
-$currentBox = urldecode($_GET["currentBoxID"]);
+$currentBoxID = urldecode($_GET["currentBoxID"]);
+require_once "../model/dataCalling.php"
 ?>
 
 <!DOCTYPE html>
@@ -17,7 +17,9 @@ $currentBox = urldecode($_GET["currentBoxID"]);
 <head>
   <title>Données LabBox</title>
   <link rel="stylesheet" href="../assets/css/PageDesGraphesStyle.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   <meta charset="utf-8" />
+
 </head>
 
 <?php include_once "loggedINHeader.php" ?>
@@ -40,7 +42,7 @@ $currentBox = urldecode($_GET["currentBoxID"]);
 <body onload=display_ct()>
   <div class="titre">
     <h1>
-      <?php echo $currentBox ?>
+      <?php echo $currentBoxID ?>
     </h1>
   </div>
 
@@ -72,36 +74,45 @@ $currentBox = urldecode($_GET["currentBoxID"]);
   </div>
 
   <div class="boxesWrapper">
-    <div class="graphe" onclick="showPopup('<?php echo 'popupGraphesCO2.php?currentBox=' . urlencode($currentBox) ?>')">
+    <div class="graphe" onclick="showPopup('<?php echo 'popupGraphesCO2.php?currentBox=' . urlencode($currentBoxID) ?>')">
       <h3>Concentration en CO2</h3>
-      <img src="../assets/images/graphe.png" alt="graphe" style="width:280px;">
+      <div class="canvasContainer">
+        <canvas id="myChartCO2"></canvas>
+      </div>
       <div class="indic">
         <p>500 ppm</p>
       </div> <!--fin div indic -->
     </div> <!--ferme div graphe -->
 
 
-    <div class="graphe" onclick="showPopup('<?php echo 'popupGraphesCO.php?currentBox=' . urlencode($currentBox) ?>')">
+    <div class="graphe" onclick="showPopup('<?php echo 'popupGraphesCO.php?currentBox=' . urlencode($currentBoxID) ?>')">
       <h3>Concentration en CO</h3>
-      <img src="../assets/images/graphe.png" alt="graphe" style="width:280px;">
+      <div class="canvasContainer">
+        <canvas id="myChartCO"></canvas>
+      </div>
       <div class="indic">
         <p>45 ppm</p>
       </div> <!--fin div indic -->
     </div> <!--ferme div graphe -->
 
 
-    <div class="graphe" onclick="showPopup('<?php echo 'popupGraphesVolume.php?currentBox=' . urlencode($currentBox) ?>')">
+    <div class="graphe"
+      onclick="showPopup('<?php echo 'popupGraphesVolume.php?currentBox=' . urlencode($currentBoxID) ?>')">
       <h3>Volume sonore</h3>
-      <img src="../assets/images/graphe.png" alt="graphe" style="width:280px;">
+      <div class="canvasContainer">
+        <canvas id="myChartDB"></canvas>
+      </div>
       <div class="indic">
         <p>20 dB</p>
       </div> <!--fin div indic -->
     </div> <!--ferme div graphe -->
 
 
-    <div class="graphe" onclick="showPopup('<?php echo 'popupGraphesBPM.php?currentBox=' . urlencode($currentBox) ?>')">
+    <div class="graphe" onclick="showPopup('<?php echo 'popupGraphesBPM.php?currentBox=' . urlencode($currentBoxID) ?>')">
       <h3>Fréquence cardiaque</h3>
-      <img src="../assets/images/graphe.png" alt="graphe" style="width:280px;">
+      <div class="canvasContainer">
+        <canvas id="myChartBPM"></canvas>
+      </div>
       <div class="indic">
         <p>150 bpm</p>
       </div> <!--fin div indic -->
@@ -109,9 +120,11 @@ $currentBox = urldecode($_GET["currentBoxID"]);
 
 
     <div class="graphe"
-      onclick="showPopup('<?php echo 'popupGraphesTemperature.php?currentBox=' . urlencode($currentBox) ?>')">
+      onclick="showPopup('<?php echo 'popupGraphesTemperature.php?currentBox=' . urlencode($currentBoxID) ?>')">
       <h3>Température</h3>
-      <img src="../assets/images/graphe.png" alt="graphe" style="width:280px;">
+      <div class="canvasContainer">
+        <canvas id="myChartTEMP"></canvas>
+      </div>
       <div class="indic">
         <p>20°</p>
       </div> <!--fin div indic -->
@@ -119,8 +132,16 @@ $currentBox = urldecode($_GET["currentBoxID"]);
 
   </div>
 
-  <script src="../assets/js/popupMgmt.js">
-    
+
+  <script src="../assets/js/popupMgmt.js"></script>
+
+  <script src="../assets/js/graphCalling.js"></script>
+  <script>
+    graphCalling("myChartCO2", <?php echo json_encode($timestamp) ?>, <?php echo json_encode($co2) ?>, "Concentration en CO2");
+    graphCalling("myChartCO", <?php echo json_encode($timestamp) ?>, <?php echo json_encode($co) ?>, "Concentration en CO");
+    graphCalling("myChartDB", <?php echo json_encode($timestamp) ?>, <?php echo json_encode($dbson) ?>, "Volume sonore");
+    graphCalling("myChartBPM", <?php echo json_encode($timestamp) ?>, <?php echo json_encode($bpm) ?>, "Fréquence cardiaque");
+    graphCalling("myChartTEMP", <?php echo json_encode($timestamp) ?>, <?php echo json_encode($temp) ?>, "Température");
   </script>
 
 
