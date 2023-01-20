@@ -22,15 +22,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 <body>
   <div id="popup" class="popup" style="display:none;">
     <iframe id="graphframe" frameborder="0"></iframe>
-    <div class=annul style="right:150px;">
-      <button onclick="hidePopup(), history.go(0)" class="btnpopup">
-        Terminé
-      </button>
-    </div>
-    <div class=annul>
-      <button onclick="hidePopup(), href='accueilBox.php'" class="btnpopup"> Annuler
-      </button>
-    </div>
+    
   </div>
 
   <!-- Add the overlay div -->

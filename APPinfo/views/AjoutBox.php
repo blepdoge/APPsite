@@ -32,11 +32,12 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
       $nomBox_err = "Donnez un nom à votre Box";
     } else {
       $nomBox = mysqli_real_escape_string($link, trim($_POST["nomBox"]));
+      $ipBox = mysqli_real_escape_string($link, trim($_POST["ipBox"]));
     }
 
     if (empty($nomBox_err)) {
       // Ajouter le nom de la box dans la base de données
-      $query = "INSERT INTO labboxtable(nombox, laboratoires_idlaboratoires) VALUES ('$nomBox', '" . $_SESSION["idLabo"] . "')";
+      $query = "INSERT INTO labboxtable(LocalIP, nombox, laboratoires_idlaboratoires) VALUES ('$ipBox','$nomBox', '" . $_SESSION["idLabo"] . "')";
       mysqli_query($link, $query);
     }
 
@@ -61,7 +62,22 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     <span class="invalid-feedback">
       <?php echo $nomBox_err; ?>
     </span>
+    IP de la Box :
+    <input type="text" name="ipBox" class="inpnouvbox">
     <input type="submit" value="Confirmer" class="btnpopup" />
+    <script>
+      var btn = document.querySelector('.btnpopup');
+      btn.addEventListener('click', function (event) {
+        if (confirm('Voulez-vous vraiment ajouter cette box?')) {
+          // Save it!
+          alert('Box ajoutée');
+          window.location.href = 'accueilbox.php';
+        } else {
+          // Do nothing!
+          event.preventDefault();
+        }
+      });
+    </script>
   </form>
 
 
