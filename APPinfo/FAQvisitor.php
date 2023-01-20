@@ -3,7 +3,7 @@
 
 <head>
   <title>Foire aux Questions</title>
-  <link rel="stylesheet" href="assets/css/styleFAQ.css" />
+  <link rel="stylesheet" href="assets/css/styleFAQVisitor.css" />
   <meta charset="utf-8" />
 </head>
 
