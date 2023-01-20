@@ -111,36 +111,8 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     }
   </script>
 
-  <script>
-    // fonction pour afficher la popup
-    function showPopup(filepopup) {
-      // recup de l'iframe
-      var frame = document.getElementById("graphframe");
-      // definir la source
-      frame.src = filepopup;
-      // recup des elements popup et overlay
-      var popup = document.getElementById("popup");
-      var overlay = document.getElementById("overlay");
-      // affichage popup et overlay
-      popup.style.display = "block";
-      overlay.style.display = "block";
-    }
-
-    // Function to hide the popup
-    function hidePopup() {
-      // recup des elements popup et overlay
-      var popup = document.getElementById("popup");
-      var overlay = document.getElementById("overlay");
-      // cacher popup et overlay
-      popup.style.display = "none";
-      overlay.style.display = "none";
-      var frame = document.getElementById("graphframe");
-      // definir la source
-      frame.src = "";
-    }
-
-    // Ecouter pour des clicks sur le partie sombre pour sortir de la popup
-    document.getElementById("overlay").addEventListener("click", hidePopup);
+  <script src="assets/js/popupMgmt.js">
+    
   </script>
 </body>
 

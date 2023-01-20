@@ -17,6 +17,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
   <title>Liste des membres</title>
   <link rel="stylesheet" href="assets/css/SearchUser.css" />
   <meta charset="utf-8" />
+
 </head>
 
 <header>
@@ -29,18 +30,8 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     </div>
   </div>
 
-  <script>
-    function showOptions() {
+  <script src="assets/js/showOptions.js">
 
-      const element = document.querySelector(".options");
-      if (element.classList.contains('show') == false) {
-        element.classList.add("show");// affiche le menu
-      } else {
-        element.classList.remove("show");
-      }
-      // cache le menu
-      //ce menu vous est apporté par louis-marie
-    }
   </script>
 
   <nav>
@@ -91,7 +82,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
       <form action="" id="searchform">
         <input id="input" type="text" name="userSearchBar" placeholder="Chercher un utilisateur">
         <button type="submit" id="searchUser" name="searchUser">Chercher</button>
-        <div class="graphe" onclick="showPopup('userAdd.php')">
+        <div class="graphe disablednotadmin" onclick="showPopup('userAdd.php')">
           <img class="disablednotadmin" src="assets/images/ajouter.png" alt="addUser" width="30" height="30" />
         </div>
       </form>
@@ -105,8 +96,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
       ?>
 
   </div>
-
-
+  
   <script>
     // recupere la variable php des permissions
     var adminPerm = <?php echo json_encode($_SESSION['adminPerm']); ?>;
@@ -117,62 +107,34 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
       document.querySelectorAll('.disablednotadmin').forEach(function (element) {
         element.setAttribute('disabled', '');
       });
+      document.querySelectorAll('.disablednotadmin').forEach(function (element) {
+        element.removeAttribute('onclick');
+      });
     }
-
-    // Function to show the popup
-    function showPopup(datapopup) {
-      // Get the iframe element
-      var frame = document.getElementById("graphframe");
-      // Set the src attribute
-      frame.src = datapopup;
-      // Get the popup and overlay elements
-      var popup = document.getElementById("popup");
-      var overlay = document.getElementById("overlay");
-      // Show the popup and overlay
-      popup.style.display = "block";
-      overlay.style.display = "block";
-    }
-
-    // Function to hide the popup
-    function hidePopup() {
-      // Get the popup and overlay elements
-      var popup = document.getElementById("popup");
-      var overlay = document.getElementById("overlay");
-      // Hide the popup and overlay
-      popup.style.display = "none";
-      overlay.style.display = "none";
-      var frame = document.getElementById("graphframe");
-      // Set the src attribute
-      frame.src = "";
-    }
-
-    // Add an event listener to the overlay to hide the popup when clicked
-    document.getElementById("overlay").addEventListener("click", hidePopup);
-
-
-    function useridsave(id) {
-
-
-    }
-
+  </script>
+  <script src="assets/js/popupMgmt.js"></script>
+  <script>
     function confirmDelete(userId) {
-      if (confirm("Êtes-vous sûr de vouloir supprimer cet utilisateur ?")) {
-        window.location.href = 'TraitementDeleteUser.php?userId=' + userId;
+      
+        if (confirm("Êtes-vous sûr de vouloir supprimer cet utilisateur ?")) {
+          window.location.href = 'TraitementDeleteUser.php?userId=' + userId;
 
-      }
+        }
     }
-
   </script>
 
 </body>
 <!--Bas de page-->
-<?php include_once "views/footer.php" ?>
-<script>
-var table = document.getElementById("tableresultats");
-    var nbLignesTable = table.tBodies[0].rows.length;
 
-    if (nbLignesTable > 7) {
-      var footer = document.getElementById("footer");
-      footer.style.position = "relative";
-    }
+
+  <?php include_once "views/footer.php" ?>
+<script>
+  var table = document.getElementById("tableresultats");
+  var nbLignesTable = table.tBodies[0].rows.length;
+
+  if (nbLignesTable > 7) {
+    var footer = document.getElementById("footer");
+    footer.style.position = "relative";
+  }
 </script>
+
