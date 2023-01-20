@@ -24,7 +24,7 @@ form.addEventListener("submit", (event) => {
     // Check the status of the request
     if (xhr.status === 200) {
       // Display the result of the PHP script
-      document.getElementById("resultat").innerHTML = xhr.responseText + "Les valeurs ont bien été mises à jour.";
+      document.getElementById("resultat").innerHTML = xhr.responseText;
     } else {
       // Display an error message
       document.getElementById("resultat").innerHTML = "Une erreur est survenue.";
