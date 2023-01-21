@@ -1,4 +1,5 @@
 <?php
+
 // Connexion a notre bdd
 require_once "config.php";
 
@@ -8,10 +9,10 @@ if (isset($_GET['userSearchBar']) && !empty($_GET['userSearchBar'])) {
   $search = mysqli_real_escape_string($link, $_GET['userSearchBar']);
 
   // Generer la requete SQL en cherchant par nom ou prenom
-  $searchquery = "SELECT idusers, prenom, nom, email, adminPerm FROM users WHERE nom LIKE '" . $search . "%' OR prenom LIKE '" . $search . "%' OR email LIKE '%" . $search . "%' ORDER BY nom asc ";
+  $searchquery = "SELECT idusers, prenom, nom, email, adminPerm FROM users WHERE laboratoires_idlaboratoires='".$_SESSION["idLabo"]."' AND nom LIKE '" . $search . "%' OR prenom LIKE '" . $search . "%' OR email LIKE '%" . $search . "%' ORDER BY nom asc ";
 } else {
   // si rien de renvoyé alors on affiche tout
-  $searchquery = "SELECT * FROM users ORDER BY nom asc";
+  $searchquery = "SELECT * FROM users WHERE laboratoires_idlaboratoires='".$_SESSION["idLabo"]."' ORDER BY nom asc";
 }
 
 // faire la requete sql en fonction de la query plus haut
