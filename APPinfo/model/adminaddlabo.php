@@ -16,5 +16,7 @@ if (isset($_POST['addlabo'])) {
     }
 
     $link->close();
+    header("Location: ../views/sysadmin.php");
 }
+
 ?>

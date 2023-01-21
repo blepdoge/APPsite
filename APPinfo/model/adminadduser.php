@@ -16,11 +16,12 @@ if (isset($_POST['adduser'])) {
     VALUES ('$prenom', '$nom', '$idlaboratoire', '$email', '$adresse', '$passwordhash', '$statut')";
 
     if ($link->query($sql) === TRUE) {
-        echo "New record created successfully";
+        echo "Utilisateur ajouté avec succès";
     } else {
-        echo "Error: " . $sql . "<br>" . mysqli_error($link);
+        echo "Erreur: " . $sql . "<br>" . mysqli_error($link);
     }
 
     $link->close();
+    header("Location: ../views/sysadmin.php");
 }
 ?>
