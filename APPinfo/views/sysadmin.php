@@ -24,7 +24,7 @@ require_once "../model/config.php";
     <div id="headercontainer">
 
         <div>Gestion système SORSEN</div>
-        <div><a href="../model/logout.php">Deconnexion</a></div>
+        <div><a href="../controller/logout.php">Deconnexion</a></div>
     </div>
 </header>
 
@@ -36,12 +36,12 @@ require_once "../model/config.php";
 
             </div>
             <div class="dataform">
-                <form class="dataform" action="" method="POST">
+                <form class="dataform" action="../model/adminaddlabo.php" method="POST">
 
                     <input type="text" name="nomlabo" placeholder="Nom du laboratoire" required>
                     <input type="text" name="adresselabo" placeholder="Adresse du laboratoire" required>
                     <input type="text" name="emaillabo" placeholder="Email du laboratoire" required>
-                    <input type="submit" name="addlabo" value="Ajouter le laboratoire">
+                    <input type="submit" name="addlabo" id="addlabo" value="Ajouter le laboratoire">
 
                 </form>
             </div>
@@ -53,7 +53,7 @@ require_once "../model/config.php";
 
             </div>
             <div class="dataform">
-                <form class="dataform" action="" method="POST">
+                <form class="dataform" action="../model/adminadduser.php" method="POST">
 
                     <input type="text" name="prenom" placeholder="Prénom" required maxlength="30" />
                     <input type="text" name="nom" placeholder="Nom" required maxlength="30" />
@@ -66,7 +66,7 @@ require_once "../model/config.php";
                         <option value="1">Administrateur</option>
                         <option value="0">Utilisateur</option>
                     </select>
-                    <input type="submit" type="submit" value="Ajouter l'utilisateur" />
+                    <input type="submit" name="adduser" id="adduser" value="Ajouter l'utilisateur" />
 
                 </form>
             </div>
@@ -88,6 +88,28 @@ require_once "../model/config.php";
             <?php include_once "../model/displayuseradmin.php"; ?>
 
     </div>
+
+    <script>
+        //event listerner to prevent default form submission for addlabo
+        document.getElementById("addlabo").addEventListener("click", function(event) {
+            if(!confirm("Voulez-vous vraiment ajouter ce laboratoire ?")){
+                event.preventDefault();
+            } else {
+                
+                window.location.href = "sysadmin.php";
+            }
+            
+        });
+
+        document.getElementById("adduser").addEventListener("click", function(event) {
+            if(!confirm("Voulez-vous vraiment ajouter cet utilisateur ?")){
+                event.preventDefault();
+            } else {
+                window.location.href = "sysadmin.php";
+            }
+            
+        });
+    </script>
 
 </body>
 
