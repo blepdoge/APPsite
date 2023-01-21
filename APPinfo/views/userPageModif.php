@@ -30,7 +30,7 @@ require_once "../model/config.php";
       element.value = valueToSelect;
     }
   </script>
-  <?php $sql = "SELECT nom, prenom, adresse, email, adminPerm, password, laboratoires_idlaboratoires FROM users WHERE idusers = $userId";
+  <?php $sql = "SELECT nom, prenom, adresse, email, adminPerm, laboratoires_idlaboratoires FROM users WHERE idusers = $userId";
   $result = $link->query($sql);
   while ($row = mysqli_fetch_assoc($result)) {
     $prenom = $row['prenom'];
@@ -38,7 +38,6 @@ require_once "../model/config.php";
     $adresse = $row['adresse'];
     $email = $row['email'];
     $adminPerm = $row['adminPerm'];
-    $password = $row['password'];
     $idlaboratoires = $row['laboratoires_idlaboratoires'];
 
     if ($adminPerm == 0) {
@@ -66,8 +65,8 @@ require_once "../model/config.php";
         value="<?php echo $email ?>" />
       <input class="adresse" type="text" name="adresse" id="adresse" placeholder="Adresse" required size="30"
         maxlength="75" value="<?php echo $adresse ?>" />
-      <input class="password" type="password" name="password" id="password" placeholder="mot de passe" required
-        value="<?php echo $password ?>" />
+      <input class="password" type="password" name="password" id="password" placeholder="mot de passe" 
+         />
 
       <select class="statut" name="statut" id="statut" value="Choisir le statut" required>
 

@@ -16,6 +16,7 @@ if (isset($_POST['prenom'])) {
   $adresse = mysqli_real_escape_string($link, $_POST['adresse']);
   $password1 = mysqli_real_escape_string($link, $_POST['password']);
 
+  $password1hash = password_hash($password1, PASSWORD_DEFAULT);
 
   if ($_POST['statut'] == 'Administrateur') {
     $statut = 1;
@@ -23,14 +24,34 @@ if (isset($_POST['prenom'])) {
     $statut = 0;
   }
 
-  $sql = "UPDATE users SET nom = '$nom', prenom = '$prenom', adresse= '$adresse', email='$email', adminPerm='$statut', password='$password1', laboratoires_idlaboratoires= '$idlaboratoire' WHERE idusers = $userId";
-  $result = $link->query($sql);
-  if ($link->query($sql) === TRUE) {
-    echo '<div class="centrer"><h1> Informations mises à jour </h1></div>';
-  } else {
-    echo "Error: " . $sql . "<br>" . mysqli_error($link);
+  // Check if the data from the users table needs to be updated
+  $query = "SELECT nom, prenom, email, adresse FROM users WHERE email='$email' AND nom='$nom' AND prenom='$prenom' AND adresse='$adresse'";
+  $result = mysqli_query($link, $query);
+
+  if ($result->num_rows == 0) {
+
+    $sql = "UPDATE users SET nom = '$nom', prenom = '$prenom', adresse= '$adresse', email='$email', adminPerm='$statut', laboratoires_idlaboratoires= '$idlaboratoire' WHERE idusers = $userId";
+    $result = $link->query($sql);
+    if ($link->query($sql) === TRUE) {
+      echo '<div class="centrer"><h1> Informations mises à jour </h1></div>';
+    } else {
+      echo "Error: " . $sql . "<br>" . mysqli_error($link);
+    }
+  }else {
+    echo mysqli_error($link);
   }
 
+}
+
+//changement mdp
+if (!empty($password1)) {
+  // Update the password
+  $mdphash = password_hash($motdepasse, PASSWORD_DEFAULT);
+  $query = "UPDATE users SET password='$mdphash' WHERE email='$email'";
+  $result = mysqli_query($link, $query);
+  echo "Mot de passe changé. ";
+} else {
+  echo mysqli_error($link);
 }
 
 // Close the connection
