@@ -76,7 +76,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
   <div class="icon">
     <a href="support_box.php">
       <img src="../assets/images/icon.png" alt="icon"
-        style="  position: absolute;bottom: -100px;right: 20px;width: 60px;height: 60px;">
+        style="  position: absolute;top: 250px;right: 20px;width: 60px;height: 60px;">
     </a>
   </div>
 
