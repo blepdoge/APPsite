@@ -1,5 +1,8 @@
+var hidecalled = false;
+
 // Function to show the popup
 function showPopup(datapopup) {
+  hidecalled=false;
   // Get the iframe element
   var frame = document.getElementById("graphframe");
   // Set the src attribute
@@ -14,6 +17,7 @@ function showPopup(datapopup) {
 
 // Function to hide the popup
 function hidePopup() {
+  hidecalled = true;
   // Get the popup and overlay elements
   var popup = document.getElementById("popup");
   var overlay = document.getElementById("overlay");
@@ -23,6 +27,7 @@ function hidePopup() {
   var frame = document.getElementById("graphframe");
   // Set the src attribute
   frame.src = "";
+  
 }
 
 // Add an event listener to the overlay to hide the popup when clicked

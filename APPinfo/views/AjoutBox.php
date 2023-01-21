@@ -20,7 +20,8 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 
 <body>
   <?php
-require_once "../model/ajoutBoxDB.php";
+  require_once "../model/addBox.php";
+
   ?>
 
   <div style="padding:50px;">
@@ -45,7 +46,7 @@ require_once "../model/ajoutBoxDB.php";
         if (confirm('Voulez-vous vraiment ajouter cette box?')) {
           // Save it!
           alert('Box ajoutée');
-          window.location.href = 'accueilbox.php';
+          window.location.replace('accueilbox.php');
         } else {
           // Do nothing!
           event.preventDefault();

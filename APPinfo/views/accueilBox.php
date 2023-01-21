@@ -15,6 +15,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
   <title>Panneau de contrôle</title>
   <link rel="stylesheet" href="../assets/css/style.css">
   <meta charset="utf-8" />
+  
 </head>
 
 <?php include_once "loggedINHeader.php" ?>
@@ -22,11 +23,13 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 <body>
   <div id="popup" class="popup" style="display:none;">
     <iframe id="graphframe" frameborder="0"></iframe>
-    
+
   </div>
 
   <!-- Add the overlay div -->
-  <div id="overlay" class="overlay" style="display:none;"></div>
+  <div id="overlay" class="overlay" style="display:none;" onclick="document.location.reload(true)"></div>
+  <script src="../assets/js/popupMgmt.js"></script>
+  
 
 
   <div class="titre">
@@ -103,9 +106,8 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     }
   </script>
 
-  <script src="../assets/js/popupMgmt.js">
-    
-  </script>
+  
+  
 </body>
 
 <?php include_once "footer.php" ?>

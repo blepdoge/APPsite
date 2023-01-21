@@ -1,7 +1,7 @@
 <?php
 // Connexion a notre bdd
-  require_once "../model/config.php";
-
+require_once "config.php";
+  
   $nomBox = "";
   $nomBox_err = "";
 
@@ -23,6 +23,5 @@
     // Close connection
     mysqli_close($link);
 
-
   }
-?>
+ ?>
