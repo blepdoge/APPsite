@@ -12,7 +12,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
 require_once "../model/config.php";
 
 // Select the data from the laboratoires table
-$sql = "SELECT nomLabo, adresseLabo, emailLabo FROM laboratoires";
+$sql = "SELECT nomLabo, adresseLabo, emailLabo FROM laboratoires WHERE idlaboratoires = " . $_SESSION["idLabo"] . "";
 $result = mysqli_query($link, $sql);
 
 // Check if the query was successful

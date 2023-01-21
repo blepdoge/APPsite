@@ -83,7 +83,7 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
   <div>
     <div class="container">
       <div style="width:fitcontent">
-        <button class="disablednotadmin plus" onclick="showPopup('ajoutBox.php')">
+        <button class="disablednotadmin plus" onclick="showPopup('AjoutBox.php')">
           <h1 style="margin:0px">+</h1>
         </button>
       </div>
@@ -106,8 +106,10 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
     }
   </script>
 
+
   
   
 </body>
 
 <?php include_once "footer.php" ?>
+
