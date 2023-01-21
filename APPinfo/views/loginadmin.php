@@ -1,21 +1,14 @@
 <?php
 // recuperer ou initaliser la session
-session_start();
 
-// Check if the user is already logged in, if yes redirect him to welcome page
-if (isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true) {
-  header("location: accueilBox.php");
-  exit;
-}
-
-require_once "../model/login.php";
+require_once "../model/loginSysadmin.php";
 ?>
 
 
 <!DOCTYPE html>
 
 <head>
-  <title>Connexion</title>
+  <title>Connexion SysAdmin</title>
   <meta charset="utf-8">
   <link rel="stylesheet" href="../assets/css/styleLoginAPP.css">
 </head>
@@ -24,7 +17,7 @@ require_once "../model/login.php";
 
 <body>
   <div class="center">
-    <h1>Authentification</h1>
+    <h1>Gestion système</h1>
 
     <?php
     if (!empty($login_err)) {
@@ -52,15 +45,11 @@ require_once "../model/login.php";
         </span>
       </div>
 
-      <a href="loginadmin.php"><div class="pass">Je suis un gérant système</div></a>
       <input type="submit" value="Login">
   </div>
   </form>
 
   </div>
 </body>
-
-<!--Bas de page-->
-<?php include_once "footer.php" ?>
 
 </html>

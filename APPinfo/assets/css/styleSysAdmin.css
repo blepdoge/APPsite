@@ -1,0 +1,157 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+#headercontainer {
+  display: flex;
+  justify-content: space-between;
+  width: auto;
+  position: sticky;
+  top: 0;
+  padding: 20px;
+  background-color: #0764a3;
+  font-family: "Poppins";
+  font-size: 20px;
+}
+a {
+  color: #fff;
+  text-decoration: none;
+}
+a:hover {
+  color: #b00b69;
+}
+
+.mainwrapper {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-around;
+  height: fit-content;
+  width: 100vw;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+#add-user {
+  background-color: #73d9e0;
+  width: 100%;
+  text-align: center;
+}
+#add-lab {
+  background-color: #62e0a7;
+  width: 100%;
+  text-align: center;
+}
+#containerLab {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: fit-content;
+  width: 45%;
+  background-color: rgb(204, 204, 204);
+  padding: 20px;
+  font-family: "Poppins";
+  font-size: 20px;
+}
+
+#containerUser {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: fit-content;
+  width: 45%;
+  background-color: rgb(204, 204, 204);
+  padding: 20px;
+  font-family: "Poppins";
+  font-size: 20px;
+}
+
+.dataform {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: fit-content;
+  width: 100%;
+  background-color: rgb(204, 204, 204);
+  padding: 20px;
+  font-family: "Poppins";
+  font-size: 20px;
+}
+
+.dataform input[type="text"],
+input[type="password"],
+input[type="email"],
+select {
+  width: 75%;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: 3px solid #0764a3;
+  border-radius: 12px;
+  outline: none;
+  transition: all 0.3s ease-in-out;
+}
+.dataform input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+select:focus {
+  border: 3px solid #b00b69;
+}
+
+.dataform input[type="submit"] {
+  width: fit-content;
+  background-color: rgb(225, 255, 233);
+  color: #0764a3;
+  padding: 10px 20px;
+  margin: 8px 0;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.dataform input[type="submit"]:hover {
+  background-color: #0764a3;
+  color: rgb(225, 255, 233);
+}
+
+.tablewrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  height: fit-content;
+  width: 100%;
+  background-color: rgb(204, 204, 204);
+  padding: 20px;
+  font-family: "Poppins";
+  font-size: 20px;
+}
+
+.labtable {
+  max-height: 250px;
+  overflow: auto;
+  margin-bottom: 20px;
+}
+.usertable {
+  max-height: 350px;
+  overflow: auto;
+}
+
+.tablewrapper table {
+  border-collapse: collapse;
+}
+th {
+  background-color: #0764a3;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+th,
+td {
+  border: 3px solid #0764a3;
+  padding: 8px;
+  text-align: center;
+}
