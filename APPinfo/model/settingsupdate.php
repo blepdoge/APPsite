@@ -37,7 +37,7 @@ if ($result->num_rows == 0) {
     echo mysqli_error($link);
   }
 } else {
-  echo "Aucune donnée n'a été modifiée. ";
+  echo "Aucune donnée laboratoire n'a été modifiée. ";
 }
 
 // Check if the data from the users table needs to be updated
