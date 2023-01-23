@@ -24,7 +24,7 @@ require_once "../model/dataCalling.php";
         <h1><strong>Température</strong></h1>
       </div>
       <div class="GraphetValeurText">
-        <p class="valeurGraphe">20°C<br><br>Valeur min :<br>19°C<br><br>Valeur max :<br>21°C</p>
+        <p class="valeurGraphe"><?php echo end($temp)?>°C<br><br>Valeur min :<br><?php echo min($temp)?>°C<br><br>Valeur max :<br><?php echo max($temp)?>°C</p>
         <img class="ligne" src="../assets/images/Line.png" alt="Graph" />
         <div class="canvasContainer">
           <canvas id="myChart"></canvas>

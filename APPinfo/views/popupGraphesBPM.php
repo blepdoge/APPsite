@@ -25,7 +25,7 @@ require_once "../model/dataCalling.php";
         <h1><strong>Fréquence Cardiaque</strong></h1>
       </div>
       <div class="GraphetValeurText">
-        <p class="valeurGraphe">150 bpm<br><br>Valeur min :<br>80 bpm<br><br>Valeur max :<br>150 bpm</p>
+        <p class="valeurGraphe"><?php echo end($bpm)?> bpm<br><br>Valeur min :<br><?php echo min($bpm)?> bpm<br><br>Valeur max :<br><?php echo max($bpm)?> bpm</p>
         <img class="ligne" src="../assets/images/Line.png" alt="Graph" />
         <div class="canvasContainer">
           <canvas id="myChart"></canvas>

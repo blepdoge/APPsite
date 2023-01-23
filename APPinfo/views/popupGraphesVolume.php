@@ -22,7 +22,7 @@ require_once "../model/dataCalling.php";
         <h1><strong>Volume Sonore</strong></h1>
       </div>
       <div class="GraphetValeurText">
-        <p class="valeurGraphe">20 dB<br><br>Valeur min :<br>5 dB<br><br>Valeur max :<br>35 dB</p>
+        <p class="valeurGraphe"><?php echo end($dbson)?> dB<br><br>Valeur min :<br><?php echo end($dbson)?> dB<br><br>Valeur max :<br><?php echo end($dbson)?> dB</p>
         <img class="ligne" src="../assets/images/Line.png" alt="Graph" />
         <div class="canvasContainer">
           <canvas id="myChart"></canvas>

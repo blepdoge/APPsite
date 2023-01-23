@@ -24,7 +24,7 @@ require_once "../model/dataCalling.php";
         <h1><strong>Concentration en CO2</strong></h1>
       </div>
       <div class="GraphetValeurText">
-        <p class="valeurGraphe">500 ppm<br><br>Valeur min :<br>480 ppm<br><br>Valeur max :<br>510ppm</p>
+        <p class="valeurGraphe"><?php echo end($co2)?> ppm<br><br>Valeur min :<br><?php echo min($co2)?> ppm<br><br>Valeur max :<br><?php echo max($co2)?> ppm</p>
         <img class="ligne" src="../assets/images/Line.png" alt="Graph" />
         <div class="canvasContainer">
           <canvas id="myChart"></canvas>
