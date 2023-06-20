@@ -1,4 +1,5 @@
-<?php $ch = curl_init();
+<?php 
+$ch = curl_init();//code moodle adapté
 curl_setopt(
     $ch,
     CURLOPT_URL,
@@ -9,8 +10,6 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
 curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
 $data = curl_exec($ch);
 curl_close($ch);
-echo "Raw Data:<br />";
-//echo ("$data");
 $data_tab = str_split($data, 33);
 echo "Tabular Data:<br />";
 $size = count($data_tab);
@@ -36,6 +35,8 @@ for ($i = 0; $i < $size - 1; $i++) { //loop pour afficher les trames et choper l
     echo("Valeur du capteur : $decimalValue<br />");
     echo ("---------------<br />");
 }
+
+//ex trame temp 1004C1301001FB00B8820230619111929
 
 function defragtrame($trame) // analyse de trame
 {

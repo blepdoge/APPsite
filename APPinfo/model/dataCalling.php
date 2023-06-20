@@ -2,7 +2,7 @@
 
 
 require_once "config.php";
-$query = "SELECT sensorvalues.* FROM sensorvalues INNER JOIN labboxtable ON sensorvalues.LabBoxTable_idLabBox = labboxtable.idLabBox WHERE labboxtable.nomBox='$currentBoxID' LIMIT 6";
+$query = "SELECT * FROM (SELECT sensorvalues.* FROM sensorvalues INNER JOIN labboxtable ON sensorvalues.LabBoxTable_idLabBox = labboxtable.idLabBox WHERE labboxtable.nomBox='$currentBoxID' ORDER BY timestamp DESC LIMIT 6)Var1 ORDER BY timestamp ASC";
 $data = mysqli_query($link, $query);
 
 foreach ($data as $row) {
