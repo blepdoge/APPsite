@@ -9,7 +9,7 @@ foreach ($data as $row) {
     $dbson[] = $row['dBvalue'];
     $temp[] = $row['Tempvalue'];
     $co2[] = $row['CO2value'];
-    $co[] = $row['COvalue'];
+    $humid[] = $row['COvalue'];//remap humidity
     $bpm[] = $row['BPMvalue'];
     $timestamp[] = $row['timestamp'];
     //make the timestamp only be hours and minutes and seconds

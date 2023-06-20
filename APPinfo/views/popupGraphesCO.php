@@ -23,7 +23,7 @@ require_once "../model/dataCalling.php";
         <h1><strong>Concentration CO</strong></h1>
       </div>
       <div class="GraphetValeurText">
-        <p class="valeurGraphe"><?php echo end($co)?> ppm<br><br>Valeur min :<br><?php echo min($co)?> ppm<br><br>Valeur max :<br><?php echo max($co)?> ppm</p>
+        <p class="valeurGraphe"><?php echo end($humid)?> ppm<br><br>Valeur min :<br><?php echo min($humid)?> ppm<br><br>Valeur max :<br><?php echo max($humid)?> ppm</p>
         <img class="ligne" src="../assets/images/Line.png" alt="Graph" />
         <div class="canvasContainer">
           <canvas id="myChart"></canvas>
@@ -41,7 +41,7 @@ require_once "../model/dataCalling.php";
         labels: <?php echo json_encode($timestamp); ?>,
       datasets: [{
         label: 'Concentration en CO',
-        data: <?php echo json_encode($co); ?>,
+        data: <?php echo json_encode($humid); ?>,
         borderWidth: 1
       }]
     },

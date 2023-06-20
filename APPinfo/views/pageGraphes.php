@@ -86,12 +86,12 @@ require_once "../model/dataCalling.php"
 
 
     <div class="graphe" onclick="showPopup('<?php echo 'popupGraphesCO.php?currentBox=' . urlencode($currentBoxID) ?>')">
-      <h3>Concentration en CO</h3>
+      <h3>Humidité</h3>
       <div class="canvasContainer">
-        <canvas id="myChartCO"></canvas>
+        <canvas id="myChartHUM"></canvas>
       </div>
       <div class="indic">
-        <p><?php echo end($co)?> ppm</p>
+        <p><?php echo end($humid)?> %</p>
       </div> <!--fin div indic -->
     </div> <!--ferme div graphe -->
 
@@ -138,7 +138,7 @@ require_once "../model/dataCalling.php"
   <script src="../assets/js/graphCalling.js"></script>
   <script>
     graphCalling("myChartCO2", <?php echo json_encode($timestamp) ?>, <?php echo json_encode($co2) ?>, "Concentration en CO2");
-    graphCalling("myChartCO", <?php echo json_encode($timestamp) ?>, <?php echo json_encode($co) ?>, "Concentration en CO");
+    graphCalling("myChartHUM", <?php echo json_encode($timestamp) ?>, <?php echo json_encode($humid) ?>, "Humidité");
     graphCalling("myChartDB", <?php echo json_encode($timestamp) ?>, <?php echo json_encode($dbson) ?>, "Volume sonore");
     graphCalling("myChartBPM", <?php echo json_encode($timestamp) ?>, <?php echo json_encode($bpm) ?>, "Fréquence cardiaque");
     graphCalling("myChartTEMP", <?php echo json_encode($timestamp) ?>, <?php echo json_encode($temp) ?>, "Température");
