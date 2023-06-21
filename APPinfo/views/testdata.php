@@ -15,14 +15,12 @@ $data = curl_exec($ch);
 curl_close($ch);
 $data_tab_unfil = str_split($data, 33); //split les trames
 
-echo "Tabular Data:<br />";
 $data_tab = array_slice($data_tab_unfil, 32); // on filtre les données faussées
 $size = count($data_tab);
 
 $groupedPackets = []; //dico des packets groupés par timestamp
 
 for ($i = 0; $i < $size - 2; $i += 3) { //loop pour afficher les trames et choper les infos par groupes de 3
-    echo "Trame $i: $data_tab[$i]<br />";
     $trameArray1 = defragtrame($data_tab[$i]);
     $trameArray2 = defragtrame($data_tab[$i + 1]);
     $trameArray3 = defragtrame($data_tab[$i + 2]);
@@ -47,14 +45,6 @@ for ($i = 0; $i < $size - 2; $i += 3) { //loop pour afficher les trames et chope
         'value' => hexdec($trameArray3[5]),
     ];
 
-    echo ("Type de capteur 1 : Température<br />");
-    echo ("Valeur du capteur 1 : " . hexdec($trameArray1[5]) . "<br />");
-    echo ("Type de capteur 2 : Humidité<br />");
-    echo ("Valeur du capteur 2 : " . hexdec($trameArray2[5]) . "<br />");
-    echo ("Type de capteur 3 : Microphone<br />");
-    echo ("Valeur du capteur 3 : " . hexdec($trameArray3[5]) . "<br />");
-
-    echo ("---------------<br />");
 }
 
 $query = "SELECT COUNT(*) AS row_count FROM sensorvalues";
@@ -77,9 +67,46 @@ foreach ($groupedPackets as $timestamp => $packets) {
     }
 }
 
+$diff = $gpCount - $rowCount;
+$slicedData = array_slice($groupedPackets, $rowCount);
 
 
+// Prepare the INSERT statement
+$query = "INSERT INTO sensorvalues (timestamp, CO2value, COvalue, dBvalue, Tempvalue, BPMvalue, LabBoxTable_idLabBox) VALUES (?, 400, ?, ?, ?, 70, 1)";
 
+$stmt = mysqli_prepare($link, $query);
+
+foreach ($slicedData as $timestamp => $packets) {
+    $temperature = null;
+    $humidity = null;
+    $sound = null;
+    foreach ($packets as $packet) {
+        $typeCapteur = $packet['typeCapteur'];
+        $value = $packet['value'];
+
+        // Extract the values for temperature, humidity, and sound
+
+        switch ($typeCapteur) {
+            case 'Température':
+                $temperature = $value;
+                break;
+            case 'Humidité':
+                $humidity = $value;
+                break;
+            case 'Microphone':
+                $sound = $value;
+                break;
+        }
+
+    }
+    // Bind the parameters and execute the statement
+    mysqli_stmt_bind_param($stmt, 'sddd', $timestamp, $humidity, $sound, $temperature);
+    mysqli_stmt_execute($stmt);
+}
+
+
+// Close the statement
+mysqli_stmt_close($stmt);
 
 
 //ex trame temp 1004C1301001FB00B8820230619111929
@@ -120,8 +147,6 @@ function defragtrame($trame) // analyse de trame
         $sec
     );
 }
-
-
 
 
 ?>

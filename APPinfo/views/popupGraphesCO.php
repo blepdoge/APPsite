@@ -20,10 +20,10 @@ require_once "../model/dataCalling.php";
   <div class="maincontentGraph">
     <div class="containersGraph">
       <div class="titleZoneGraphes">
-        <h1><strong>Concentration CO</strong></h1>
+        <h1><strong>Humidité relative</strong></h1>
       </div>
       <div class="GraphetValeurText">
-        <p class="valeurGraphe"><?php echo end($humid)?> ppm<br><br>Valeur min :<br><?php echo min($humid)?> ppm<br><br>Valeur max :<br><?php echo max($humid)?> ppm</p>
+        <p class="valeurGraphe"><?php echo end($humid)?> %<br><br>Valeur min :<br><?php echo min($humid)?> %<br><br>Valeur max :<br><?php echo max($humid)?> %</p>
         <img class="ligne" src="../assets/images/Line.png" alt="Graph" />
         <div class="canvasContainer">
           <canvas id="myChart"></canvas>
