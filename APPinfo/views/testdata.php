@@ -10,12 +10,14 @@ curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
 curl_setopt($ch, CURLOPT_FOLLOWLOCATION, 1);
 $data = curl_exec($ch);
 curl_close($ch);
-$data_tab = str_split($data, 33);
+$data_tab_unfil = str_split($data, 33);
+
+
 echo "Tabular Data:<br />";
+$data_tab = array_slice($data_tab_unfil, 32); // on filtre les données faussées
 $size = count($data_tab);
 
 for ($i = 0; $i < $size - 1; $i++) { //loop pour afficher les trames et choper les infos
-    echo ($i);
     echo "Trame $i: $data_tab[$i]<br />";
     $trameArray = defragtrame($data_tab[$i]);
     switch($trameArray[3]){//switch pour afficher le type de capteur
