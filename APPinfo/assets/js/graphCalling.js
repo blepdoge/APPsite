@@ -21,3 +21,13 @@ function graphCalling(graphid,timestamps,graphvar,graphtitle) {
     }
   });
 }
+
+function addData(chartID, label, data) {
+  const chart = getChart(chartID);
+
+  chart.data.labels.push(label);
+  chart.data.datasets.forEach((dataset) => {
+      dataset.data.push(data);
+  });
+  chart.update();
+}

@@ -10,7 +10,7 @@ $co2 = [];
 $humid = [];
 $bpm = [];
 $timestamp = [];
-
+$timestampsF = [];
 foreach ($data as $row) {
     $co2[] = $row['CO2value'];
     $humid[] = $row['COvalue'];//remap humidity

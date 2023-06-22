@@ -8,7 +8,8 @@ if (!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true) {
   exit;
 }
 $currentBoxID = urldecode($_GET["currentBoxID"]);
-require_once "../model/dataCalling.php"
+require_once "../model/dataCalling.php";
+
 ?>
 
 <!DOCTYPE html>
@@ -53,12 +54,10 @@ require_once "../model/dataCalling.php"
     }
   </script>
 
-
   <div class="trombone">
     <p id="horloge">
     </p>
   </div>
-
 
   <div id="popup" class="popup" style="display:none;">
     <iframe id="graphframe" frameborder="0"></iframe>
@@ -68,32 +67,38 @@ require_once "../model/dataCalling.php"
   <div id="overlay" class="overlay" style="display:none;"></div>
 
   <div class="boutonsSessions">
-    <button class="boutonSessionStart">Lancer la session</button>
-    <button class="boutonSessionStop">Arrêter la session</button>
+    <button class="boutonSessionStart" id="sessionStartBtn">Lancer la session</button>
+    <button class="boutonSessionStop" id="sessionStopBtn">Arrêter la session</button>
     <button class="boutonSessionExporter">Exporter les données</button>
   </div>
 
   <div class="boxesWrapper">
 
 
-    <div class="graphe" onclick="showPopup('<?php echo 'popupGraphesCO2.php?currentBox=' . urlencode($currentBoxID) ?>')">
+    <div class="graphe"
+      onclick="showPopup('<?php echo 'popupGraphesCO2.php?currentBox=' . urlencode($currentBoxID) ?>')">
       <h3>Concentration en CO2</h3>
       <div class="canvasContainer">
         <canvas id="myChartCO2"></canvas>
       </div>
       <div class="indic">
-        <p><?php echo end($co2)?> ppm</p>
+        <p>
+          <?php echo end($co2) ?> ppm
+        </p>
       </div> <!--fin div indic -->
     </div> <!--ferme div graphe -->
 
 
-    <div class="graphe" onclick="showPopup('<?php echo 'popupGraphesCO.php?currentBox=' . urlencode($currentBoxID) ?>')">
+    <div class="graphe"
+      onclick="showPopup('<?php echo 'popupGraphesCO.php?currentBox=' . urlencode($currentBoxID) ?>')">
       <h3>Humidité</h3>
       <div class="canvasContainer">
         <canvas id="myChartHUM"></canvas>
       </div>
       <div class="indic">
-        <p><?php echo end($humid)?> %</p>
+        <p>
+          <?php echo end($humid) ?> %
+        </p>
       </div> <!--fin div indic -->
     </div> <!--ferme div graphe -->
 
@@ -105,18 +110,23 @@ require_once "../model/dataCalling.php"
         <canvas id="myChartDB"></canvas>
       </div>
       <div class="indic">
-        <p><?php echo end($dbson)?> dB</p>
+        <p>
+          <?php echo end($dbson) ?> dB
+        </p>
       </div> <!--fin div indic -->
     </div> <!--ferme div graphe -->
 
 
-    <div class="graphe" onclick="showPopup('<?php echo 'popupGraphesBPM.php?currentBox=' . urlencode($currentBoxID) ?>')">
+    <div class="graphe"
+      onclick="showPopup('<?php echo 'popupGraphesBPM.php?currentBox=' . urlencode($currentBoxID) ?>')">
       <h3>Fréquence cardiaque</h3>
       <div class="canvasContainer">
         <canvas id="myChartBPM"></canvas>
       </div>
       <div class="indic">
-        <p><?php echo end($bpm)?> bpm</p>
+        <p>
+          <?php echo end($bpm) ?> bpm
+        </p>
       </div> <!--fin div indic -->
     </div> <!--ferme div graphe -->
 
@@ -128,15 +138,17 @@ require_once "../model/dataCalling.php"
         <canvas id="myChartTEMP"></canvas>
       </div>
       <div class="indic">
-        <p><?php echo end($temp)?>°</p>
+        <p>
+          <?php echo end($temp) ?>°
+        </p>
       </div> <!--fin div indic -->
     </div> <!--ferme div graphe -->
 
   </div>
 
-
   <script src="../assets/js/popupMgmt.js"></script>
 
+  <script src="../assets/js/xhrDataFetch.js"></script>
   <script src="../assets/js/graphCalling.js"></script>
   <script>
     graphCalling("myChartCO2", <?php echo json_encode($timestampsF) ?>, <?php echo json_encode($co2) ?>, "Concentration en CO2");
@@ -145,8 +157,7 @@ require_once "../model/dataCalling.php"
     graphCalling("myChartBPM", <?php echo json_encode($timestampsF) ?>, <?php echo json_encode($bpm) ?>, "Fréquence cardiaque");
     graphCalling("myChartTEMP", <?php echo json_encode($timestampsF) ?>, <?php echo json_encode($temp) ?>, "Température");
   </script>
-
-
+  
 </body>
 
 <?php include_once "footer.php" ?>
