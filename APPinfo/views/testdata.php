@@ -51,21 +51,21 @@ $query = "SELECT COUNT(*) AS row_count FROM sensorvalues";
 $result = mysqli_query($link, $query);
 $row = mysqli_fetch_assoc($result);
 $rowCount = $row['row_count'];
-echo "Number of rows in the sensorvalue table: " . $rowCount;
+//echo "Number of rows in the sensorvalue table: " . $rowCount;
 
 $gpCount = count(array_keys($groupedPackets));
 
 // Print the groupedPackets dictionary with its contents
-foreach ($groupedPackets as $timestamp => $packets) {
-    echo "--------------------------------<br />";
-    echo "Timestamp: $timestamp<br />";
-    foreach ($packets as $packet) {
-        $typeCapteur = $packet['typeCapteur'];
-        $value = $packet['value'];
-        echo "Type de capteur: $typeCapteur<br />";
-        echo "Valeur du capteur: $value<br />";
-    }
-}
+// foreach ($groupedPackets as $timestamp => $packets) {
+//     echo "--------------------------------<br />";
+//     echo "Timestamp: $timestamp<br />";
+//     foreach ($packets as $packet) {
+//         $typeCapteur = $packet['typeCapteur'];
+//         $value = $packet['value'];
+//         echo "Type de capteur: $typeCapteur<br />";
+//         echo "Valeur du capteur: $value<br />";
+//     }
+// }
 
 $diff = $gpCount - $rowCount;
 $slicedData = array_slice($groupedPackets, $rowCount);
@@ -129,7 +129,7 @@ function defragtrame($trame) // analyse de trame
     $sec = substr($trame, 31, 2); //seconde
     list($t, $o, $r, $c, $n, $v, $a, $x, $year, $month, $day, $hour, $min, $sec) =
         sscanf($trame, "%1s%4s%1s%1s%2s%4s%4s%2s%4s%2s%2s%2s%2s%2s"); // décodage avec sscanf
-    echo ("<br />$t,$o,$r,$c,$n,$v,$a,$x,$year,$month,$day,$hour,$min,$sec<br />");
+    //echo ("<br />$t,$o,$r,$c,$n,$v,$a,$x,$year,$month,$day,$hour,$min,$sec<br />");
     return array(
         $t,
         $o,
