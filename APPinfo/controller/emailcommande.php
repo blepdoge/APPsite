@@ -22,16 +22,16 @@ try {
     // setup des données serveurs
     $mail->SMTPDebug = 0; // 2 to Enable verbose debug output
     $mail->isSMTP(); // Set mailer to use SMTP
-    $mail->Host = 'smtp-fr.securemail.pro'; // Specify main and backup SMTP servers
+    $mail->Host = 'nohost'; // Specify main and backup SMTP servers
     $mail->SMTPAuth = true; // Enable SMTP authentication
-    $mail->Username = 'sorsenteam@sorsen.site'; // SMTP username
-    $mail->Password = 'serveurAPP2023'; // SMTP password
+    $mail->Username = 'still nothing'; // SMTP username
+    $mail->Password = 'nothing here'; // SMTP password
     $mail->SMTPSecure = 'ssl'; // Enable TLS encryption, `ssl` also accepted
-    $mail->Port = 465; // TCP port to connect to
+    $mail->Port = 999; // TCP port to connect to
 
     // destinataire et expediteur
     $mail->setFrom('sorsenteam@sorsen.site', 'LabBox Team');
-    $mail->addAddress('lm.szymko@gmail.com', 'recipient'); // Add a recipient
+    $mail->addAddress('testrecip', 'recipient'); // Add a recipient
 
     // infos de l'email
     $mail->Subject = 'LabBox Inquiry';
